@@ -109,17 +109,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
-                                        <rect key="frame" x="0.0" y="110.5" width="375" height="446.5"/>
+                                        <rect key="frame" x="0.0" y="154" width="375" height="360"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No antibiotic duplication results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-Li-4Ym">
-                                                <rect key="frame" x="50.5" y="219" width="274.5" height="21"/>
+                                                <rect key="frame" x="30" y="189" width="315" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-2C-jzN" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="20.5" y="290" width="334.5" height="156.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <rect key="frame" x="0.0" y="220" width="375" height="140"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="discalimerText">
                                                         <string key="value">This multiple medicine duplication search facility is designed to facilitate searching for duplications on a number of medicine pairs at any one time.</string>
@@ -131,21 +131,20 @@
                                                 <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="3b6-2C-jzN" secondAttribute="trailing" constant="20" id="4H4-ge-2dN"/>
-                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" constant="20" id="E6V-JB-ZTB"/>
-                                            <constraint firstItem="N3K-Li-4Ym" firstAttribute="top" secondItem="FJf-G1-B95" secondAttribute="bottom" constant="50" id="EtS-tT-36b"/>
+                                            <constraint firstAttribute="trailing" secondItem="3b6-2C-jzN" secondAttribute="trailing" id="4H4-ge-2dN"/>
+                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" id="E6V-JB-ZTB"/>
+                                            <constraint firstItem="N3K-Li-4Ym" firstAttribute="top" secondItem="FJf-G1-B95" secondAttribute="bottom" constant="20" id="EtS-tT-36b"/>
                                             <constraint firstItem="FJf-G1-B95" firstAttribute="top" secondItem="COD-ln-l3c" secondAttribute="top" id="PdF-1K-KWp"/>
                                             <constraint firstAttribute="bottom" secondItem="3b6-2C-jzN" secondAttribute="bottom" id="UAL-1D-WGx"/>
-                                            <constraint firstAttribute="trailing" secondItem="N3K-Li-4Ym" secondAttribute="trailing" constant="50" id="asr-fA-dHO"/>
+                                            <constraint firstAttribute="trailing" secondItem="N3K-Li-4Ym" secondAttribute="trailing" constant="30" id="asr-fA-dHO"/>
                                             <constraint firstItem="FJf-G1-B95" firstAttribute="centerX" secondItem="COD-ln-l3c" secondAttribute="centerX" id="jqe-aW-g4u"/>
-                                            <constraint firstItem="N3K-Li-4Ym" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" constant="50" id="qwy-Qb-0Wo"/>
-                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="top" secondItem="N3K-Li-4Ym" secondAttribute="bottom" constant="50" id="rhD-fK-Efe"/>
+                                            <constraint firstItem="N3K-Li-4Ym" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" constant="30" id="qwy-Qb-0Wo"/>
+                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="top" secondItem="N3K-Li-4Ym" secondAttribute="bottom" constant="10" id="rhD-fK-Efe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="COD-ln-l3c" firstAttribute="leading" secondItem="Jsd-Ej-WVB" secondAttribute="leading" id="EQ9-Q9-Di2"/>
                                     <constraint firstItem="COD-ln-l3c" firstAttribute="centerX" secondItem="Jsd-Ej-WVB" secondAttribute="centerX" id="WbB-Lf-Kok"/>
@@ -229,6 +228,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="placeHolderDisclaimer" destination="3b6-2C-jzN" id="l5T-T7-ht7"/>
                         <outlet property="placeholderView" destination="Jsd-Ej-WVB" id="LY1-em-7eM"/>
                         <outlet property="tableView" destination="yoB-7X-Dfh" id="9f3-Oc-vGr"/>
                     </connections>
@@ -249,6 +249,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
+                                        <rect key="frame" x="0.0" y="103.5" width="375" height="460"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No medicine interactions results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
+                                                <rect key="frame" x="30" y="189" width="315" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="220" width="375" height="240"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="discalimerText">
+                                                        <mutableString key="value">This multiple medicine interaction search facility is designed to facilitate searching for interactions on a number of medicine pairs at any one time. Studies of medicines interactions are generally conducted for two medicine pairs. This multiple medicine interaction checker allows a single search for a number of medicine pairs as a single search. The compatibility of three or more medicines in combination is not generally available.</mutableString>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
+                                                <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" id="Axr-Yr-W18"/>
+                                            <constraint firstItem="vIy-vl-bZT" firstAttribute="centerX" secondItem="5gg-j3-R5l" secondAttribute="centerX" id="BbT-kI-i46"/>
+                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="top" secondItem="Zbk-bT-CL0" secondAttribute="bottom" constant="10" id="KOv-NB-tJb"/>
+                                            <constraint firstAttribute="bottom" secondItem="JzH-R1-tfP" secondAttribute="bottom" id="NAv-Gy-F8X"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zbk-bT-CL0" secondAttribute="trailing" constant="30" id="Tfi-W7-5qK"/>
+                                            <constraint firstAttribute="trailing" secondItem="JzH-R1-tfP" secondAttribute="trailing" id="ocT-kC-Cmx"/>
+                                            <constraint firstItem="Zbk-bT-CL0" firstAttribute="top" secondItem="vIy-vl-bZT" secondAttribute="bottom" constant="20" id="rOp-rw-b5v"/>
+                                            <constraint firstItem="Zbk-bT-CL0" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" constant="30" id="vif-Om-MSw"/>
+                                            <constraint firstItem="vIy-vl-bZT" firstAttribute="top" secondItem="5gg-j3-R5l" secondAttribute="top" id="x48-8Y-nxF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="centerY" secondItem="soc-3h-1ds" secondAttribute="centerY" id="BEh-3J-eQp"/>
+                                    <constraint firstAttribute="trailing" secondItem="5gg-j3-R5l" secondAttribute="trailing" id="IBz-Nb-Mxl"/>
+                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="centerX" secondItem="soc-3h-1ds" secondAttribute="centerX" id="dTg-Fe-xjK"/>
+                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="leading" secondItem="soc-3h-1ds" secondAttribute="leading" id="yVP-gA-Zb3"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="crN-4Y-Rw0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,54 +338,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
-                                        <rect key="frame" x="0.0" y="68.5" width="375" height="530"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No medicine interactions results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
-                                                <rect key="frame" x="50" y="219" width="275" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="290" width="375" height="240"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="discalimerText">
-                                                        <mutableString key="value">This multiple medicine interaction search facility is designed to facilitate searching for interactions on a number of medicine pairs at any one time. Studies of medicines interactions are generally conducted for two medicine pairs. This multiple medicine interaction checker allows a single search for a number of medicine pairs as a single search. The compatibility of three or more medicines in combination is not generally available.</mutableString>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
-                                                <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" id="Axr-Yr-W18"/>
-                                            <constraint firstItem="vIy-vl-bZT" firstAttribute="centerX" secondItem="5gg-j3-R5l" secondAttribute="centerX" id="BbT-kI-i46"/>
-                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="top" secondItem="Zbk-bT-CL0" secondAttribute="bottom" constant="50" id="KOv-NB-tJb"/>
-                                            <constraint firstAttribute="bottom" secondItem="JzH-R1-tfP" secondAttribute="bottom" id="NAv-Gy-F8X"/>
-                                            <constraint firstAttribute="trailing" secondItem="Zbk-bT-CL0" secondAttribute="trailing" constant="50" id="Tfi-W7-5qK"/>
-                                            <constraint firstAttribute="trailing" secondItem="JzH-R1-tfP" secondAttribute="trailing" id="ocT-kC-Cmx"/>
-                                            <constraint firstItem="Zbk-bT-CL0" firstAttribute="top" secondItem="vIy-vl-bZT" secondAttribute="bottom" constant="50" id="rOp-rw-b5v"/>
-                                            <constraint firstItem="Zbk-bT-CL0" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" constant="50" id="vif-Om-MSw"/>
-                                            <constraint firstItem="vIy-vl-bZT" firstAttribute="top" secondItem="5gg-j3-R5l" secondAttribute="top" id="x48-8Y-nxF"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="centerY" secondItem="soc-3h-1ds" secondAttribute="centerY" id="BEh-3J-eQp"/>
-                                    <constraint firstAttribute="trailing" secondItem="5gg-j3-R5l" secondAttribute="trailing" id="IBz-Nb-Mxl"/>
-                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="centerX" secondItem="soc-3h-1ds" secondAttribute="centerX" id="dTg-Fe-xjK"/>
-                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="leading" secondItem="soc-3h-1ds" secondAttribute="leading" id="yVP-gA-Zb3"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -352,6 +352,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="placeHolderDisclaimer" destination="JzH-R1-tfP" id="eRL-9T-KoP"/>
                         <outlet property="placeholderView" destination="soc-3h-1ds" id="gqR-EM-Rvd"/>
                         <outlet property="tableView" destination="crN-4Y-Rw0" id="nRG-cx-6tZ"/>
                     </connections>

@@ -17,6 +17,7 @@ import RxDataSources
 class InteractionsResultController: BaseViewController, UITableViewDelegate {
     @IBOutlet weak var placeholderView: DefaultBGView!
     
+    @IBOutlet weak var placeHolderDisclaimer: DisclaimerView!
     var entity: InteractionsEntity?
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,6 +38,8 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
     
     private func setupPlaceHolder() {
         placeholderView.isHidden = false
+        placeHolderDisclaimer.subviews.first?.backgroundColor = .clear
+        
         view.bringSubview(toFront: placeholderView)
     }
     

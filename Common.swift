@@ -37,7 +37,7 @@ struct CommonConstants {
     static let surveillanceHeaderHeight: CGFloat = 70.0
     static let surveillanceFooterHeight: CGFloat = 80.0
     static let duplicationsFooterHeight: CGFloat = 150.0
-    static let interactionsFooterHeight: CGFloat = 230.0
+    static let interactionsFooterHeight: CGFloat = 240.0
     static let interactionsHeaderHeight: CGFloat = 180.0
 }
 

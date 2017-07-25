@@ -16,6 +16,7 @@ import RxDataSources
 
 class DuplicationsResultController: BaseViewController {
     @IBOutlet weak var placeholderView: DefaultBGView!
+    @IBOutlet weak var placeHolderDisclaimer: DisclaimerView!
     
     var entity: DuplicationsEntity?
     
@@ -37,6 +38,7 @@ class DuplicationsResultController: BaseViewController {
     
     private func setupPlaceHolder() {
         placeholderView.isHidden = false
+        placeHolderDisclaimer.subviews.first?.backgroundColor = .clear
         view.bringSubview(toFront: placeholderView)
     }
     

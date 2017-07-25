@@ -43,6 +43,12 @@ class SurveillanceDataController: BaseViewController {
         microbeField.textField.text = microbeEntity?.title
         antimicrobialField.textField.text = antibioticEntity?.title
         
+        sectorField.textField.text = BusinessModel.shared.usr.sector.value.rawValue
+        sectorField.textField.isUserInteractionEnabled = false
+        
+        locationField.textField.text = BusinessModel.shared.usr.location.value.rawValue
+        locationField.textField.isUserInteractionEnabled = false
+        
         updateSearchButton()
         
         microbeClearButton
@@ -72,13 +78,6 @@ class SurveillanceDataController: BaseViewController {
             self?.microbeEntity = entity
             self?.updateSearchButton()
         }
-        
-        
-        sectorField.textField.text = BusinessModel.shared.usr.sector.value.rawValue
-        sectorField.textField.isUserInteractionEnabled = false
-        
-        locationField.textField.text = BusinessModel.shared.usr.location.value.rawValue
-        locationField.textField.isUserInteractionEnabled = false
         
         bindProfileTextField(textField: sectorField, array: Sector.surveillanceArray.map{ $0.rawValue }, actionSheetTitle: "Select Sector type")
         

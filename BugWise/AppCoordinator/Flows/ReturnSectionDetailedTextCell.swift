@@ -12,6 +12,7 @@ class ReturnSectionDetailedTextCell: UITableViewCell {
     
     public func config(with model: ReturnDetailedTextModel) {
         
-        titleLabel.attributedText = model.title.stringFromHtml()
+        titleLabel.attributedText = model.title.stringFromHtml(font: RegularFontWithSize(size: 13))
+
     }
 }

@@ -23,22 +23,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e0F-6c-DbS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e0F-6c-DbS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" id="YYn-t4-bt9" customClass="HomeTableViewCell" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YYn-t4-bt9" id="7Ql-eu-nly">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U93-tg-Zp6">
-                                                    <rect key="frame" x="38" y="0.0" width="300" height="77"/>
+                                                    <rect key="frame" x="38" y="0.0" width="300" height="66"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infection" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-5F-qg2">
-                                                            <rect key="frame" x="0.0" y="9" width="60" height="60"/>
+                                                            <rect key="frame" x="0.0" y="3.5" width="60" height="60"/>
                                                             <color key="backgroundColor" red="0.085505180060000005" green="0.50838899609999999" blue="0.99870699640000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="YMA-Uw-Dxy"/>
@@ -52,7 +52,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib8-Jf-Ewd">
-                                                            <rect key="frame" x="73" y="28" width="227" height="21"/>
+                                                            <rect key="frame" x="72" y="22.5" width="228" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="leading" secondItem="9N1-5F-qg2" secondAttribute="trailing" constant="13" id="9i7-ZA-QuI"/>
+                                                        <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="leading" secondItem="9N1-5F-qg2" secondAttribute="trailing" constant="12" id="9i7-ZA-QuI"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ib8-Jf-Ewd" secondAttribute="trailing" id="azi-dl-Jjm"/>
                                                         <constraint firstItem="9N1-5F-qg2" firstAttribute="leading" secondItem="U93-tg-Zp6" secondAttribute="leading" id="g9k-Ru-Ajg"/>
                                                         <constraint firstItem="9N1-5F-qg2" firstAttribute="centerY" secondItem="U93-tg-Zp6" secondAttribute="centerY" id="osB-sW-a8P"/>

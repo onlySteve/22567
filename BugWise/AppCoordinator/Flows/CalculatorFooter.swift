@@ -41,7 +41,7 @@ class CalculatorFooter: CommonCustomUIBase {
         disclaimerTitleLabel.font = BoldFontWithSize(size: 15)
         
         disclaimerTextLabel.font = RegularFontWithSize(size: 14)
-        disclaimerTextLabel.text = "The results contained in and produced by this tool are for educational and informational purposes only and should not be the basis for the diagnosis or treatment of a patient's health concern or replace  decision making. No declarations are made or inferred regarding the accuracy of calculations. No liability will be accepted by the authors for any harm that comes from its use."
+        disclaimerTextLabel.text = "The results contained in and produced by this tool are for educational and informational purposes only and should not be the basis for the diagnosis or treatment of a patient’s health concern or replace medical decision making. No declarations are made or inferred regarding the accuracy of calculations. No liability will be accepted by the author for any harm that comes from its use."
         
         disclaimerTextLabel.textColor = CommonAppearance.boldGreyColor
     }

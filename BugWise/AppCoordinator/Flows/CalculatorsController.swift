@@ -23,7 +23,7 @@ import RxDataSources
 enum CalculatorTypes: String {
     case creatinine = "Creatinine Clearance Estimate by Cockcroft-Gault Equation"
     case flowRate = "IV Flow Rate"
-    case paediatric = "Paediatric dosing"
+    case paediatric = "Paediatric Dosing"
     
     static let allItems = [creatinine, flowRate, paediatric]
 }

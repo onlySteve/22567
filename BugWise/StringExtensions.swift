@@ -81,9 +81,11 @@ extension String {
     }
     
     var containsOnlyNumberCharacter: Bool {
-        let characterSet = CharacterSet(charactersIn: "0123456789")
-        let range = (self as NSString).rangeOfCharacter(from: characterSet)
-        return range.location != NSNotFound
+        guard let _ = Double(self) else {
+            return false
+        }
+        
+        return true
     }
-
+    
 }

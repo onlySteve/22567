@@ -63,6 +63,9 @@ class CalculatorField: CommonCustomUIBase, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        return string.containsOnlyNumberCharacter || string.characters.count == 0
+        let replaced = (textField.text! as NSString)
+            .replacingCharacters(in: range, with: string);
+        
+        return replaced.containsOnlyNumberCharacter || string.characters.count == 0
     }
 }

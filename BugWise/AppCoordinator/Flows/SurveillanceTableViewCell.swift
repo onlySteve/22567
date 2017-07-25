@@ -25,8 +25,19 @@ final class SurveillanceTableViewCell: BaseCell {
         casesLabel.font = RegularFontWithSize(size: 15)
     }
     
-    public func config(with survEntity: SurveillanceEntity) {
-        drugLabel.text = survEntity.microbe
+    public func config(with survEntity: SurveillanceEntity, type: SurveillanceDataType) {
+        
+        switch type {
+        case .antimicrobials: drugLabel.text = survEntity.drug
+            break
+        case .drug: drugLabel.text = survEntity.drug
+            break
+        case .medicine: drugLabel.text = survEntity.drug
+            break
+        case .microbes: drugLabel.text = survEntity.microbe
+            break
+        }
+        
         casesLabel.text = survEntity.cases
         susceptibilityLabel.text = survEntity.susceptibility
         specialNoteLabel.text = survEntity.specialNote

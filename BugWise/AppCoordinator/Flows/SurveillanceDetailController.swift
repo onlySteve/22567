@@ -13,6 +13,13 @@ import RealmSwift
 import RxDataSources
 import RxCocoa
 
+enum SurveillanceDataType: String {
+    case antimicrobials = "Antimicrobials"
+    case microbes = "Microbes"
+    case drug = "Drug"
+    case medicine = "Medicine"
+}
+
 class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
     
     @IBOutlet weak var microbeLabel: UILabel!
@@ -48,7 +55,7 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
         antibioticLabel.text = requestEntity?.antibiotic?.title
         antibioticLabel.textColor = CommonAppearance.blueColor
         
-        sectorLocationLabel.text = String(format: "%@ sector\n%@", (requestEntity?.sector)!, (requestEntity?.location)!)
+        sectorLocationLabel.text = String(format: "%@ Sector\n%@ Location", (requestEntity?.sector)!, (requestEntity?.location)!)
         sectorLocationLabel.textColor = CommonAppearance.boldGreyColor
     }
     
@@ -68,7 +75,7 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
         dataSource.configureCell = { (_, tv, ip, survEntity: SurveillanceEntity) in
             let cell = tv.dequeueReusableCell(withIdentifier: SurveillanceTableViewCell.nameOfClass)! as! SurveillanceTableViewCell
             
-            cell.config(with: survEntity)
+            cell.config(with: survEntity, type: self.surveillanceType())
             return cell
         }
         
@@ -98,6 +105,7 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
         guard let section = generatedSections?[section] else { return nil }
         
         let headerView = SurveillanceTableViewHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: CommonConstants.surveillanceHeaderHeight))
+        headerView.antimicrobialsLabel.text = surveillanceType().rawValue
         headerView.titleLabel.text = String(format: "SampleType: %@", section.items.first?.sampleType ?? "None")
         
         return headerView
@@ -134,6 +142,23 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
         }
         
         return resultArray
+    }
+    
+    private func surveillanceType() -> SurveillanceDataType {
+        
+        if requestEntity?.microbe != nil && requestEntity?.antibiotic != nil {
+            return Sector(rawValue: (requestEntity?.sector)!) == .privateType ? .medicine : .drug
+        }
+        
+        if requestEntity?.microbe != nil {
+            return .antimicrobials
+        }
+        
+        if requestEntity?.antibiotic != nil {
+            return .microbes
+        }
+        
+        return .microbes
     }
 }
 

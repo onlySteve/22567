@@ -10,6 +10,7 @@ import ObjectMapper
 
 struct SurveillanceEntity: Mappable {
     var microbe: String?
+    var drug: String?
     var cases: String?
     var susceptibility: String?
     var specialNote: String?
@@ -23,6 +24,7 @@ struct SurveillanceEntity: Mappable {
     
     mutating func mapping(map: Map) {
         microbe <- map["Microbe"]
+        drug <- map["Drug"]
         cases <- map["Cases"]
         susceptibility <- map["Susceptibility"]
         specialNote <- map["SpecialNote"]

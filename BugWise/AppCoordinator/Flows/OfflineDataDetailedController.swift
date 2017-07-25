@@ -182,22 +182,8 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                                              style: .plain,
                                              actionHandler: { [weak self] in
                                                 
-                                                var teaser: String?
-                                                
-                                                if (self?.entity?.isKind(of: AntibioticEntity.self))! {
-                                                    teaser = "Pull in the antibiotic."
-                                                }
-                                                
-                                                if (self?.entity?.isKind(of: InfectionEntity.self))! {
-                                                    teaser = "Pull in the infection."
-                                                }
-                                                
-                                                if (self?.entity?.isKind(of: MicrobeEntity.self))! {
-                                                    teaser = "Pull in the microbe."
-                                                }
-                                                
                                                 // text to share
-                                                let text = String(format: "%@\nHi, I thought you may find the Bug Wise application clinically useful in promoting antimicrobial stewardship. The application is freely available in your App store", teaser ?? "")
+                                                let text = "Hi, I thought you may find the Bug Wise application clinically useful in promoting antimicrobial stewardship. The application is freely available in your App store"
                                                 
                                                 // set up activity view controller
                                                 let textToShare = [ text ]

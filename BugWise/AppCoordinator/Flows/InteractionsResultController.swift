@@ -53,7 +53,8 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
         let footerView = DisclaimerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: CommonConstants.interactionsFooterHeight))
         tableView.tableFooterView = footerView
         
-        footerView.discalimerText = "This multiple medicine interaction search facility is designed to facilitate searching for interactions on a number of medicine pairs at any one time. Studies of medicines interactions are generally conducted for two medicine pairs as a single search. The compatibility of three or more medicines in combination is not generally available."
+        
+        footerView.discalimerText = "This multiple medicine interaction search facility is designed to facilitate searching for interactions on a number of medicine pairs at any one time. Studies of medicines interactions are generally conducted for two medicine pairs. This multiple medicine interaction checker allows a single search for a number of medicine pairs as a single search. The compatibility of three or more medicines in combination is not generally available."
     }
     
     private func setupTableView() {

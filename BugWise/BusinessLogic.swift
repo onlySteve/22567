@@ -11,13 +11,20 @@ import RxSwift
 import RxRealm
 import RealmSwift
 import Moya
-
+import ReachabilitySwift
 
 typealias voidBlock = () -> ()
 
 class BusinessModel {
     
     let usr: UserModel = UserModel()
+    
+    var notReachableNetwork: Bool {
+        let reachabil = Reachability()!
+        
+        return reachabil.currentReachabilityStatus == .notReachable
+    }
+    
     private let disposeBag = DisposeBag()
     
     private init() { }

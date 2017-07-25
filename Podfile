@@ -12,7 +12,7 @@ target 'BugWise' do
   pod 'Moya/RxSwift'
   pod "RxGesture"
   pod 'Kingfisher', '~> 3.0'
-  pod 'Reachability', '3.2.0'
+  pod 'ReachabilitySwift', '~> 3'
   pod 'RealmSwift', '2.1.2'
   pod 'RxRealm', '0.4.1'
   pod 'ObjectMapper', '~> 2.2'

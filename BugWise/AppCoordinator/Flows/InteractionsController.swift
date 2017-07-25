@@ -76,6 +76,12 @@ class InteractionsController: BaseViewController, UITableViewDelegate {
     }
     
     private func showSearch() {
+        
+        if (BusinessModel.shared.notReachableNetwork) {
+            showNetworkReachabilityAlert()
+            return
+        }
+        
         let searchController = SearchOnlinceController.controller()
         
         if let type = type {

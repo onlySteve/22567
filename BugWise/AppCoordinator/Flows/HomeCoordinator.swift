@@ -52,6 +52,12 @@ final class HomeCoordinator: BaseCoordinator {
                 self.showOfflineDetailed(searchItem: searchItem)
                 break
             case .drug:
+                
+                if (BusinessModel.shared.notReachableNetwork) {
+                    showNetworkReachabilityAlert()
+                    break
+                }
+                
                 showHud()
                 EntitiesManager.shared.antibiotic(id: searchItem.id, onSucces: { (entity) in
                     hideHud()
@@ -96,6 +102,12 @@ final class HomeCoordinator: BaseCoordinator {
                 self.showOfflineDetailed(searchItem: searchItem)
                 break
             case .drug:
+                
+                if (BusinessModel.shared.notReachableNetwork) {
+                    showNetworkReachabilityAlert()
+                    break
+                }
+                
                 showHud()
                 EntitiesManager.shared.antibiotic(id: searchItem.id, onSucces: { (entity) in
                     hideHud()

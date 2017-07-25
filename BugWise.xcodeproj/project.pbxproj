@@ -53,7 +53,6 @@
 		6170F5A11EE5A2F700D171C8 /* BusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170F5A01EE5A2F700D171C8 /* BusinessLogic.swift */; };
 		6170F5A31EE5A64100D171C8 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170F5A21EE5A64100D171C8 /* ServerAPI.swift */; };
 		6170F5A51EE5C76B00D171C8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170F5A41EE5C76B00D171C8 /* LoginModel.swift */; };
-		6170F5A71EE5CDE200D171C8 /* ReachabilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170F5A61EE5CDE200D171C8 /* ReachabilityExtension.swift */; };
 		6170F5A91EE5D99700D171C8 /* authorizationExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6170F5A81EE5D99700D171C8 /* authorizationExample.json */; };
 		6170F5AB1EE5E4D200D171C8 /* offlineContentExamle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6170F5AA1EE5E4D200D171C8 /* offlineContentExamle.json */; };
 		617E19421F09823800E34838 /* duplicationsExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 617E19411F09823800E34838 /* duplicationsExample.json */; };
@@ -229,7 +228,6 @@
 		6170F5A01EE5A2F700D171C8 /* BusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessLogic.swift; sourceTree = "<group>"; };
 		6170F5A21EE5A64100D171C8 /* ServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
 		6170F5A41EE5C76B00D171C8 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		6170F5A61EE5CDE200D171C8 /* ReachabilityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityExtension.swift; sourceTree = "<group>"; };
 		6170F5A81EE5D99700D171C8 /* authorizationExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authorizationExample.json; sourceTree = "<group>"; };
 		6170F5AA1EE5E4D200D171C8 /* offlineContentExamle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = offlineContentExamle.json; sourceTree = "<group>"; };
 		617E19411F09823800E34838 /* duplicationsExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duplicationsExample.json; sourceTree = "<group>"; };
@@ -716,7 +714,6 @@
 				61B221C71EDF0A33003CCF3E /* UIImageExtensions.swift */,
 				61B221C91EDF0DD3003CCF3E /* UIButtonExtensions.swift */,
 				61ACEA0E1EE363FC006FADFA /* UILabelExtensions.swift */,
-				6170F5A61EE5CDE200D171C8 /* ReachabilityExtension.swift */,
 				61EB1A311EEDA978002F7934 /* StringExtensions.swift */,
 			);
 			name = Extensions;
@@ -1324,7 +1321,6 @@
 				612187731F0717CB0046857C /* SurveillanceTableViewHeader.swift in Sources */,
 				61ACEA011EE34BF2006FADFA /* FavouritesController.swift in Sources */,
 				61EB1A291EEC87EF002F7934 /* AlertsController.swift in Sources */,
-				6170F5A71EE5CDE200D171C8 /* ReachabilityExtension.swift in Sources */,
 				61ACE9EC1EE21069006FADFA /* PinCodeCoordinator.swift in Sources */,
 				61B221981EDD35F3003CCF3E /* StartController.swift in Sources */,
 				61F430D91EF67FF900A76362 /* BaseEntity.swift in Sources */,

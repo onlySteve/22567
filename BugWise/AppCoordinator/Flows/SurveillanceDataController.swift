@@ -136,6 +136,11 @@ class SurveillanceDataController: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
                 
+                if (BusinessModel.shared.notReachableNetwork) {
+                    showNetworkReachabilityAlert()
+                    return
+                }
+                
                 guard let items = EntitiesManager.shared.searcItems(type: searchType) else {
                     completion(nil)
                     return

@@ -17,6 +17,8 @@ func RegularFontWithSize(size: CGFloat = 15) -> UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+let networkReachabilityMessage = "No Internet Connection ..It lools like there’s a problem with your internet connection. Please try again"
+
 struct CommonAppearance {
     static let greyColor = UIColor(netHex: 0xC8C7CC)
     static let lightGreyColor = UIColor(netHex: 0xECECEC)
@@ -75,6 +77,10 @@ func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(Int(seconds * 1000.0))) {
         completion()
     }
+}
+
+func showNetworkReachabilityAlert() {
+    showHud(success: false, time: 3.5, message: networkReachabilityMessage, completion: nil)
 }
 
 func showHud() {

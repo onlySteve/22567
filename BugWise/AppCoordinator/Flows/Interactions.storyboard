@@ -108,16 +108,16 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-Ej-WVB" userLabel="placeHolder" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
                                         <rect key="frame" x="0.0" y="154" width="375" height="360"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No antibiotic duplication results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-Li-4Ym">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No antibiotic duplication results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-Li-4Ym">
                                                 <rect key="frame" x="30" y="189" width="315" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-2C-jzN" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-2C-jzN" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="220" width="375" height="140"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -127,7 +127,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-G1-B95">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-G1-B95">
                                                 <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
                                             </imageView>
                                         </subviews>
@@ -252,16 +252,16 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
                                         <rect key="frame" x="0.0" y="103.5" width="375" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No medicine interactions results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No medicine interactions results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
                                                 <rect key="frame" x="30" y="189" width="315" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="220" width="375" height="240"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -271,7 +271,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
                                                 <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
                                             </imageView>
                                         </subviews>

@@ -41,11 +41,11 @@ final class MicrobeEntity: BaseEntity {
         
         if let associatedDict = associatedDict {
             
-            for (key, value) in associatedDict {
-                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: ["id": key, "title": value]) {
+            for (index, dict) in associatedDict.enumerated() {
+                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: ["primaryKey": "\(id)\(dict.key)","id": dict.key, "title": dict.value, "order": index.description]) {
                     associatedInfections.append(associatedEntity)
                 }
-            }            
+            }
         }
     }
     

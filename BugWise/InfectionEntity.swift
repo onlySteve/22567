@@ -41,8 +41,8 @@ final class InfectionEntity: BaseEntity {
         associatedDict <- map["Detail.AssociatedMicrobes"]
         
         if let associatedDict = associatedDict {
-            for (key, value) in associatedDict {
-                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: ["id": key, "title": value]) {
+            for (index, dict) in associatedDict.enumerated() {
+                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: ["primaryKey": "\(id)\(dict.key)","id": dict.key, "title": dict.value, "order": index.description]) {
                     associatedMicrobes.append(associatedEntity)
                 }
             }
@@ -56,8 +56,10 @@ final class InfectionEntity: BaseEntity {
 
 final class AssociatedEntity: Object, Mappable {
     
+    dynamic var primaryKeyID: String = "0"
     dynamic var id: String = "0"
     dynamic var title: String?
+    dynamic var orderNumber: String?
     
     // MARK: JSON
     required convenience init?(map: Map) {
@@ -69,10 +71,12 @@ final class AssociatedEntity: Object, Mappable {
         
         id <- map["id"]
         title <- map["title"]
+        orderNumber <- map["order"]
+        primaryKeyID <- map["primaryKey"]
     }
     
     override class func primaryKey() -> String? {
-        return "title"
+        return "primaryKeyID"
     }
 }
 

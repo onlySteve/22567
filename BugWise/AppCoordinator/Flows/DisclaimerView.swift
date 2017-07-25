@@ -14,6 +14,7 @@ import RxCocoa
 
 class DisclaimerView: CommonCustomUIBase {
     
+    @IBOutlet weak var separatorView: SeparatorView!
     @IBOutlet weak var disclaimerTextLabel: UILabel!
     
     @IBOutlet weak var disclaimerTitleLabel: UILabel!
@@ -25,10 +26,15 @@ class DisclaimerView: CommonCustomUIBase {
         }
     }
     
+    @IBInspectable var topSeparatorHidden: Bool = false {
+        didSet {
+            separatorView.isHidden = topSeparatorHidden
+        }
+    }
+    
     private let disposeBag = DisposeBag()
     
     override func setup() {
-        disclaimerTitleLabel.textColor = CommonAppearance.lighBlueColor
         
         disclaimerTextLabel.font = RegularFontWithSize(size: 14)
         

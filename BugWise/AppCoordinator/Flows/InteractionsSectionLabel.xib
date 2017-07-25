@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InteractionsSectionLabel" customModule="BugWise" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="eEj-cj-45Y" id="Cxg-tc-uZT"/>
+                <outlet property="titleLabel" destination="YEC-Ox-wZB" id="Hx8-Be-SdR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEC-Ox-wZB">
+                    <rect key="frame" x="15" y="0.0" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-cj-45Y">
+                    <rect key="frame" x="15" y="26" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YEC-Ox-wZB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="02t-em-6c0"/>
+                <constraint firstItem="YEC-Ox-wZB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G8P-sg-Kw6"/>
+                <constraint firstAttribute="trailing" secondItem="YEC-Ox-wZB" secondAttribute="trailing" constant="15" id="TXN-Zx-CYn"/>
+                <constraint firstItem="eEj-cj-45Y" firstAttribute="top" secondItem="YEC-Ox-wZB" secondAttribute="bottom" constant="5" id="euo-sX-9qe"/>
+                <constraint firstAttribute="bottom" secondItem="eEj-cj-45Y" secondAttribute="bottom" id="iec-nS-Pkg"/>
+                <constraint firstItem="eEj-cj-45Y" firstAttribute="leading" secondItem="YEC-Ox-wZB" secondAttribute="leading" id="pW3-e6-nQg"/>
+                <constraint firstItem="eEj-cj-45Y" firstAttribute="trailing" secondItem="YEC-Ox-wZB" secondAttribute="trailing" id="x4n-Ak-uZt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="111.5"/>
+        </view>
+    </objects>
+</document>

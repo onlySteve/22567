@@ -1,0 +1,673 @@
+{
+    "Heading": "Montelukast",
+    "Class": "Leukotriene receptor antagonists",
+    "Strength": "<ul></ul>",
+    "Dose": "",
+    "Indication": "<ul></ul>",
+    "Administration": "",
+    "Trades": [
+        {
+            "Name": "Sintair",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Pharma Dynamics",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R165.30"
+                }
+            ]
+        },
+        {
+            "Name": "Sintair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Pharma Dynamics",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R165.30"
+                }
+            ]
+        },
+        {
+            "Name": "Sintair",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Pharma Dynamics",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R165.30"
+                }
+            ]
+        },
+        {
+            "Name": "BelAIR",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Austell (Camox)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R226.86"
+                }
+            ]
+        },
+        {
+            "Name": "Belair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Austell (Camox)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "BelAIR",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Austell (Camox)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R226.86"
+                }
+            ]
+        },
+        {
+            "Name": "Dilair",
+            "Strength": "4 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Ranbaxy",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R232.80"
+                }
+            ]
+        },
+        {
+            "Name": "Dilair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Ranbaxy",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R232.80"
+                }
+            ]
+        },
+        {
+            "Name": "Dilair",
+            "Strength": "5 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Ranbaxy",
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "R232.80"
+                }
+            ]
+        },
+        {
+            "Name": "Glenmont",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Glenmark Pharmaceuticals South Africa (Pty) Ltd",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        },
+        {
+            "Name": "Glenmont",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Glenmark Pharmaceuticals South Africa (Pty) Ltd",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        },
+        {
+            "Name": "Glenmont",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Glenmark Pharmaceuticals South Africa (Pty) Ltd",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        },
+        {
+            "Name": "Kulair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Kulair",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Kulair",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Lumont",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Simayla (Zydus)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R157.73"
+                },
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Lumont",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Simayla (Zydus)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R157.73"
+                },
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Lumont",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Simayla (Zydus)",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R157.73"
+                },
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Minair",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Thebe Pharm Alliance",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.16"
+                }
+            ]
+        },
+        {
+            "Name": "Minair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Thebe Pharm Alliance",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.16"
+                }
+            ]
+        },
+        {
+            "Name": "Minair",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Thebe Pharm Alliance",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.16"
+                }
+            ]
+        },
+        {
+            "Name": "Monte Air",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R240.05"
+                }
+            ]
+        },
+        {
+            "Name": "Monte Air",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R240.05"
+                }
+            ]
+        },
+        {
+            "Name": "Monte Air",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R240.05"
+                }
+            ]
+        },
+        {
+            "Name": "Monte Air Sprinkles",
+            "Strength": "4 mg",
+            "Form": "SAC",
+            "Schedule": null,
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R240.05"
+                }
+            ]
+        },
+        {
+            "Name": "Monteflo",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Monteflo",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Monteflo",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": null,
+            "Price": [
+                {
+                    "Packsize": "30",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Biotech",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Biotech",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Chew Biotech",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Biotech",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Chew Biotech",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Biotech",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Cipla",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Cipla Medpro",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Cipla",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Cipla Medpro",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Cipla",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Cipla Medpro",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R180.95"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Specpharm",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Specpharm",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R215.99"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Specpharm",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Specpharm",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R215.99"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast Specpharm",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Specpharm",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R215.99"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast unicorn",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast unicorn",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Montelukast unicorn",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "--"
+                }
+            ]
+        },
+        {
+            "Name": "Singulair",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": "3",
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R340.05"
+                }
+            ]
+        },
+        {
+            "Name": "Singulair",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": "3",
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R340.05"
+                }
+            ]
+        },
+        {
+            "Name": "Singulair",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": "3",
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R340.05"
+                }
+            ]
+        },
+        {
+            "Name": "Singulair Sprinkles",
+            "Strength": "4 mg",
+            "Form": "GRA",
+            "Schedule": "3",
+            "Manuf": "MSD",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R340.05"
+                }
+            ]
+        },
+        {
+            "Name": "Sintrine",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Sintrine",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Sintrine",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Sandoz",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R229.21"
+                }
+            ]
+        },
+        {
+            "Name": "Topraz",
+            "Strength": "5 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Dr Reddys",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        },
+        {
+            "Name": "Topraz",
+            "Strength": "4 mg",
+            "Form": "CHU",
+            "Schedule": null,
+            "Manuf": "Dr Reddys",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        },
+        {
+            "Name": "Topraz",
+            "Strength": "10 mg",
+            "Form": "TAB",
+            "Schedule": null,
+            "Manuf": "Dr Reddys",
+            "Price": [
+                {
+                    "Packsize": "28",
+                    "Price": "R169.86"
+                }
+            ]
+        }
+    ],
+    "id": "165899"
+}

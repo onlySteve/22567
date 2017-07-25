@@ -1,0 +1,46 @@
+{
+    "searchTerms": {
+        "Condition": [
+                      {
+                      "ID": "C62",
+                      "Name": "Bacteremia"
+                      }],
+        "Microbe": [
+                    {
+                    "ID": "M1",
+                    "Name": "Acinetobact"
+                    }
+                    ],
+        "Drug": [
+                 {
+                 "ID": "D86",
+                 "Name": "Amikacin"
+                 }]
+    },
+    "Conditions": [
+                   {
+                   "ID": "C63",
+                   "Detail": {
+                   "Name": "Bronchitis\n",
+                   "Description": "xxx",
+                   "Diagnosis": "yyy",
+                   "1stLine": "zzz",
+                   "2ndLine": "aaa",
+                   "Associated Microbes":
+                   "bbb",
+                   "References": "ccc"
+                   }
+                   ],
+    "Microbes": [
+                 {
+                 "ID": "M1",
+                 "Detail": {
+                 "Name": "Acinetobacter ",
+                 "Description": "ddd",
+                 "Treatment": "eee",
+                 "Associated Infections":
+                 "fff",
+                 "References": "ggg"
+                 }
+                 ]
+}

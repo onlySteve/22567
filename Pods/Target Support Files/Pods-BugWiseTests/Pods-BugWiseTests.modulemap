@@ -1,0 +1,6 @@
+framework module Pods_BugWiseTests {
+  umbrella header "Pods-BugWiseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

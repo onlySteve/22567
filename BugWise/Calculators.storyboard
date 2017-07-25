@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculators Controller-->
+        <scene sceneID="FHh-zs-KdG">
+            <objects>
+                <viewController storyboardIdentifier="CalculatorsController" id="eOm-Bh-hNJ" customClass="CalculatorsController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bG9-GP-yUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="krJ-gD-5eu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="suK-Kn-dDI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KKj-SG-JdB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellID" textLabel="BnQ-C7-KmN" style="IBUITableViewCellStyleDefault" id="Tgb-iC-fuB">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tgb-iC-fuB" id="OFP-7i-18E">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BnQ-C7-KmN">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KKj-SG-JdB" firstAttribute="top" secondItem="suK-Kn-dDI" secondAttribute="top" id="6z5-bI-qD0"/>
+                            <constraint firstItem="KKj-SG-JdB" firstAttribute="leading" secondItem="suK-Kn-dDI" secondAttribute="leading" id="a2r-xw-6aM"/>
+                            <constraint firstAttribute="bottom" secondItem="KKj-SG-JdB" secondAttribute="bottom" id="aWA-LV-xNe"/>
+                            <constraint firstAttribute="trailing" secondItem="KKj-SG-JdB" secondAttribute="trailing" id="pPG-de-9re"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="KKj-SG-JdB" id="zID-fp-8Lk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fet-mE-SMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194" y="335"/>
+        </scene>
+        <!--Creatinine Calculator Controller-->
+        <scene sceneID="5iW-Sr-6Hw">
+            <objects>
+                <viewController storyboardIdentifier="CreatinineCalculatorController" id="Pmi-qj-WvO" customClass="CreatinineCalculatorController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qSg-Bn-TYb"/>
+                        <viewControllerLayoutGuide type="bottom" id="orz-8y-b7U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oPj-qy-jpz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5F-Ma-S2O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzG-5Z-ioA" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="710.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-Yu-l2J" userLabel="sexHeader">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vci-0a-zLG">
+                                                        <rect key="frame" x="67" y="9" width="139" height="22"/>
+                                                        <state key="normal" title="Male (1)">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="check">
+                                                            <color key="titleColor" red="0.1176470588" green="0.37254901959999998" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQX-hu-7cb">
+                                                        <rect key="frame" x="25" y="10" width="27" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.1176470588" green="0.37254901959999998" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWb-K2-bkT">
+                                                        <rect key="frame" x="221" y="3" width="139" height="34"/>
+                                                        <state key="normal" title="Female (0.85)">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="check">
+                                                            <color key="titleColor" red="0.1176470588" green="0.37254901959999998" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtM-31-VhL" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="39" width="375" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Tly-LJ-C7k"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Vci-0a-zLG" firstAttribute="leading" secondItem="iQX-hu-7cb" secondAttribute="trailing" constant="15" id="ANr-CZ-UeJ"/>
+                                                    <constraint firstItem="YtM-31-VhL" firstAttribute="leading" secondItem="nPw-Yu-l2J" secondAttribute="leading" id="GMp-eV-4Qt"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Hdf-ZU-H6y"/>
+                                                    <constraint firstItem="SWb-K2-bkT" firstAttribute="width" secondItem="Vci-0a-zLG" secondAttribute="width" id="OE3-kZ-Gxe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YtM-31-VhL" secondAttribute="trailing" id="OTj-b6-hSa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YtM-31-VhL" secondAttribute="bottom" id="Pke-WV-q5y"/>
+                                                    <constraint firstItem="iQX-hu-7cb" firstAttribute="centerY" secondItem="nPw-Yu-l2J" secondAttribute="centerY" id="S3e-c6-we9"/>
+                                                    <constraint firstItem="Vci-0a-zLG" firstAttribute="centerY" secondItem="nPw-Yu-l2J" secondAttribute="centerY" id="UbU-Yl-bnz"/>
+                                                    <constraint firstItem="SWb-K2-bkT" firstAttribute="leading" secondItem="Vci-0a-zLG" secondAttribute="trailing" constant="15" id="VuV-A4-cne"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SWb-K2-bkT" secondAttribute="trailing" constant="15" id="jHm-Eq-4l5"/>
+                                                    <constraint firstItem="iQX-hu-7cb" firstAttribute="leading" secondItem="nPw-Yu-l2J" secondAttribute="leading" constant="25" id="ubZ-t8-rnF"/>
+                                                    <constraint firstItem="SWb-K2-bkT" firstAttribute="centerY" secondItem="Vci-0a-zLG" secondAttribute="centerY" id="zdI-lN-YvC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mC-g6-CcD" userLabel="age" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="bH7-YC-4LF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Age"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="yr"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-Cf-9p5" userLabel="weight" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="105" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Weight"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="kg"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXQ-dy-PCB" userLabel="serumCreat" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="160" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Serum Creatinine"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mg/dL"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tO-Zn-NUQ" userLabel="result" customClass="CalculatorResultHeader" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="225" width="375" height="25"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="m7v-mN-bHe"/>
+                                                </constraints>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUn-KZ-7dw" userLabel="creatClear" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="260" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Creatinine Clearance"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mL/min"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLineCount">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-x9-zFj" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="315" width="375" height="1"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="p2X-of-mVS"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSW-t9-aBU" userLabel="footer" customClass="CalculatorFooter" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="326" width="375" height="286"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refernces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bb-a7-xtW">
+                                                <rect key="frame" x="10" y="622" width="355" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cockroft, D.W., and M.H., Gault, 1976. Prediction of creatinie clearance from serum creatinine.\nNephron, 16(1), pp.31-41" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCi-84-ELS">
+                                                <rect key="frame" x="10" y="650" width="355" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.64301639795303345" green="0.64288228750228882" blue="0.65937858819961548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ac3-Cf-9p5" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="0sh-Mv-fxJ"/>
+                                            <constraint firstItem="ac3-Cf-9p5" firstAttribute="top" secondItem="9mC-g6-CcD" secondAttribute="bottom" id="74y-AE-NVx"/>
+                                            <constraint firstAttribute="trailing" secondItem="TXQ-dy-PCB" secondAttribute="trailing" id="82i-4c-3p7"/>
+                                            <constraint firstItem="jCi-84-ELS" firstAttribute="leading" secondItem="3Bb-a7-xtW" secondAttribute="leading" id="9Xf-9p-S5X"/>
+                                            <constraint firstItem="jCi-84-ELS" firstAttribute="trailing" secondItem="3Bb-a7-xtW" secondAttribute="trailing" id="AEZ-Rk-br1"/>
+                                            <constraint firstAttribute="trailing" secondItem="nPw-Yu-l2J" secondAttribute="trailing" id="E5b-SD-hVh"/>
+                                            <constraint firstAttribute="trailing" secondItem="7tO-Zn-NUQ" secondAttribute="trailing" id="F6p-LH-MNG"/>
+                                            <constraint firstItem="KUn-KZ-7dw" firstAttribute="top" secondItem="7tO-Zn-NUQ" secondAttribute="bottom" constant="10" id="FrU-La-bEl"/>
+                                            <constraint firstAttribute="trailing" secondItem="KUn-KZ-7dw" secondAttribute="trailing" id="IxO-8L-5kj"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Bb-a7-xtW" secondAttribute="trailing" constant="10" id="K4M-Hv-tGb"/>
+                                            <constraint firstItem="3Bb-a7-xtW" firstAttribute="top" secondItem="dSW-t9-aBU" secondAttribute="bottom" constant="10" id="KsR-Qh-opU"/>
+                                            <constraint firstAttribute="trailing" secondItem="CMy-x9-zFj" secondAttribute="trailing" id="MQB-6C-IdN"/>
+                                            <constraint firstItem="7tO-Zn-NUQ" firstAttribute="top" secondItem="TXQ-dy-PCB" secondAttribute="bottom" constant="10" id="Na9-6J-gr4"/>
+                                            <constraint firstItem="nPw-Yu-l2J" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="PJ6-AM-eav"/>
+                                            <constraint firstItem="7tO-Zn-NUQ" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="PaX-Jt-5au"/>
+                                            <constraint firstItem="jCi-84-ELS" firstAttribute="top" secondItem="3Bb-a7-xtW" secondAttribute="bottom" constant="10" id="QU8-Zf-Cr6"/>
+                                            <constraint firstItem="TXQ-dy-PCB" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="V5B-iT-TKT"/>
+                                            <constraint firstItem="nPw-Yu-l2J" firstAttribute="top" secondItem="KzG-5Z-ioA" secondAttribute="top" id="baJ-rL-Ds1"/>
+                                            <constraint firstItem="dSW-t9-aBU" firstAttribute="top" secondItem="CMy-x9-zFj" secondAttribute="bottom" constant="10" id="cY0-Tl-8q5"/>
+                                            <constraint firstItem="KUn-KZ-7dw" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="cgL-Nh-JOC"/>
+                                            <constraint firstItem="ac3-Cf-9p5" firstAttribute="height" secondItem="9mC-g6-CcD" secondAttribute="height" id="gGu-IB-89K"/>
+                                            <constraint firstAttribute="trailing" secondItem="dSW-t9-aBU" secondAttribute="trailing" id="hiB-BW-cpB"/>
+                                            <constraint firstItem="dSW-t9-aBU" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="i3p-ZV-QEG"/>
+                                            <constraint firstItem="3Bb-a7-xtW" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" constant="10" id="jB9-LY-kxS"/>
+                                            <constraint firstItem="TXQ-dy-PCB" firstAttribute="top" secondItem="ac3-Cf-9p5" secondAttribute="bottom" id="kz8-Rq-dBV"/>
+                                            <constraint firstItem="9mC-g6-CcD" firstAttribute="top" secondItem="nPw-Yu-l2J" secondAttribute="bottom" constant="10" id="mc7-Jn-VeB"/>
+                                            <constraint firstItem="CMy-x9-zFj" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="nCn-JA-H3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="ac3-Cf-9p5" secondAttribute="trailing" id="nSq-zs-FBg"/>
+                                            <constraint firstItem="9mC-g6-CcD" firstAttribute="leading" secondItem="KzG-5Z-ioA" secondAttribute="leading" id="owR-nx-WsE"/>
+                                            <constraint firstItem="CMy-x9-zFj" firstAttribute="top" secondItem="KUn-KZ-7dw" secondAttribute="bottom" id="pvk-eT-v20"/>
+                                            <constraint firstAttribute="trailing" secondItem="9mC-g6-CcD" secondAttribute="trailing" id="tSU-1U-bxg"/>
+                                            <constraint firstItem="KUn-KZ-7dw" firstAttribute="height" secondItem="9mC-g6-CcD" secondAttribute="height" id="vft-aZ-tEO"/>
+                                            <constraint firstItem="TXQ-dy-PCB" firstAttribute="height" secondItem="9mC-g6-CcD" secondAttribute="height" id="yqF-rA-SVO"/>
+                                            <constraint firstAttribute="bottom" secondItem="jCi-84-ELS" secondAttribute="bottom" constant="10" id="ytU-su-o5W"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KzG-5Z-ioA" firstAttribute="leading" secondItem="O5F-Ma-S2O" secondAttribute="leading" id="5JA-Jd-Qpu"/>
+                                    <constraint firstAttribute="trailing" secondItem="KzG-5Z-ioA" secondAttribute="trailing" id="n1C-iw-4oR"/>
+                                    <constraint firstItem="KzG-5Z-ioA" firstAttribute="top" secondItem="O5F-Ma-S2O" secondAttribute="top" id="qlG-fD-m06"/>
+                                    <constraint firstAttribute="bottom" secondItem="KzG-5Z-ioA" secondAttribute="bottom" id="wxG-ak-c9i"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KzG-5Z-ioA" firstAttribute="width" secondItem="oPj-qy-jpz" secondAttribute="width" id="Aoa-kq-sEo"/>
+                            <constraint firstAttribute="bottom" secondItem="O5F-Ma-S2O" secondAttribute="bottom" id="G7H-fh-lzR"/>
+                            <constraint firstItem="O5F-Ma-S2O" firstAttribute="top" secondItem="oPj-qy-jpz" secondAttribute="top" id="kjx-a6-Goo"/>
+                            <constraint firstAttribute="trailing" secondItem="O5F-Ma-S2O" secondAttribute="trailing" id="wI0-DA-tkt"/>
+                            <constraint firstItem="O5F-Ma-S2O" firstAttribute="leading" secondItem="oPj-qy-jpz" secondAttribute="leading" id="zcJ-L9-LMy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageField" destination="9mC-g6-CcD" id="bhQ-kj-rMz"/>
+                        <outlet property="femaleButton" destination="SWb-K2-bkT" id="l6o-v3-KVs"/>
+                        <outlet property="footer" destination="dSW-t9-aBU" id="ode-Ur-Nea"/>
+                        <outlet property="maleButton" destination="Vci-0a-zLG" id="Rzh-gi-cYb"/>
+                        <outlet property="resultField" destination="KUn-KZ-7dw" id="pst-H1-KUt"/>
+                        <outlet property="serumCreatField" destination="TXQ-dy-PCB" id="rb7-4v-zwE"/>
+                        <outlet property="weightField" destination="ac3-Cf-9p5" id="mSp-Su-xQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjS-p2-kvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="-349"/>
+        </scene>
+        <!--Flow Rate Calculator Controller-->
+        <scene sceneID="EkQ-dz-Czp">
+            <objects>
+                <viewController storyboardIdentifier="FlowRateCalculatorController" id="vuV-cu-JXb" customClass="FlowRateCalculatorController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yYz-id-UMh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ceL-2Y-Gpm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WiP-mU-VtW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrn-4b-nmI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJ6-4X-CJe" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geT-t9-PxQ" userLabel="volume" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="OQs-aJ-ebF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Volume"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mL"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgT-aJ-Naz" userLabel="time" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Time"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="min"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-uW-Pqg" userLabel="drop factor" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="110" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Drop Factor"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="drops/mL"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-Mx-3Uw" userLabel="result" customClass="CalculatorResultHeader" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="175" width="375" height="25"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="S9L-cP-vQc"/>
+                                                </constraints>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-jM-s9f" userLabel="creatClear" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="210" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="IV Flow Rate"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="drops/min"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-lV-Fg4" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="265" width="375" height="1"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Gb9-zh-0dW"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-pr-lHR" userLabel="footer" customClass="CalculatorFooter" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="276" width="375" height="286"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gCd-lV-Fg4" secondAttribute="trailing" id="0DA-X5-1SJ"/>
+                                            <constraint firstItem="bgT-aJ-Naz" firstAttribute="height" secondItem="geT-t9-PxQ" secondAttribute="height" id="4Gz-1t-Rwb"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1K-uW-Pqg" secondAttribute="trailing" id="CH4-AW-Iqc"/>
+                                            <constraint firstAttribute="bottom" secondItem="1xV-pr-lHR" secondAttribute="bottom" constant="10" id="JgA-rV-Ocm"/>
+                                            <constraint firstItem="geT-t9-PxQ" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="Kfw-9k-ifs"/>
+                                            <constraint firstItem="FQJ-jM-s9f" firstAttribute="height" secondItem="geT-t9-PxQ" secondAttribute="height" id="Pes-95-5mO"/>
+                                            <constraint firstItem="FQJ-jM-s9f" firstAttribute="top" secondItem="hw0-Mx-3Uw" secondAttribute="bottom" constant="10" id="Pey-aI-WMZ"/>
+                                            <constraint firstItem="gCd-lV-Fg4" firstAttribute="top" secondItem="FQJ-jM-s9f" secondAttribute="bottom" id="Q0O-XQ-dRk"/>
+                                            <constraint firstAttribute="trailing" secondItem="1xV-pr-lHR" secondAttribute="trailing" id="XxH-EZ-2m6"/>
+                                            <constraint firstAttribute="trailing" secondItem="hw0-Mx-3Uw" secondAttribute="trailing" id="ZB8-ci-6oe"/>
+                                            <constraint firstItem="hw0-Mx-3Uw" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="bPQ-wy-Zuw"/>
+                                            <constraint firstItem="1xV-pr-lHR" firstAttribute="top" secondItem="gCd-lV-Fg4" secondAttribute="bottom" constant="10" id="cS2-OS-aoE"/>
+                                            <constraint firstItem="bgT-aJ-Naz" firstAttribute="top" secondItem="geT-t9-PxQ" secondAttribute="bottom" id="csP-9c-0Kf"/>
+                                            <constraint firstItem="h1K-uW-Pqg" firstAttribute="height" secondItem="geT-t9-PxQ" secondAttribute="height" id="dTK-ZO-92L"/>
+                                            <constraint firstItem="bgT-aJ-Naz" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="e9i-G5-T16"/>
+                                            <constraint firstItem="gCd-lV-Fg4" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="i0q-BT-y13"/>
+                                            <constraint firstItem="hw0-Mx-3Uw" firstAttribute="top" secondItem="h1K-uW-Pqg" secondAttribute="bottom" constant="10" id="jae-a0-n5S"/>
+                                            <constraint firstItem="FQJ-jM-s9f" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="kaE-hU-ycB"/>
+                                            <constraint firstAttribute="trailing" secondItem="geT-t9-PxQ" secondAttribute="trailing" id="mb9-sr-IeK"/>
+                                            <constraint firstAttribute="trailing" secondItem="FQJ-jM-s9f" secondAttribute="trailing" id="p37-jV-AEz"/>
+                                            <constraint firstItem="geT-t9-PxQ" firstAttribute="top" secondItem="OJ6-4X-CJe" secondAttribute="top" id="pUU-Nm-dsv"/>
+                                            <constraint firstItem="1xV-pr-lHR" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="psf-Cr-ln7"/>
+                                            <constraint firstItem="h1K-uW-Pqg" firstAttribute="leading" secondItem="OJ6-4X-CJe" secondAttribute="leading" id="rNl-sl-uAo"/>
+                                            <constraint firstAttribute="trailing" secondItem="bgT-aJ-Naz" secondAttribute="trailing" id="uNk-IT-UW3"/>
+                                            <constraint firstItem="h1K-uW-Pqg" firstAttribute="top" secondItem="bgT-aJ-Naz" secondAttribute="bottom" id="xAM-Po-KPn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OJ6-4X-CJe" firstAttribute="top" secondItem="Yrn-4b-nmI" secondAttribute="top" id="8Cf-gQ-Xrd"/>
+                                    <constraint firstAttribute="trailing" secondItem="OJ6-4X-CJe" secondAttribute="trailing" id="hno-WW-oE3"/>
+                                    <constraint firstItem="OJ6-4X-CJe" firstAttribute="leading" secondItem="Yrn-4b-nmI" secondAttribute="leading" id="voO-LE-dAk"/>
+                                    <constraint firstAttribute="bottom" secondItem="OJ6-4X-CJe" secondAttribute="bottom" id="zIe-VT-kGR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yrn-4b-nmI" secondAttribute="trailing" id="PEJ-VZ-zvB"/>
+                            <constraint firstItem="OJ6-4X-CJe" firstAttribute="width" secondItem="WiP-mU-VtW" secondAttribute="width" id="Yjq-IR-BDg"/>
+                            <constraint firstItem="Yrn-4b-nmI" firstAttribute="top" secondItem="WiP-mU-VtW" secondAttribute="top" id="Z3g-in-c4n"/>
+                            <constraint firstAttribute="bottom" secondItem="Yrn-4b-nmI" secondAttribute="bottom" id="sgw-TD-3gn"/>
+                            <constraint firstItem="Yrn-4b-nmI" firstAttribute="leading" secondItem="WiP-mU-VtW" secondAttribute="leading" id="zsf-hA-gIA"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="474"/>
+                    <connections>
+                        <outlet property="dropFactorField" destination="h1K-uW-Pqg" id="w1N-UO-II9"/>
+                        <outlet property="footer" destination="1xV-pr-lHR" id="2jS-yk-SJy"/>
+                        <outlet property="resultField" destination="FQJ-jM-s9f" id="Usv-Jn-417"/>
+                        <outlet property="timeField" destination="bgT-aJ-Naz" id="c77-ED-RDw"/>
+                        <outlet property="volumeField" destination="geT-t9-PxQ" id="VPa-f1-GfQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkS-kg-60t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.60000000000002" y="259.97001499250376"/>
+        </scene>
+        <!--Paediatric Calculator Controller-->
+        <scene sceneID="TdY-Ua-xlx">
+            <objects>
+                <viewController storyboardIdentifier="PaediatricCalculatorController" id="rYJ-Ot-bV9" customClass="PaediatricCalculatorController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MHq-b1-IPA"/>
+                        <viewControllerLayoutGuide type="bottom" id="cbH-9a-ABk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bQR-NX-Hf6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyZ-BJ-4wU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-KE-gkt" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQl-RD-hk7" userLabel="volume" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="6mD-l2-vo7"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Weight of child"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="kg"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-Si-iDf" userLabel="drop factor" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Adult dose"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mg"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUx-wc-uIJ" userLabel="result" customClass="CalculatorResultHeader" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="120" width="375" height="25"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="fyV-9T-oGw"/>
+                                                </constraints>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJV-Nd-jrS" userLabel="creatClear" customClass="CalculatorField" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="155" width="375" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Child dose"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mg"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Pk-Y0-E7R" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="210" width="375" height="1"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="cgQ-VK-J9h"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vR-5L-ci4" userLabel="footer" customClass="CalculatorFooter" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="221" width="375" height="286"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="aJV-Nd-jrS" firstAttribute="height" secondItem="NQl-RD-hk7" secondAttribute="height" id="5Q4-9m-1mJ"/>
+                                            <constraint firstItem="XUx-wc-uIJ" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="9Qh-2I-L69"/>
+                                            <constraint firstItem="6Pk-Y0-E7R" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="BAW-RQ-vaB"/>
+                                            <constraint firstAttribute="trailing" secondItem="NQl-RD-hk7" secondAttribute="trailing" id="CL9-yf-b1M"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Pk-Y0-E7R" secondAttribute="trailing" id="Dx3-d2-bQV"/>
+                                            <constraint firstItem="uHd-Si-iDf" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="FQy-ky-pFS"/>
+                                            <constraint firstAttribute="trailing" secondItem="aJV-Nd-jrS" secondAttribute="trailing" id="Kmg-X0-sKm"/>
+                                            <constraint firstItem="XUx-wc-uIJ" firstAttribute="top" secondItem="uHd-Si-iDf" secondAttribute="bottom" constant="10" id="RXR-K7-cZO"/>
+                                            <constraint firstItem="aJV-Nd-jrS" firstAttribute="top" secondItem="XUx-wc-uIJ" secondAttribute="bottom" constant="10" id="TYI-Bd-cPr"/>
+                                            <constraint firstItem="aJV-Nd-jrS" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="TuK-Uj-2Ol"/>
+                                            <constraint firstItem="uHd-Si-iDf" firstAttribute="height" secondItem="NQl-RD-hk7" secondAttribute="height" id="Wip-y1-ztq"/>
+                                            <constraint firstItem="0vR-5L-ci4" firstAttribute="top" secondItem="6Pk-Y0-E7R" secondAttribute="bottom" constant="10" id="Z6g-58-ym9"/>
+                                            <constraint firstAttribute="trailing" secondItem="0vR-5L-ci4" secondAttribute="trailing" id="ZUW-PS-TOA"/>
+                                            <constraint firstItem="uHd-Si-iDf" firstAttribute="top" secondItem="NQl-RD-hk7" secondAttribute="bottom" id="d67-1h-xT0"/>
+                                            <constraint firstItem="6Pk-Y0-E7R" firstAttribute="top" secondItem="aJV-Nd-jrS" secondAttribute="bottom" id="egO-k3-z6x"/>
+                                            <constraint firstAttribute="bottom" secondItem="0vR-5L-ci4" secondAttribute="bottom" constant="10" id="hEP-f4-cQD"/>
+                                            <constraint firstAttribute="trailing" secondItem="XUx-wc-uIJ" secondAttribute="trailing" id="ojv-CU-AHq"/>
+                                            <constraint firstItem="NQl-RD-hk7" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="raC-c4-V0H"/>
+                                            <constraint firstItem="0vR-5L-ci4" firstAttribute="leading" secondItem="lVp-KE-gkt" secondAttribute="leading" id="uiM-Vn-r5i"/>
+                                            <constraint firstAttribute="trailing" secondItem="uHd-Si-iDf" secondAttribute="trailing" id="uuh-yP-lBI"/>
+                                            <constraint firstItem="NQl-RD-hk7" firstAttribute="top" secondItem="lVp-KE-gkt" secondAttribute="top" id="yb4-2R-HO7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lVp-KE-gkt" firstAttribute="top" secondItem="qyZ-BJ-4wU" secondAttribute="top" id="Fy6-LP-ckN"/>
+                                    <constraint firstItem="lVp-KE-gkt" firstAttribute="leading" secondItem="qyZ-BJ-4wU" secondAttribute="leading" id="QGN-so-ioB"/>
+                                    <constraint firstAttribute="bottom" secondItem="lVp-KE-gkt" secondAttribute="bottom" id="ZOx-nc-mPM"/>
+                                    <constraint firstAttribute="trailing" secondItem="lVp-KE-gkt" secondAttribute="trailing" id="o3v-cz-x9a"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lVp-KE-gkt" firstAttribute="width" secondItem="bQR-NX-Hf6" secondAttribute="width" id="5oh-Bw-p57"/>
+                            <constraint firstItem="qyZ-BJ-4wU" firstAttribute="leading" secondItem="bQR-NX-Hf6" secondAttribute="leading" id="YPY-Fm-hNW"/>
+                            <constraint firstAttribute="trailing" secondItem="qyZ-BJ-4wU" secondAttribute="trailing" id="bPJ-lK-9IL"/>
+                            <constraint firstItem="qyZ-BJ-4wU" firstAttribute="top" secondItem="bQR-NX-Hf6" secondAttribute="top" id="lSq-mf-69b"/>
+                            <constraint firstAttribute="bottom" secondItem="qyZ-BJ-4wU" secondAttribute="bottom" id="qdU-Nk-g9s"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="500"/>
+                    <connections>
+                        <outlet property="doseField" destination="uHd-Si-iDf" id="Qdm-qN-aUB"/>
+                        <outlet property="footer" destination="0vR-5L-ci4" id="ZK3-V9-Weq"/>
+                        <outlet property="resultField" destination="aJV-Nd-jrS" id="pbN-ym-Vm3"/>
+                        <outlet property="weightField" destination="NQl-RD-hk7" id="7Pc-Px-qV5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkp-fk-wD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="911"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="check" width="13" height="10"/>
+    </resources>
+</document>

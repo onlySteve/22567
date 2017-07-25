@@ -1,0 +1,22 @@
+{
+    "token": "1D0E4A6A2E29E61E",
+    "expires_in": 86400,
+    "messages": "",
+    "static_content_signature": "f3446fb8c3a00f66d3f7aa6aa20fdab3",
+    "news": [
+             {
+             "Heading": "New XYZ medicine available",
+             "Image": "http://a-zmeds.com/wp-content/uploads/2017/05/Selection_165.png",
+             "Teaser": "This is the subheading / teaser for this news item",
+             "content": "This is the content"
+             },
+             {
+             "Heading": "This is a spectacular app!",
+             "Image": "http://a-zmeds.com/wp-content/uploads/2017/05/Selection_165.png",
+             "Teaser": "This is the subheading / teaser for this news item",
+             "content": "<h2>Breaking news</h2><p>AtoZ are busy launching PD's new <i>antimicrobial stewardship</i> app!  <b>Watch this space</b> for details...</p>",
+             "img": "http://a-zmeds.com/wp-content/uploads/2017/05/Selection_165.png",
+             "teaser": "This is the subheading / teaser for this another important news item"
+             }
+             ]
+}

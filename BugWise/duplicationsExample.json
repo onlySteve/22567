@@ -1,0 +1,17 @@
+{
+    "DATA": [
+             {
+             "Description": "Other aminoglycosides",
+             "Type": "Therapeutic Duplication Found",
+             "Medicines": "Amikacin Fresenius, Amikacin Fresenius"
+             },
+             {
+             "Description": "Amikacin",
+             "Type": "Generic Duplication Found",
+             "Medicines": "Amikacin Fresenius, Amikacin Fresenius"
+             }
+             ],
+    "MESSAGE": {
+        "NoData": ""
+    }
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderView">
+            <connections>
+                <outlet property="msgLabel" destination="25C-09-fdQ" id="DNJ-W7-8dc"/>
+                <outlet property="retryButton" destination="T7m-I5-kqB" id="Nfp-Rc-hFt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-Z7-CDq">
+                    <rect key="frame" x="66.5" y="140.5" width="243" height="243"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ozJ-Z7-CDq" secondAttribute="height" id="QLY-dq-2r0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25C-09-fdQ">
+                    <rect key="frame" x="30" y="529.5" width="315" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7m-I5-kqB" customClass="BaseRedButton" customModule="BugWise" customModuleProvider="target">
+                    <rect key="frame" x="94" y="570" width="187.5" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="hDc-wK-Tvh"/>
+                    </constraints>
+                    <state key="normal" title="Retry"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="T7m-I5-kqB" secondAttribute="bottom" constant="61" id="79O-2z-o4D"/>
+                <constraint firstItem="25C-09-fdQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="7QF-pT-Xcm"/>
+                <constraint firstItem="T7m-I5-kqB" firstAttribute="top" secondItem="25C-09-fdQ" secondAttribute="bottom" constant="20" id="NVj-hL-eMv"/>
+                <constraint firstItem="T7m-I5-kqB" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="XUb-z6-6zr"/>
+                <constraint firstItem="T7m-I5-kqB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YAr-DT-cfv"/>
+                <constraint firstAttribute="trailing" secondItem="25C-09-fdQ" secondAttribute="trailing" constant="30" id="bof-bj-JXk"/>
+                <constraint firstItem="ozJ-Z7-CDq" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="50" id="r8z-LN-dXm"/>
+                <constraint firstItem="25C-09-fdQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ozJ-Z7-CDq" secondAttribute="bottom" constant="20" id="tVB-GX-JWy"/>
+                <constraint firstItem="ozJ-Z7-CDq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uE4-Kh-Tfi"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="103.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_empty_2" width="241" height="243"/>
+    </resources>
+</document>

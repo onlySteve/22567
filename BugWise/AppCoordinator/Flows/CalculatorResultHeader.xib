@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorResultHeader" customModule="BugWise" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="uNn-O0-ccT" id="irS-zH-3gY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="391" height="31"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-O0-ccT">
+                    <rect key="frame" x="0.0" y="0.0" width="391" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uNn-O0-ccT" secondAttribute="trailing" id="19P-Xs-BwT"/>
+                <constraint firstAttribute="bottom" secondItem="uNn-O0-ccT" secondAttribute="bottom" id="7hB-2X-shx"/>
+                <constraint firstItem="uNn-O0-ccT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="I2N-rd-OJ6"/>
+                <constraint firstItem="uNn-O0-ccT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O9e-i6-tTJ"/>
+                <constraint firstItem="uNn-O0-ccT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OYT-l9-cEp"/>
+                <constraint firstItem="uNn-O0-ccT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yCj-gc-PDz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="145.5" y="304.5"/>
+        </view>
+    </objects>
+</document>

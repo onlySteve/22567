@@ -1,0 +1,25 @@
+{
+    "DATA": [
+             {
+             "TradeA": "3252",
+             "MedicineA": "Mefloquine",
+             "TradeB": "109265",
+             "MedicineB": "Lanoxin",
+             "severity": "unsafe.png",
+             "Details": {
+             "Detail1": {
+             "Category": "Warning",
+             "Description": "Avoid combination.",
+             "ReferenceID": "24065"
+             },
+             "Detail3": {
+             "Category": "Outcome risks",
+             "Description": " QT interval prolongation. QT interval prolongation. Ventricular tachycardia. Torsade de pointes risk. Torsade de pointes risk. Ventricular cardiac arrhythmias.",
+             "ReferenceID": "30889"
+             }
+             }
+             }
+             ],
+    "MESSAGE": {
+        "NoData": ""
+    }

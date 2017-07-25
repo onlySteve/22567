@@ -1,0 +1,30 @@
+ [
+  {
+  "Date": "2014",
+  "Microbe": "Acinetobacter baumannii",
+  "Infection": null,
+  "Drug": "Amikacin",
+  "SampleType": "Blood cultures",
+  "Sector": "Private",
+  "Location": "Cape Town",
+  "Cases": "14",
+  "Susceptibility": "79%",
+  "Source": "SASCM Laboratory Surveillance Private Sector Jan-Dec 2014",
+  "Note": "Laboratory based data\nLocation refers to central laboratory",
+  "SpecialNote": null
+  },
+  {
+  "Date": "2014",
+  "Microbe": "Acinetobacter baumannii",
+  "Infection": null,
+  "Drug": "Cefepime",
+  "SampleType": "Blood cultures",
+  "Sector": "Private",
+  "Location": "Cape Town",
+  "Cases": "14",
+  "Susceptibility": "64%",
+  "Source": "SASCM Laboratory Surveillance Private Sector Jan-Dec 2014",
+  "Note": "Laboratory based data\nLocation refers to central laboratory",
+  "SpecialNote": null
+  }
+  ]

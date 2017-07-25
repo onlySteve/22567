@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurveillanceTableViewHeader">
+            <connections>
+                <outlet property="antimicrobialsLabel" destination="BZP-l4-AZV" id="AdE-6c-631"/>
+                <outlet property="casesLabel" destination="cg2-iC-yGI" id="KQU-lm-74n"/>
+                <outlet property="susceptibilityLabel" destination="b0F-bD-gZd" id="RUW-iv-jCU"/>
+                <outlet property="titleLabel" destination="Fjs-bO-0Z3" id="eth-E7-3JK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjs-bO-0Z3">
+                    <rect key="frame" x="5" y="5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microbes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZP-l4-AZV">
+                    <rect key="frame" x="5" y="36" width="180" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of Cases" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg2-iC-yGI">
+                    <rect key="frame" x="190" y="26" width="47.5" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susceptibility" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-bD-gZd">
+                    <rect key="frame" x="245" y="36" width="103" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cg2-iC-yGI" firstAttribute="centerY" secondItem="BZP-l4-AZV" secondAttribute="centerY" id="CMv-zV-rZg"/>
+                <constraint firstItem="BZP-l4-AZV" firstAttribute="leading" secondItem="Fjs-bO-0Z3" secondAttribute="leading" id="D5R-MW-yZ5"/>
+                <constraint firstAttribute="trailing" secondItem="b0F-bD-gZd" secondAttribute="leading" constant="130" id="NBo-Yz-AQT"/>
+                <constraint firstAttribute="bottom" secondItem="BZP-l4-AZV" secondAttribute="bottom" constant="5" id="NfW-dk-F2n"/>
+                <constraint firstItem="b0F-bD-gZd" firstAttribute="centerY" secondItem="BZP-l4-AZV" secondAttribute="centerY" id="cTH-mb-aBA"/>
+                <constraint firstItem="Fjs-bO-0Z3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="fON-bA-LFn"/>
+                <constraint firstItem="BZP-l4-AZV" firstAttribute="top" secondItem="Fjs-bO-0Z3" secondAttribute="bottom" constant="10" id="i9O-GY-28P"/>
+                <constraint firstItem="b0F-bD-gZd" firstAttribute="leading" secondItem="cg2-iC-yGI" secondAttribute="leading" constant="55" id="kAN-nc-NLW"/>
+                <constraint firstItem="cg2-iC-yGI" firstAttribute="leading" secondItem="BZP-l4-AZV" secondAttribute="trailing" constant="5" id="nnr-nh-Jgm"/>
+                <constraint firstItem="Fjs-bO-0Z3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="vqB-gP-ibN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

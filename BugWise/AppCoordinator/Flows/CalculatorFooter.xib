@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorFooter">
+            <connections>
+                <outlet property="disclaimerTextLabel" destination="bS3-Hd-b4B" id="GOj-ud-x3P"/>
+                <outlet property="disclaimerTitleLabel" destination="6P1-V7-5Jz" id="Vvk-pI-fVm"/>
+                <outlet property="formulaBottomConstraint" destination="gSI-xK-J4d" id="Ci6-na-FgX"/>
+                <outlet property="formulaDescLabel" destination="vTE-H3-cSH" id="w1H-n1-PWZ"/>
+                <outlet property="formulaLabel" destination="3Sj-C9-oms" id="nfC-XS-Fh2"/>
+                <outlet property="formulaTitleLabel" destination="rTK-Q8-4lq" id="uQc-ze-nce"/>
+                <outlet property="showDisclaimerButton" destination="ruY-Y8-S6u" id="Ja2-Cp-aR3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1SV-ob-eib">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sj-C9-oms">
+                    <rect key="frame" x="10" y="38" width="355" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us6-LM-rPn" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="93" width="375" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="al2-BV-rRH"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-V7-5Jz">
+                    <rect key="frame" x="10" y="104" width="355" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-Hd-b4B">
+                    <rect key="frame" x="10" y="135" width="355" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruY-Y8-S6u">
+                    <rect key="frame" x="10" y="156" width="355" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Click here for full notice and disclaimer.">
+                        <color key="titleColor" red="0.1176470588" green="0.37254901959999998" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTK-Q8-4lq">
+                    <rect key="frame" x="10" y="10" width="355" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-H3-cSH">
+                    <rect key="frame" x="10" y="64" width="355" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ruY-Y8-S6u" firstAttribute="leading" secondItem="bS3-Hd-b4B" secondAttribute="leading" id="3RU-yZ-Ymx"/>
+                <constraint firstItem="bS3-Hd-b4B" firstAttribute="leading" secondItem="6P1-V7-5Jz" secondAttribute="leading" id="71J-Qm-Sqb"/>
+                <constraint firstItem="3Sj-C9-oms" firstAttribute="trailing" secondItem="rTK-Q8-4lq" secondAttribute="trailing" id="9XB-iN-IIt"/>
+                <constraint firstItem="us6-LM-rPn" firstAttribute="leading" secondItem="1SV-ob-eib" secondAttribute="leading" id="Hid-RU-yxW"/>
+                <constraint firstItem="6P1-V7-5Jz" firstAttribute="top" secondItem="us6-LM-rPn" secondAttribute="bottom" constant="10" id="IZz-jO-CnZ"/>
+                <constraint firstItem="6P1-V7-5Jz" firstAttribute="trailing" secondItem="rTK-Q8-4lq" secondAttribute="trailing" id="K00-Lk-0b6"/>
+                <constraint firstItem="vTE-H3-cSH" firstAttribute="leading" secondItem="3Sj-C9-oms" secondAttribute="leading" id="OCk-rw-Npr"/>
+                <constraint firstItem="rTK-Q8-4lq" firstAttribute="top" secondItem="1SV-ob-eib" secondAttribute="top" constant="10" id="RAe-8b-Bg8"/>
+                <constraint firstItem="6P1-V7-5Jz" firstAttribute="leading" secondItem="rTK-Q8-4lq" secondAttribute="leading" id="Sax-9h-GSE"/>
+                <constraint firstItem="us6-LM-rPn" firstAttribute="top" secondItem="vTE-H3-cSH" secondAttribute="bottom" constant="8" id="Vc3-ZL-Aai"/>
+                <constraint firstAttribute="trailing" secondItem="rTK-Q8-4lq" secondAttribute="trailing" constant="10" id="XRg-AW-NB5"/>
+                <constraint firstItem="3Sj-C9-oms" firstAttribute="top" secondItem="rTK-Q8-4lq" secondAttribute="bottom" constant="10" id="bMz-xb-bQ0"/>
+                <constraint firstItem="ruY-Y8-S6u" firstAttribute="trailing" secondItem="bS3-Hd-b4B" secondAttribute="trailing" id="gLk-qJ-PHk"/>
+                <constraint firstItem="vTE-H3-cSH" firstAttribute="top" secondItem="3Sj-C9-oms" secondAttribute="bottom" constant="5" id="gSI-xK-J4d"/>
+                <constraint firstAttribute="trailing" secondItem="us6-LM-rPn" secondAttribute="trailing" id="gxV-OE-miG"/>
+                <constraint firstItem="vTE-H3-cSH" firstAttribute="trailing" secondItem="3Sj-C9-oms" secondAttribute="trailing" id="mge-iL-9kV"/>
+                <constraint firstItem="bS3-Hd-b4B" firstAttribute="top" secondItem="6P1-V7-5Jz" secondAttribute="bottom" constant="10" id="o15-4s-LC3"/>
+                <constraint firstItem="bS3-Hd-b4B" firstAttribute="trailing" secondItem="6P1-V7-5Jz" secondAttribute="trailing" id="pQR-64-c4C"/>
+                <constraint firstItem="ruY-Y8-S6u" firstAttribute="top" secondItem="bS3-Hd-b4B" secondAttribute="bottom" id="qi3-Wr-Chc"/>
+                <constraint firstAttribute="bottom" secondItem="ruY-Y8-S6u" secondAttribute="bottom" id="tCm-yD-Rl8"/>
+                <constraint firstItem="3Sj-C9-oms" firstAttribute="leading" secondItem="rTK-Q8-4lq" secondAttribute="leading" id="taV-LS-chg"/>
+                <constraint firstItem="rTK-Q8-4lq" firstAttribute="leading" secondItem="1SV-ob-eib" secondAttribute="leading" constant="10" id="ztE-EQ-YFV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34.5" y="114.5"/>
+        </view>
+    </objects>
+</document>

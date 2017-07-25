@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurveillanceTableViewFooter" customModule="BugWise" customModuleProvider="target">
+            <connections>
+                <outlet property="noteLabel" destination="VqQ-rQ-2Hi" id="qG8-FB-hOK"/>
+                <outlet property="sourceLabel" destination="gKP-2E-5OY" id="euT-sQ-zJz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqQ-rQ-2Hi">
+                    <rect key="frame" x="5" y="10" width="337" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKP-2E-5OY">
+                    <rect key="frame" x="5" y="38" width="337" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZy-go-EPj" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
+                    <rect key="frame" x="15" y="68" width="317" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="yUv-Xd-F16"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="IZy-go-EPj" secondAttribute="bottom" id="3Sk-uu-cZB"/>
+                <constraint firstAttribute="bottom" secondItem="gKP-2E-5OY" secondAttribute="bottom" constant="10" id="6Hh-fv-SVj"/>
+                <constraint firstItem="gKP-2E-5OY" firstAttribute="trailing" secondItem="VqQ-rQ-2Hi" secondAttribute="trailing" id="8Ur-uX-Q91"/>
+                <constraint firstAttribute="trailing" secondItem="IZy-go-EPj" secondAttribute="trailing" constant="15" id="d1i-Ra-zCg"/>
+                <constraint firstItem="gKP-2E-5OY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VqQ-rQ-2Hi" secondAttribute="bottom" id="fxy-jv-xjx"/>
+                <constraint firstAttribute="trailing" secondItem="VqQ-rQ-2Hi" secondAttribute="trailing" constant="5" id="m6J-T0-Rr2"/>
+                <constraint firstItem="IZy-go-EPj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="mhf-VC-3RD"/>
+                <constraint firstItem="gKP-2E-5OY" firstAttribute="leading" secondItem="VqQ-rQ-2Hi" secondAttribute="leading" id="tIL-WL-2mO"/>
+                <constraint firstItem="VqQ-rQ-2Hi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="uBa-YL-DsK"/>
+                <constraint firstItem="VqQ-rQ-2Hi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="zaJ-4j-HSr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="16.5" y="-277.5"/>
+        </view>
+    </objects>
+</document>

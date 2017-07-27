@@ -14,8 +14,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderView">
             <connections>
+                <outlet property="backButton" destination="T7m-I5-kqB" id="fGv-1W-oPJ"/>
                 <outlet property="msgLabel" destination="25C-09-fdQ" id="DNJ-W7-8dc"/>
-                <outlet property="retryButton" destination="T7m-I5-kqB" id="Nfp-Rc-hFt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-Z7-CDq">
-                    <rect key="frame" x="66.5" y="140.5" width="243" height="243"/>
+                    <rect key="frame" x="103.5" y="214.5" width="169" height="169"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ozJ-Z7-CDq" secondAttribute="height" id="QLY-dq-2r0"/>
                     </constraints>
@@ -40,7 +40,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="hDc-wK-Tvh"/>
                     </constraints>
-                    <state key="normal" title="Retry"/>
+                    <state key="normal" title="Back"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,6 +59,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img_empty_2" width="241" height="243"/>
+        <image name="img_empty_2" width="168" height="169"/>
     </resources>
 </document>

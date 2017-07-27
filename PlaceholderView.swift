@@ -15,7 +15,7 @@ class PlaceholderView: CommonCustomUIBase {
     
     @IBOutlet weak var msgLabel: UILabel!
     
-    @IBOutlet weak var retryButton: BaseRedButton!
+    @IBOutlet weak var backButton: BaseRedButton!
     
     @IBInspectable var msgText: String? = "Error retrieving HTML data" {
         didSet {
@@ -24,20 +24,5 @@ class PlaceholderView: CommonCustomUIBase {
     }
     
     private let disposeBag = DisposeBag()
-
-    override func setup() {
-        
-        
-        retryButton
-            .rx
-            .tap
-            .subscribe(onNext: { _ in
-                showHud()
-                
-                delay(1.5, completion: {
-                    hideHud()
-                })
-            }).addDisposableTo(disposeBag)
-    }
     
 }

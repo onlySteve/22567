@@ -27,7 +27,7 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
     @IBOutlet weak var sectorLocationLabel: UILabel!
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var placeHolderView: UIView!
+    @IBOutlet weak var placeHolderView: PlaceholderView!
     
     var items: [SurveillanceEntity]?
     var requestEntity: SurveillanceRequestEntity?
@@ -63,6 +63,13 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
         
         guard let items = items, items.count > 0 else {
             placeHolderView.isHidden = false
+            
+            placeHolderView.backButton.rx
+                .tap
+                .subscribe(onNext: { [weak self] _ in
+                    self?.navigationController?.popViewController(animated: true)
+                }).addDisposableTo(disposeBag)
+            
             view.bringSubview(toFront: placeHolderView)
             return
         }

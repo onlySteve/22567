@@ -32,6 +32,12 @@ class DisclaimerView: CommonCustomUIBase {
         }
     }
     
+    @IBInspectable var separatorColor: UIColor = CommonAppearance.greyColor {
+        didSet {
+            separatorView.backgroundColor = separatorColor
+        }
+    }
+    
     private let disposeBag = DisposeBag()
     
     override func setup() {

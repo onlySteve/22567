@@ -56,6 +56,9 @@ class DuplicationsResultController: BaseViewController {
     private func setupFooter() {
         let footerView = DisclaimerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: CommonConstants.duplicationsFooterHeight))
         footerView.discalimerText = "This multiple medicine duplication search facility is designed to facilitate searching for duplications on a number of medicine pairs at any one time."
+        
+        footerView.separatorColor = CommonAppearance.boldGreyColor
+        
         tableView.tableFooterView = footerView
     }
     

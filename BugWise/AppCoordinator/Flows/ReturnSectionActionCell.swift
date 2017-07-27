@@ -13,12 +13,11 @@ class ReturnSectionActionCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        label.font = RegularFontWithSize(size: 13)
         button.titleLabel?.font = RegularFontWithSize(size: 13)
         button.isHidden = true
     }
     
     func config(with model: AssociatedEntity) {
-        label.text = model.title
+        label.attributedText = model.title?.stringFromHtml(textColor: .black, font: RegularFontWithSize(size: 13))
     }
 }

@@ -68,16 +68,8 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
         return { navController in
             if navController.viewControllers.isEmpty == true {
                 
-                navController.setViewControllers([FavouritesViewController.controllerFromStoryboard(.tabBar)], animated: false)
-//                
-//                let profileCoordinator = self.coordinatorFactory.make(navController: navController)
-//                
-//                profileCoordinator.onBackAction = { [weak self] in
-//                    self?.onBackAction?()
-//                }
-//                
-//                profileCoordinator.start()
-//                self.addDependency(profileCoordinator)
+                navController.setViewControllers([FavouritesViewController.controller()], animated: false)
+
             }
         }
     }

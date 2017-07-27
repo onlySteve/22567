@@ -114,43 +114,13 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         // And bind issues to table view
         // Here is where the magic happens, with only one binding
         // we have filled up about 3 table view data source methods
-        
-//        Observable.just([SectionModel(model: "Ras", items: [SearchEntity]())]).bind(to: tableView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
-        
         searchTrackerModel
             .trackItems()
             .map{ (searchResult) in
                 return self.generateSections(input: searchResult)
             }
             .bindTo(tableView.rx.items(dataSource: dataSource))
-//            .bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
-        
-        // Here we tell table view that if user clicks on a cell,
-        // and the keyboard is still visible, hide it
-        tableView
-            .rx.itemSelected
-            .subscribe(onNext: { indexPath in
-//                if self.searchBar.isFirstResponder == true {
-//                    self.view.endEditing(true)
-//                }
-            })
-            .addDisposableTo(disposeBag)
-
-        
-//        let search = searchBar.rx.text.orEmpty.changed.asDriver().startWith("")
-//        
-//        search
-//            .map{ [unowned self] (searchText) in
-//                EntitiesManager.shared.searchOnline(SearchOnlineRequestEntity(text: searchText, type: type), onSuccess: { (searchArray) in
-//                    return self.generateSections(input: searchArray, filterText: searchText)
-//                }, onFail: {
-//                    return [SectionModel<String, SearchEntity>]()
-//                })
-//            }
-//            .drive(tableView.rx.items(dataSource: dataSource))
-//            .addDisposableTo(disposeBag)
     }
     
     
@@ -187,4 +157,3 @@ extension SearchOnlinceController {
         return controller
     }
 }
-

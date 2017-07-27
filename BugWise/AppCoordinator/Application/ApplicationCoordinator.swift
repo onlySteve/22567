@@ -9,32 +9,10 @@
 import UIKit
 import RxSwift
 
-
-fileprivate var onboardingWasShown = false
-fileprivate var isAutorized = false
-
-fileprivate enum LaunchInstructor {
-    case main, starter
-    
-//    static func configure(
-//        isAutorized: Bool =  BusinessModel.shared.usr.loggedIn.value) -> LaunchInstructor {
-//        
-//        switch (isAutorized) {
-//        case false: return .starter
-//        case true: return .main
-//        }
-//    }
-}
-
-
 final class ApplicationCoordinator: BaseCoordinator {
 
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
-//    private var instructor: LaunchInstructor {
-//        return LaunchInstructor.configure()
-//    }
-    
     private let disposeBag = DisposeBag()
     
     init(router: Router, coordinatorFactory: CoordinatorFactory) {

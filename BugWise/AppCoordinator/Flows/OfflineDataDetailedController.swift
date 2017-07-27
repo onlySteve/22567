@@ -158,6 +158,8 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
 
             associatedSetupDone = true
             
+            cell.tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+            
             return cell
         }
         
@@ -167,7 +169,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
     // MARK:- UITableViewDelegate
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 46
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

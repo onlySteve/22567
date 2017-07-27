@@ -342,27 +342,28 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-Zv-Vyc">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-Zv-Vyc">
                                                                         <rect key="frame" x="8" y="11.5" width="204" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfR-Zu-nGD" customClass="BaseRedButton" customModule="BugWise" customModuleProvider="target">
-                                                                        <rect key="frame" x="217" y="6" width="150" height="33.5"/>
+                                                                        <rect key="frame" x="217" y="5.5" width="150" height="34"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="height" constant="34" id="T9Z-wE-Xy6"/>
                                                                             <constraint firstAttribute="width" constant="150" id="mIQ-Nt-Rio"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Surveillance Data"/>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="TfR-Zu-nGD" secondAttribute="bottom" constant="6" id="EF1-tm-x17"/>
+                                                                    <constraint firstItem="NdI-Zv-Vyc" firstAttribute="top" secondItem="HYG-0d-BKU" secondAttribute="top" constant="11.5" id="G1l-Wi-BLB"/>
+                                                                    <constraint firstItem="TfR-Zu-nGD" firstAttribute="centerY" secondItem="HYG-0d-BKU" secondAttribute="centerY" id="U86-aY-NlS"/>
                                                                     <constraint firstItem="TfR-Zu-nGD" firstAttribute="leading" secondItem="NdI-Zv-Vyc" secondAttribute="trailing" constant="5" id="WbD-ji-XaE"/>
-                                                                    <constraint firstItem="TfR-Zu-nGD" firstAttribute="top" secondItem="HYG-0d-BKU" secondAttribute="top" constant="6" id="XK0-G5-t0V"/>
                                                                     <constraint firstItem="NdI-Zv-Vyc" firstAttribute="leading" secondItem="HYG-0d-BKU" secondAttribute="leading" constant="8" id="b6c-mQ-S7S"/>
                                                                     <constraint firstAttribute="trailing" secondItem="TfR-Zu-nGD" secondAttribute="trailing" constant="8" id="juV-Ln-Uyy"/>
-                                                                    <constraint firstItem="NdI-Zv-Vyc" firstAttribute="centerY" secondItem="HYG-0d-BKU" secondAttribute="centerY" id="qDD-uZ-kJs"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="NdI-Zv-Vyc" secondAttribute="bottom" constant="13" id="sPB-4R-DWj"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>

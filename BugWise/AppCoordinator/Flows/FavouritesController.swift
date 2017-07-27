@@ -10,17 +10,8 @@ import RxCocoa
 import RxSwift
 import RealmSwift
 
-// MARK:- Protocol
-
-protocol FavouritesModuleFactory {
-    func makeFavouritesOutput() -> FavouritesView
-}
-
-// MARK:- Implementation
-
-final class FavouritesViewController: BaseViewController, FavouritesView, UITableViewDataSource {
+final class FavouritesViewController: BaseViewController, UITableViewDataSource {
     
-    internal var onComplete: (()->())?
     private let disposeBag = DisposeBag()
     private var dataSource = Array<BaseEntity>()
     
@@ -108,9 +99,10 @@ final class FavouritesViewController: BaseViewController, FavouritesView, UITabl
     }
 }
 
-// MARK:- Factory
-
-func makeFavouritesOutput() -> FavouritesView {
-    return FavouritesViewController.controllerFromStoryboard(.tabBar)
+extension FavouritesViewController {
+    static func controller() -> FavouritesViewController {
+        let controller = FavouritesViewController.controllerFromStoryboard(.tabBar)
+        
+        return controller
+    }
 }
-

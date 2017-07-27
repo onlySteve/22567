@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -412,11 +412,11 @@ no favourites data for selected type.</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TqZ-gP-0B8" id="FKy-xQ-Udn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ucu-Th-Ypc">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -687,7 +687,7 @@ All copyrights in respect of the information conveyed to the user on this Applic
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="36410BEB-2ED9-46E6-AE2C-2708690C287A" id="khg-EN-YIa"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabBarItem:khg-EN-YIa:image" id="khg-EN-YIa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15g-gB-dHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -695,7 +695,20 @@ All copyrights in respect of the information conveyed to the user on this Applic
         </scene>
     </scenes>
     <resources>
-        <image name="36410BEB-2ED9-46E6-AE2C-2708690C287A" width="15" height="16">
+        <image name="aboutContent" width="720" height="1080"/>
+        <image name="email" width="19" height="14"/>
+        <image name="location" width="19" height="19"/>
+        <image name="nav_disclaimer" width="20" height="22"/>
+        <image name="nav_fav" width="24" height="22"/>
+        <image name="nav_fav_a" width="24" height="22"/>
+        <image name="nav_home" width="21" height="21"/>
+        <image name="nav_home_a" width="21" height="21"/>
+        <image name="nav_info" width="21" height="21"/>
+        <image name="nav_info_a" width="21" height="21"/>
+        <image name="nav_profile" width="16" height="21"/>
+        <image name="nav_profile_a" width="16" height="21"/>
+        <image name="phone" width="16" height="16"/>
+        <image name="tabBarItem:khg-EN-YIa:image" width="15" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -762,19 +775,6 @@ AMIA2QDbAN0NPw1EDU8NWA1rDW8Neg2DDYgNkA2TDZgNpw2rDbINug3HDcwNzg3QDdUN3Q3gDeUN7Q3w
 DgIOBQ4KAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAADgw
 </mutableData>
         </image>
-        <image name="aboutContent" width="720" height="1080"/>
-        <image name="email" width="19" height="14"/>
-        <image name="location" width="19" height="19"/>
-        <image name="nav_disclaimer" width="20" height="22"/>
-        <image name="nav_fav" width="24" height="22"/>
-        <image name="nav_fav_a" width="24" height="22"/>
-        <image name="nav_home" width="21" height="21"/>
-        <image name="nav_home_a" width="21" height="21"/>
-        <image name="nav_info" width="21" height="21"/>
-        <image name="nav_info_a" width="21" height="21"/>
-        <image name="nav_profile" width="16" height="21"/>
-        <image name="nav_profile_a" width="16" height="21"/>
-        <image name="phone" width="16" height="16"/>
         <image name="user" width="19" height="19"/>
     </resources>
 </document>

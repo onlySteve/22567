@@ -43,7 +43,7 @@ class SurveillanceDataController: BaseViewController {
         microbeField.textField.text = microbeEntity?.title
         antimicrobialField.textField.text = antibioticEntity?.title
         
-        sectorField.textField.text = BusinessModel.shared.usr.sector.value.rawValue
+        sectorField.textField.text = Sector.privateType.rawValue
         sectorField.textField.isUserInteractionEnabled = false
         
         locationField.textField.text = BusinessModel.shared.usr.location.value.rawValue

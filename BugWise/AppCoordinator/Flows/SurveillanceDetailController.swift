@@ -153,19 +153,11 @@ class SurveillanceDetailController: BaseViewController, UITableViewDelegate {
     
     private func surveillanceType() -> SurveillanceDataType {
         
-        if requestEntity?.microbe != nil && requestEntity?.antibiotic != nil {
-            return Sector(rawValue: (requestEntity?.sector)!) == .privateType ? .medicine : .drug
-        }
-        
-        if requestEntity?.microbe != nil {
-            return .antimicrobials
-        }
-        
-        if requestEntity?.antibiotic != nil {
+        if requestEntity?.antibiotic != nil && requestEntity?.microbe == nil {
             return .microbes
         }
         
-        return .microbes
+        return .antimicrobials
     }
 }
 

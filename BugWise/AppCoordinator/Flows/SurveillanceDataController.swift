@@ -43,7 +43,9 @@ class SurveillanceDataController: BaseViewController {
         microbeField.textField.text = microbeEntity?.title
         antimicrobialField.textField.text = antibioticEntity?.title
         
-        sectorField.textField.text = Sector.privateType.rawValue
+        let currentSectorType = BusinessModel.shared.usr.sector.value
+        
+        sectorField.textField.text = (currentSectorType == .both ? .privateType : currentSectorType).rawValue
         sectorField.textField.isUserInteractionEnabled = false
         
         locationField.textField.text = BusinessModel.shared.usr.location.value.rawValue

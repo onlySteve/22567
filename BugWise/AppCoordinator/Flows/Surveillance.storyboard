@@ -32,7 +32,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Search antibiotic susceptibility information. Not intended to guide empiric treatment"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="data_w"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -196,21 +196,21 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Data does not inform treatment decisions. For information purposes only –">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content=" ">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="14"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="SASCM">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>

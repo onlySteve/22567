@@ -35,7 +35,7 @@ class CalculatorsController: BaseViewController {
     fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        
+                
         tableView.tableFooterView = UIView()
         setupHeader()
         bindUI()

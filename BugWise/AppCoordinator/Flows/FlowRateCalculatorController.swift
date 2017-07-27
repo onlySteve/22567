@@ -57,17 +57,17 @@ class FlowRateCalculatorController: BaseViewController {
     }
     
     private func updateResult() {
-        guard let volume = Double(volumeField.valueTextField.text!) else {
+        guard let volume = volumeField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
         
-        guard let time = Double(timeField.valueTextField.text!) else {
+        guard let time = timeField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
         
-        guard let dropFactor = Double(dropFactorField.valueTextField.text!) else {
+        guard let dropFactor = dropFactorField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
@@ -75,7 +75,8 @@ class FlowRateCalculatorController: BaseViewController {
         
         let result = volume * dropFactor / time
         
-        resultField.valueTextField.text = String(format: "%.1f", Double(floor(1000*result)/1000))
+        resultField.valueTextField.text = Double(floor(1000*result)/1000).stringValue
+        
     }
 }
 

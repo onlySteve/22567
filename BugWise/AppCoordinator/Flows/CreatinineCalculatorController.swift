@@ -88,17 +88,17 @@ class CreatinineCalculatorController: BaseViewController {
     }
     
     private func updateResult() {
-        guard let age = Double(ageField.valueTextField.text!) else {
+        guard let age = ageField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
         
-        guard let weight = Double(weightField.valueTextField.text!) else {
+        guard let weight = weightField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
         
-        guard let serumCreat = Double(serumCreatField.valueTextField.text!) else {
+        guard let serumCreat = serumCreatField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
@@ -107,7 +107,7 @@ class CreatinineCalculatorController: BaseViewController {
         
         let result = coof * ( (140 - age) / serumCreat ) * (weight / 72)
         
-        resultField.valueTextField.text = String(format: "%.3f", Double(floor(1000*result)/1000))
+        resultField.valueTextField.text = Double(floor(1000*result)/1000).stringValue
     }
 }
 

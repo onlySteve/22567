@@ -17,6 +17,18 @@ func RegularFontWithSize(size: CGFloat = 15) -> UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+
+struct Number {
+    static let numberFormatter: NumberFormatter = {
+        let styler = NumberFormatter()
+        
+        styler.numberStyle = .decimal
+        styler.decimalSeparator = styler.decimalSeparator ?? ","
+        
+        return styler
+    }()
+}
+
 struct CommonAppearance {
     static let greyColor = UIColor(netHex: 0xC8C7CC)
     static let lightGreyColor = UIColor(netHex: 0xECECEC)

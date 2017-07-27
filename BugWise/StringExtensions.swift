@@ -81,11 +81,15 @@ extension String {
     }
     
     var containsOnlyNumberCharacter: Bool {
-        guard let _ = Double(self) else {
+        guard let _ = self.number?.doubleValue else {
             return false
         }
         
         return true
+    }
+    
+    var number: NSNumber? {
+        return Number.numberFormatter.number(from: self)
     }
     
 }

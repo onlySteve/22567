@@ -48,19 +48,18 @@ class PaediatricCalculatorController: BaseViewController {
     
     private func updateResult() {
         
-        guard let weight = Double(weightField.valueTextField.text!) else {
+        guard let weight = weightField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
         
-        guard let dose = Double(doseField.valueTextField.text!) else {
+        guard let dose = doseField.valueTextField.text!.number?.doubleValue else {
             resultField.valueTextField.text = nil
             return
         }
-        
         
         let result = dose * (weight * 2.20462 / 150)
-        resultField.valueTextField.text = String(format: "%.3f", Double(floor(1000*result)/1000))
+        resultField.valueTextField.text = Double(floor(1000*result)/1000).stringValue
     }
 }
 

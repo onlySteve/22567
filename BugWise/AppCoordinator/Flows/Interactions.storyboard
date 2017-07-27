@@ -108,17 +108,23 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-Ej-WVB" userLabel="placeHolder" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
-                                        <rect key="frame" x="0.0" y="154" width="375" height="360"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
+                                        <rect key="frame" x="0.0" y="133" width="375" height="402"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No antibiotic duplication results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-Li-4Ym">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No antibiotic duplication results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-Li-4Ym">
                                                 <rect key="frame" x="30" y="189" width="315" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-2C-jzN" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="220" width="375" height="140"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KA4-Be-3LI">
+                                                <rect key="frame" x="167.5" y="220" width="40" height="34"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" red="0.94693535569999998" green="0.40740355849999998" blue="0.23142510650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-2C-jzN" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="262" width="375" height="140"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="discalimerText">
@@ -127,21 +133,23 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-G1-B95">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-G1-B95">
                                                 <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="3b6-2C-jzN" secondAttribute="trailing" id="4H4-ge-2dN"/>
+                                            <constraint firstItem="KA4-Be-3LI" firstAttribute="top" secondItem="N3K-Li-4Ym" secondAttribute="bottom" constant="10" id="AY1-Fr-IU5"/>
                                             <constraint firstItem="3b6-2C-jzN" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" id="E6V-JB-ZTB"/>
                                             <constraint firstItem="N3K-Li-4Ym" firstAttribute="top" secondItem="FJf-G1-B95" secondAttribute="bottom" constant="20" id="EtS-tT-36b"/>
+                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="top" secondItem="KA4-Be-3LI" secondAttribute="bottom" constant="8" id="IWF-1a-PM8"/>
+                                            <constraint firstItem="KA4-Be-3LI" firstAttribute="centerX" secondItem="COD-ln-l3c" secondAttribute="centerX" id="Jsc-Gk-P2w"/>
                                             <constraint firstItem="FJf-G1-B95" firstAttribute="top" secondItem="COD-ln-l3c" secondAttribute="top" id="PdF-1K-KWp"/>
                                             <constraint firstAttribute="bottom" secondItem="3b6-2C-jzN" secondAttribute="bottom" id="UAL-1D-WGx"/>
                                             <constraint firstAttribute="trailing" secondItem="N3K-Li-4Ym" secondAttribute="trailing" constant="30" id="asr-fA-dHO"/>
                                             <constraint firstItem="FJf-G1-B95" firstAttribute="centerX" secondItem="COD-ln-l3c" secondAttribute="centerX" id="jqe-aW-g4u"/>
                                             <constraint firstItem="N3K-Li-4Ym" firstAttribute="leading" secondItem="COD-ln-l3c" secondAttribute="leading" constant="30" id="qwy-Qb-0Wo"/>
-                                            <constraint firstItem="3b6-2C-jzN" firstAttribute="top" secondItem="N3K-Li-4Ym" secondAttribute="bottom" constant="10" id="rhD-fK-Efe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -229,6 +237,7 @@
                     </view>
                     <connections>
                         <outlet property="placeHolderDisclaimer" destination="3b6-2C-jzN" id="l5T-T7-ht7"/>
+                        <outlet property="placeholderBackButton" destination="KA4-Be-3LI" id="a84-aU-9kb"/>
                         <outlet property="placeholderView" destination="Jsd-Ej-WVB" id="LY1-em-7eM"/>
                         <outlet property="tableView" destination="yoB-7X-Dfh" id="9f3-Oc-vGr"/>
                     </connections>
@@ -252,17 +261,23 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
-                                        <rect key="frame" x="0.0" y="103.5" width="375" height="460"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
+                                        <rect key="frame" x="0.0" y="82.5" width="375" height="502.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No medicine interactions results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No medicine interaction results to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-bT-CL0">
                                                 <rect key="frame" x="30" y="189" width="315" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="220" width="375" height="240"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-sZ-VgM">
+                                                <rect key="frame" x="167" y="220" width="40" height="34"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" red="0.94693535569999998" green="0.40740355849999998" blue="0.23142510650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-R1-tfP" customClass="DisclaimerView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="262.5" width="375" height="240"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="discalimerText">
@@ -271,7 +286,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topSeparatorHidden" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty_2" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-vl-bZT">
                                                 <rect key="frame" x="103.5" y="0.0" width="168" height="169"/>
                                             </imageView>
                                         </subviews>
@@ -279,9 +294,11 @@
                                         <constraints>
                                             <constraint firstItem="JzH-R1-tfP" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" id="Axr-Yr-W18"/>
                                             <constraint firstItem="vIy-vl-bZT" firstAttribute="centerX" secondItem="5gg-j3-R5l" secondAttribute="centerX" id="BbT-kI-i46"/>
-                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="top" secondItem="Zbk-bT-CL0" secondAttribute="bottom" constant="10" id="KOv-NB-tJb"/>
+                                            <constraint firstItem="nvz-sZ-VgM" firstAttribute="centerX" secondItem="5gg-j3-R5l" secondAttribute="centerX" id="LlJ-8y-uZj"/>
                                             <constraint firstAttribute="bottom" secondItem="JzH-R1-tfP" secondAttribute="bottom" id="NAv-Gy-F8X"/>
                                             <constraint firstAttribute="trailing" secondItem="Zbk-bT-CL0" secondAttribute="trailing" constant="30" id="Tfi-W7-5qK"/>
+                                            <constraint firstItem="JzH-R1-tfP" firstAttribute="top" secondItem="nvz-sZ-VgM" secondAttribute="bottom" constant="8" id="d3b-oj-QPN"/>
+                                            <constraint firstItem="nvz-sZ-VgM" firstAttribute="top" secondItem="Zbk-bT-CL0" secondAttribute="bottom" constant="10" id="lsZ-xe-940"/>
                                             <constraint firstAttribute="trailing" secondItem="JzH-R1-tfP" secondAttribute="trailing" id="ocT-kC-Cmx"/>
                                             <constraint firstItem="Zbk-bT-CL0" firstAttribute="top" secondItem="vIy-vl-bZT" secondAttribute="bottom" constant="20" id="rOp-rw-b5v"/>
                                             <constraint firstItem="Zbk-bT-CL0" firstAttribute="leading" secondItem="5gg-j3-R5l" secondAttribute="leading" constant="30" id="vif-Om-MSw"/>
@@ -353,6 +370,7 @@
                     </view>
                     <connections>
                         <outlet property="placeHolderDisclaimer" destination="JzH-R1-tfP" id="eRL-9T-KoP"/>
+                        <outlet property="placeholderBackButton" destination="nvz-sZ-VgM" id="CYe-Tj-OqS"/>
                         <outlet property="placeholderView" destination="soc-3h-1ds" id="gqR-EM-Rvd"/>
                         <outlet property="tableView" destination="crN-4Y-Rw0" id="nRG-cx-6tZ"/>
                     </connections>

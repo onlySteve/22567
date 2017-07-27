@@ -15,8 +15,10 @@ import RxGesture
 import RxDataSources
 
 class InteractionsResultController: BaseViewController, UITableViewDelegate {
+    
     @IBOutlet weak var placeholderView: DefaultBGView!
     
+    @IBOutlet weak var placeholderBackButton: UIButton!
     @IBOutlet weak var placeHolderDisclaimer: DisclaimerView!
     var entity: InteractionsEntity?
     
@@ -39,6 +41,13 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
     private func setupPlaceHolder() {
         placeholderView.isHidden = false
         placeHolderDisclaimer.subviews.first?.backgroundColor = .clear
+        
+        placeholderBackButton
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }).addDisposableTo(disposeBag)
         
         view.bringSubview(toFront: placeholderView)
     }

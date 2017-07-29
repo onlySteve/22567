@@ -16,24 +16,15 @@ extension String {
                 resultStr = String(format:"<span style=\"font-family: '\(font.familyName)', '\(font.fontName)'; font-size: \(font.pointSize)\">%@</span>", self)
             }
             
-            
-//            let modifiedFont = NSString(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>" as NSString, htmlText) as String
-            
-            
+                       
             let data = resultStr.data(using: String.Encoding.utf8, allowLossyConversion: true)
             if let d = data {
                 let str: NSMutableAttributedString = try NSAttributedString(data: d,
                                                  options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                  documentAttributes: nil).mutableCopy() as! NSMutableAttributedString
                 
-//                self.attributedText = attrStr
-                
                 let fullRange = NSRange(location: 0, length: str.length)
                 str.addAttribute(NSForegroundColorAttributeName, value: textColor, range: fullRange)
-//
-//                if let font = font {
-//                    str.addAttribute(NSFontAttributeName, value: font, range: fullRange)
-//                }
                 
                 return str.copy() as? NSAttributedString
             }

@@ -22,6 +22,8 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
     private let tabBarView: TabBarView
     private let coordinatorFactory: CoordinatorFactory
     
+    var homeCoordinator: HomeCoordinator?
+    
     init(tabbarView: TabBarView, coordinatorFactory: CoordinatorFactory) {
         self.tabBarView = tabbarView
         self.coordinatorFactory = coordinatorFactory
@@ -42,9 +44,14 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
     private func runHomeFlow() -> ((UINavigationController) -> ()) {
         return { navController in
             if navController.viewControllers.isEmpty == true {
-                let homeCoordinator = self.coordinatorFactory.makeHomeCoordinator(navController: navController)
-                homeCoordinator.start()
-                self.addDependency(homeCoordinator)
+                self.homeCoordinator = self.coordinatorFactory.makeHomeCoordinator(navController: navController) as? HomeCoordinator
+                
+                guard let coordinator = self.homeCoordinator else {
+                    return
+                }
+                
+                coordinator.start()
+                self.addDependency(coordinator)
             }
         }
     }
@@ -68,7 +75,13 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
         return { navController in
             if navController.viewControllers.isEmpty == true {
                 
-                navController.setViewControllers([FavouritesViewController.controller()], animated: false)
+                let favController = FavouritesViewController.controller()
+                
+                favController.onItemSelect = { [weak self] (item) in
+                    self?.homeCoordinator?.showDetailedFromFavourite(searchItem: item)
+                }
+                
+                navController.setViewControllers([favController], animated: false)
 
             }
         }

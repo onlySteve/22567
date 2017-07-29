@@ -15,6 +15,8 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
     
     var onComplete: (()->())? 
     var onBack: (()->())? 
+    var selectHomeBar: (() -> ())?
+    
     
     var onHomeFlowSelect: ((UINavigationController) -> ())? 
     var onAboutFlowSelect: ((UINavigationController) -> ())? 
@@ -63,6 +65,14 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
                 
             }.addDisposableTo(disposeBag)
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(TabBarController.selectHome), name: showHomeTabNotificationName, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: showHomeTabNotificationName, object: nil);
     }
     
     // MARK:- Private
@@ -76,7 +86,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
         }
     }
     
-    private func selectHome() {
+    @objc private func selectHome() {
         self.selectedIndex = ControllersOrder.home.rawValue
         
         if let controller = self.customizableViewControllers?[ControllersOrder.home.rawValue] as? UINavigationController {

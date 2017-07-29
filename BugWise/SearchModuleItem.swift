@@ -21,14 +21,6 @@ enum ModuleType: String {
     case conditions = "Conditions"
     case microbes = "Microbes"
     case drugs = "Drugs"
-    
-    func typeFrom(_ searchType: ModuleSearchType) -> (ModuleType) {
-        switch searchType {
-        case .condition: return .conditions
-        case .microbe: return .microbes
-        case .drug: return .drugs
-        }
-    }
 }
 
 enum ModuleSearchType: String {
@@ -60,7 +52,7 @@ final class SearchModuleItem: Object, Mappable {
     }
     
     dynamic var firstLetter = ""
-    
+    dynamic var isFavorite: Bool = false
     dynamic var id: String = "0"
     dynamic var title: String?
     

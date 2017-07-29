@@ -29,6 +29,8 @@ struct Number {
     }()
 }
 
+let showHomeTabNotificationName = Notification.Name("showHomeTab")
+
 struct CommonAppearance {
     static let greyColor = UIColor(netHex: 0xC8C7CC)
     static let lightGreyColor = UIColor(netHex: 0xECECEC)

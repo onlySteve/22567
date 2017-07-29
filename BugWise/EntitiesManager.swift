@@ -97,7 +97,7 @@ final class EntitiesManager {
     }
     
     //MARK:- DetailedEntities
-    func updateEntity(_ entity: BaseEntity?, favStatus: Bool) {
+    func updateEntity(_ entity: SearchModuleItem?, favStatus: Bool) {
         
         guard let entity = entity else {
             return
@@ -192,7 +192,12 @@ final class EntitiesManager {
         }
     }
     
-    func searcItem(id: String) -> SearchModuleItem? {
+    func searcItem(id: String?) -> SearchModuleItem? {
+        
+        guard let id = id else {
+            return nil
+        }
+        
         return realm?.object(ofType: SearchModuleItem.self, forPrimaryKey: id)
     }
     

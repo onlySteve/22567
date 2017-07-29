@@ -127,6 +127,13 @@ final class HomeCoordinator: BaseCoordinator {
     }
     
     
+    func showDetailedFromFavourite(searchItem: SearchModuleItem?) {
+        NotificationCenter.default.post(name: showHomeTabNotificationName, object: nil)
+        
+        router.popToRootModule(animated: false)
+        showOfflineDetailed(searchItem: searchItem)
+    }
+    
     private func showOfflineDetailed(searchItem: SearchModuleItem?) {
         
         guard let searchItem = searchItem else { return }
@@ -175,6 +182,9 @@ final class HomeCoordinator: BaseCoordinator {
         controller.onSurveillanceDataSelect = { [weak self] (surveillanceEntity) in
             self?.showSurveilanceData(microbe: surveillanceEntity?.typeEnum == .microbe ? surveillanceEntity : nil, antibiotic: surveillanceEntity?.typeEnum == .drug ? surveillanceEntity : nil)
         }
+        
+        controller.initialFavStatus = searchItem.isFavorite
+        controller.onFavoriteItemSelect = { EntitiesManager.shared.updateEntity(searchItem, favStatus: $0) }
         
         self.router.push(controller, animated: true)
     }

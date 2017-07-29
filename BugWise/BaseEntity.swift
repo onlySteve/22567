@@ -13,7 +13,6 @@ class BaseEntity: Object, Mappable {
     
     dynamic var id: String = "0"
     dynamic var parentID: String = ""
-    dynamic var isFavorite = false
     
     // MARK: JSON
     required convenience init?(map: Map) {

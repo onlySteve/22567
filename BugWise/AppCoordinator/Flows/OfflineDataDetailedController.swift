@@ -18,6 +18,8 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
     var onTradeItemSelect: (([TradeEntity]) -> ())?
     var onAssociatedItemSelect: ((SearchModuleItem) -> ())?
     var onSurveillanceDataSelect: ((SearchModuleItem?) -> ())?
+    var onFavoriteItemSelect: ((Bool)->())?
+    var initialFavStatus: Bool = false
     
     var entity: BaseEntity?
     
@@ -203,19 +205,21 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
         favoriteButton.setImage(#imageLiteral(resourceName: "nav_fav"), for: .normal)
         favoriteButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         
-        favoriteButton.isSelected = (self.entity?.isFavorite)!
         favoriteButton.addTarget(self, action: #selector(self.favoriteButtonAction(_:)), for: .touchUpInside)
         
         
         let favoriteBarButton = UIBarButtonItem(customView: favoriteButton)
+        
+        favoriteButton.isSelected = initialFavStatus
         
         navigationItem.rightBarButtonItems = [shareBarButton!, favoriteBarButton]
     }
     
     @objc private func favoriteButtonAction(_ button: UIButton) {
         button.isSelected = !button.isSelected
+        initialFavStatus = button.isSelected
         
-        EntitiesManager.shared.updateEntity(self.entity, favStatus: button.isSelected)
+        onFavoriteItemSelect?(button.isSelected)
     }
     
     private func config(with entity: BaseEntity) -> (Array<OfflineSectionModel>) {

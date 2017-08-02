@@ -41,7 +41,7 @@ struct CommonAppearance {
     static let lighBlueColor = UIColor(netHex: 0x1D74BC)
     static let yellowToOrangeColor = UIColor(netHex: 0xF28621)
     static let strongRedColor = UIColor(netHex: 0xEB1F05)
-    
+    static let duplicationsSeparatorColor = UIColor(netHex: 0xB6B6B6)
     static let boldGreyColor = UIColor(netHex: 0x8A8A8F)
 }
 

@@ -126,7 +126,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
             
             cell.tableViewHeight.constant = ReturnSectionActionsTableViewCell.cellHeight * CGFloat(actionsModel.items.count)
             
-            let itemsObservable = Observable.just(actionsModel.items.sorted(by: {$0.title ?? "" < $1.title ?? ""}))
+            let itemsObservable = Observable.just(actionsModel.items.sorted(by: {$0.orderNumber < $1.orderNumber}))
             
             itemsObservable
                 .bindTo(cell.tableView.rx.items(cellIdentifier: ReturnSectionActionCell.nameOfClass, cellType: ReturnSectionActionCell.self)) { index, model, cell in

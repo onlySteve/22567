@@ -36,13 +36,13 @@ final class MicrobeEntity: BaseEntity {
         references <- map["Detail.References"]
         
         
-        var associatedDict: Dictionary<String, String>?
-        associatedDict <- map["Detail.AssociatedInfections"]
+        var associatedArray: Array<Dictionary<String, Any>>?
+        associatedArray <- map["Detail.AssociatedInf"]
         
-        if let associatedDict = associatedDict {
-            
-            for (index, dict) in associatedDict.enumerated() {
-                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: ["primaryKey": "\(id)\(dict.key)","id": dict.key, "title": dict.value, "order": index.description]) {
+        if let associatedArray = associatedArray {
+            for dict in associatedArray {
+                if let associatedEntity = Mapper<AssociatedEntity>().map(JSON: dict) {
+                    associatedEntity.primaryKeyID = "\(id)\(associatedEntity.id)"
                     associatedInfections.append(associatedEntity)
                 }
             }

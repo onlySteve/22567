@@ -28,7 +28,7 @@ class InteractionsSectionLabel: CommonCustomUIBase {
     }
     
     override func setup() {
-        titleLabel.textColor = CommonAppearance.boldGreyColor
+        titleLabel.textColor = UIColor(netHex: 0x69828F)
         titleLabel.font = RegularFontWithSize()
         
         descriptionLabel.font = RegularFontWithSize(size: 14)

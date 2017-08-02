@@ -89,6 +89,12 @@ class SurveillanceDataController: BaseViewController {
             .rx
             .tap
             .subscribe { [weak self] _ in
+                
+                if (BusinessModel.shared.notReachableNetwork) {
+                    showNetworkReachabilityAlert()
+                    return
+                }
+                
                 showHud()
                 
                 let requestData = SurveillanceRequestEntity(microbe: self?.microbeEntity, antibiotic: self?.antibioticEntity, sector: (self?.sectorField.textField.text)!, location: (self?.locationField.textField.text)!)

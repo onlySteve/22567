@@ -15,9 +15,11 @@ class ReturnSectionActionCell: UITableViewCell {
         
         button.titleLabel?.font = RegularFontWithSize(size: 13)
         button.isHidden = true
+        
+        label.font = RegularFontWithSize(size: 13)
     }
     
     func config(with model: AssociatedEntity) {
-        label.attributedText = model.title?.stringFromHtml(textColor: .black, font: RegularFontWithSize(size: 13))
+        label.text = model.title
     }
 }

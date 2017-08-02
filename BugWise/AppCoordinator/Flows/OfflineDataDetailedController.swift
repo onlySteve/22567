@@ -132,7 +132,13 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                 .bindTo(cell.tableView.rx.items(cellIdentifier: ReturnSectionActionCell.nameOfClass, cellType: ReturnSectionActionCell.self)) { index, model, cell in
                     cell.config(with: model)
                     
-                    guard let searchItem = EntitiesManager.shared.searcItem(id: model.id) else { return }
+                    
+                    
+                    guard let searchItem = EntitiesManager.shared.searcItem(id: model.id) else {
+                        
+                        cell.labelTrailingToSuperview.constant = 8
+                        return
+                    }
                     
                     if searchItem.typeEnum != .condition {
                         cell.button.isHidden = false
@@ -175,7 +181,14 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+//        guard let cell = tableView.cellForRow(at: indexPath) else {
+//            return UITableViewAutomaticDimension
+//        }
+        
         return UITableViewAutomaticDimension
+        
+//        return cell.isKind(of: ReturnSectionActionsTableViewCell.self) ? ReturnSectionActionsTableViewCell.cellHeight : UITableViewAutomaticDimension
     }
     
     // MARK: - Private

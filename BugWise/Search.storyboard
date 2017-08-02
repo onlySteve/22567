@@ -332,7 +332,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="b01-2L-CuM"/>
+                                                        <constraint firstAttribute="height" constant="100" id="2rL-2T-M8S"/>
                                                     </constraints>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReturnSectionActionCell" rowHeight="46" id="fN5-a1-Ttj" customClass="ReturnSectionActionCell" customModule="BugWise" customModuleProvider="target">
@@ -342,8 +342,11 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-Zv-Vyc">
-                                                                        <rect key="frame" x="8" y="11.5" width="204" height="21"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-Zv-Vyc">
+                                                                        <rect key="frame" x="8" y="2" width="204" height="41.5"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="41.5" id="7kY-KW-OP2"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -358,17 +361,18 @@
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="NdI-Zv-Vyc" firstAttribute="top" secondItem="HYG-0d-BKU" secondAttribute="top" constant="11.5" id="G1l-Wi-BLB"/>
+                                                                    <constraint firstItem="NdI-Zv-Vyc" firstAttribute="top" secondItem="HYG-0d-BKU" secondAttribute="top" constant="2" id="G1l-Wi-BLB"/>
                                                                     <constraint firstItem="TfR-Zu-nGD" firstAttribute="centerY" secondItem="HYG-0d-BKU" secondAttribute="centerY" id="U86-aY-NlS"/>
-                                                                    <constraint firstItem="TfR-Zu-nGD" firstAttribute="leading" secondItem="NdI-Zv-Vyc" secondAttribute="trailing" constant="5" id="WbD-ji-XaE"/>
                                                                     <constraint firstItem="NdI-Zv-Vyc" firstAttribute="leading" secondItem="HYG-0d-BKU" secondAttribute="leading" constant="8" id="b6c-mQ-S7S"/>
                                                                     <constraint firstAttribute="trailing" secondItem="TfR-Zu-nGD" secondAttribute="trailing" constant="8" id="juV-Ln-Uyy"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="NdI-Zv-Vyc" secondAttribute="bottom" constant="13" id="sPB-4R-DWj"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="NdI-Zv-Vyc" secondAttribute="bottom" constant="2" id="sPB-4R-DWj"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="NdI-Zv-Vyc" secondAttribute="trailing" constant="163" id="y9C-zl-8bM"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
                                                                 <outlet property="button" destination="TfR-Zu-nGD" id="FxG-zi-qne"/>
                                                                 <outlet property="label" destination="NdI-Zv-Vyc" id="oHv-cl-xb9"/>
+                                                                <outlet property="labelTrailingToSuperview" destination="y9C-zl-8bM" id="zCd-kt-uuU"/>
                                                             </connections>
                                                         </tableViewCell>
                                                     </prototypes>
@@ -383,7 +387,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tableView" destination="vez-z1-eVU" id="fOg-xE-SEi"/>
-                                            <outlet property="tableViewHeight" destination="b01-2L-CuM" id="jZs-xS-uVZ"/>
+                                            <outlet property="tableViewHeight" destination="2rL-2T-M8S" id="aLc-RX-cuO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

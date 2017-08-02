@@ -9,6 +9,7 @@
 class ReturnSectionActionCell: UITableViewCell {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelTrailingToSuperview: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

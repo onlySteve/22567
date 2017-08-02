@@ -18,7 +18,7 @@ final class SurveillanceTableViewCell: BaseCell {
         super.awakeFromNib()
         
         drugLabel.font = RegularFontWithSize(size: 15)
-        specialNoteLabel.font = RegularFontWithSize(size: 15)
+        specialNoteLabel.font = RegularFontWithSize(size: 13)
         specialNoteLabel.textColor = CommonAppearance.boldGreyColor
         
         susceptibilityLabel.font = RegularFontWithSize(size: 15)

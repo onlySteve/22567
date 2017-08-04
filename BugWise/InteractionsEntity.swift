@@ -8,6 +8,7 @@
 
 import ObjectMapper
 
+
 enum SeverityType: String {
     case caution = "caution.png"
     case contraindicated = "skull.png"
@@ -36,18 +37,7 @@ struct InteractionsEntity: Mappable {
     var firstMedcine: String?
     var secondMedcine: String?
     var severityType: SeverityType?
-    
-//    var severity = ModuleSearchType.condition.rawValue
-//    
-//    var typeEnum: ModuleSearchType {
-//        get{
-//            return ModuleSearchType(rawValue: type)!
-//        }
-//        set{
-//            type = newValue.rawValue
-//        }
-//    }
-    
+        
     var details = Array<InteractionsDetailEntity>()
     
     init?(map: Map) {
@@ -56,12 +46,12 @@ struct InteractionsEntity: Mappable {
     
     mutating func mapping(map: Map) {
         
-        firstMedcine <- map["DATA.0.MedicineA"]
-        secondMedcine <- map["DATA.0.MedicineB"]
-        severityType <- map["DATA.0.severity"]
+        firstMedcine <- map["MedicineA"]
+        secondMedcine <- map["MedicineB"]
+        severityType <- map["severity"]
         
         var detailsDict: Dictionary<String, Dictionary<String, Any>>?
-        detailsDict <- map["DATA.0.Details"]
+        detailsDict <- map["Details"]
         
         if let detailsDict = detailsDict {
             for (key, value) in detailsDict {

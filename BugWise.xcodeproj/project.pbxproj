@@ -12,8 +12,7 @@
 		6107AE2D1EE8C5220090A299 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6107AE2C1EE8C5220090A299 /* HomeCell.swift */; };
 		611DA71A1F0AD54C00AA96CC /* InteractionsResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DA7191F0AD54C00AA96CC /* InteractionsResultController.swift */; };
 		611DA71C1F0AD72F00AA96CC /* InteractionsResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DA71B1F0AD72F00AA96CC /* InteractionsResultTableViewCell.swift */; };
-		611DA71E1F0AD93600AA96CC /* InteractionsResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderView.swift */; };
-		611DA7201F0AD94800AA96CC /* InteractionsResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611DA71F1F0AD94800AA96CC /* InteractionsResultHeaderView.xib */; };
+		611DA71E1F0AD93600AA96CC /* InteractionsResultHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderTableViewCell.swift */; };
 		6121874A1F026B140046857C /* Calculators.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612187491F026B140046857C /* Calculators.storyboard */; };
 		6121874C1F026C9B0046857C /* CalculatorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121874B1F026C9B0046857C /* CalculatorsController.swift */; };
 		6121874F1F0275A60046857C /* MenuTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121874E1F0275A60046857C /* MenuTypeEnum.swift */; };
@@ -188,8 +187,7 @@
 		6107AE2C1EE8C5220090A299 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		611DA7191F0AD54C00AA96CC /* InteractionsResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionsResultController.swift; sourceTree = "<group>"; };
 		611DA71B1F0AD72F00AA96CC /* InteractionsResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionsResultTableViewCell.swift; sourceTree = "<group>"; };
-		611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionsResultHeaderView.swift; sourceTree = "<group>"; };
-		611DA71F1F0AD94800AA96CC /* InteractionsResultHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionsResultHeaderView.xib; sourceTree = "<group>"; };
+		611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionsResultHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		612187491F026B140046857C /* Calculators.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calculators.storyboard; sourceTree = "<group>"; };
 		6121874B1F026C9B0046857C /* CalculatorsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorsController.swift; sourceTree = "<group>"; };
 		6121874E1F0275A60046857C /* MenuTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTypeEnum.swift; sourceTree = "<group>"; };
@@ -396,8 +394,7 @@
 			children = (
 				611DA7191F0AD54C00AA96CC /* InteractionsResultController.swift */,
 				611DA71B1F0AD72F00AA96CC /* InteractionsResultTableViewCell.swift */,
-				611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderView.swift */,
-				611DA71F1F0AD94800AA96CC /* InteractionsResultHeaderView.xib */,
+				611DA71D1F0AD93600AA96CC /* InteractionsResultHeaderTableViewCell.swift */,
 			);
 			name = InteractionsSearchResult;
 			sourceTree = "<group>";
@@ -1027,7 +1024,6 @@
 				61B221731EDD3532003CCF3E /* LaunchScreen.storyboard in Resources */,
 				6121874A1F026B140046857C /* Calculators.storyboard in Resources */,
 				61EB1A271EEC86C4002F7934 /* Home.storyboard in Resources */,
-				611DA7201F0AD94800AA96CC /* InteractionsResultHeaderView.xib in Resources */,
 				61B221701EDD3532003CCF3E /* Assets.xcassets in Resources */,
 				617E194C1F09A97C00E34838 /* InteractionsSectionLabel.xib in Resources */,
 				61ACEA261EE4DAD3006FADFA /* LICENSE in Resources */,
@@ -1216,7 +1212,7 @@
 				61EC7D391EE1FF4200E04DBD /* StartView.swift in Sources */,
 				61EC7D331EE1F2C200E04DBD /* StoryboardsEnum.swift in Sources */,
 				61F430DD1EF6F47900A76362 /* TradesController.swift in Sources */,
-				611DA71E1F0AD93600AA96CC /* InteractionsResultHeaderView.swift in Sources */,
+				611DA71E1F0AD93600AA96CC /* InteractionsResultHeaderTableViewCell.swift in Sources */,
 				61A0051C1EF5540100AC7BA7 /* ReturnHeaderCell.swift in Sources */,
 				61ACEA281EE4DAD3006FADFA /* UIBarButtonItem+blocks.m in Sources */,
 				61ACE9F51EE2B8FA006FADFA /* TabBarCoordinator.swift in Sources */,

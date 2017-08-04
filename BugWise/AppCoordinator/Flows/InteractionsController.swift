@@ -138,9 +138,9 @@ class InteractionsController: BaseViewController, UITableViewDelegate {
                 switch type {
                 case .medicine:
                     EntitiesManager.shared.interactionsSearch((self?.resultItems.value.map{ $0.id ?? "" })!,
-                                                              onSuccess: { (interactionEntity) in
+                                                              onSuccess: { (interactionEntities) in
                                                                 hideHud()
-                                                                self?.navigationController?.pushViewController(InteractionsResultController.controller(interactionEntity), animated: true)
+                                                                self?.navigationController?.pushViewController(InteractionsResultController.controller(interactionEntities), animated: true)
                     }, onFail: {
                         showHud(success: false, time: 0.5, message: "Please, try again", completion: nil)
                     })

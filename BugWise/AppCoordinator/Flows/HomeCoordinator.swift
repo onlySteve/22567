@@ -72,13 +72,6 @@ final class HomeCoordinator: BaseCoordinator {
             }
         }
 
-        
-//        itemsOutput.onItemSelect = { [weak self] (item) in
-//            self?.showItemDetail(item)
-//        }
-//        itemsOutput.onCreateItem = { [weak self] in
-//            self?.runCreationFlow()
-//        }
         router.setRootModule(homeOutput)
     }
     

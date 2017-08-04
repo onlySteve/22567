@@ -13,23 +13,26 @@ import RxCocoa
 import RealmSwift
 import RxGesture
 import RxDataSources
+import ObjectMapper
 
-class InteractionsResultController: BaseViewController, UITableViewDelegate {
+class InteractionsResultController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var placeholderView: DefaultBGView!
     
     @IBOutlet weak var placeholderBackButton: UIButton!
     @IBOutlet weak var placeHolderDisclaimer: DisclaimerView!
-    var entity: InteractionsEntity?
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var entities: [InteractionsEntity]?
+    
+    private var dataSource = Array<Mappable>()
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let entity = entity, entity.details.count > 0 {
+        if let entities = entities, entities.count > 0 {
             setupTableView()
         } else {
             setupPlaceHolder()
@@ -52,19 +55,11 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
         view.bringSubview(toFront: placeholderView)
     }
     
-    private func setupHeader() {
-        
-        let headerView = InteractionsResultHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: CommonConstants.interactionsFooterHeight))
-        tableView.tableHeaderView = headerView
-        
-        headerView.config(firstItem: entity?.firstMedcine, secondItem: entity?.secondMedcine, image: entity?.severityType?.image, description: entity?.severityType?.title)
-        
-    }
     
     private func setupFooter() {
         let footerView = DisclaimerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: CommonConstants.interactionsFooterHeight))
         
-        footerView.separatorColor = CommonAppearance.boldGreyColor
+        footerView.separatorColor = CommonAppearance.duplicationsSeparatorColor
         
         footerView.discalimerText = "This multiple medicine interaction search facility is designed to facilitate searching for interactions on a number of medicine pairs at any one time. Studies of medicines interactions are generally conducted for two medicine pairs. This multiple medicine interaction checker allows a single search for a number of medicine pairs as a single search. The compatibility of three or more medicines in combination is not generally available."
         
@@ -73,20 +68,63 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
     
     private func setupTableView() {
         
-        guard let entity = entity else {
+        guard let entities = entities else {
             return
         }
         
-        setupHeader()
         setupFooter()
         
-        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        Observable.just(entity.details)
-            .bindTo(tableView.rx.items(cellIdentifier: InteractionsResultTableViewCell.nameOfClass, cellType: InteractionsResultTableViewCell.self)) { index, model, cell in
-                cell.config(with: model)
-            }.addDisposableTo(disposeBag)
+        dataSource = generateDatasource(input: entities)
+        
+        tableView.reloadData()
     }
+    
+    private func generateDatasource(input: [InteractionsEntity]) -> Array<Mappable> {
+        
+        var resultArray = Array<Mappable>()
+        
+        for item in input {
+            resultArray.append(item)
+            resultArray += item.details as Array<Mappable>
+        }
+        
+        return resultArray
+    }
+    
+    // MARK:- UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = dataSource[indexPath.row]
+        
+        if item is InteractionsEntity {
+            let cell: InteractionsResultHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: InteractionsResultHeaderTableViewCell.nameOfClass) as! InteractionsResultHeaderTableViewCell
+            
+            let sepVisible = (dataSource.count > indexPath.row + 1) ? dataSource[indexPath.row + 1] is InteractionsEntity : true
+            cell.config(with: item as! InteractionsEntity, separatorVisible: (indexPath.row + 1 == dataSource.count) ? false : sepVisible)
+            
+            return cell
+        }
+        
+        if item is InteractionsDetailEntity {
+            let cell: InteractionsResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: InteractionsResultTableViewCell.nameOfClass) as! InteractionsResultTableViewCell
+            
+            let sepVisible = (dataSource.count > indexPath.row + 1) ? dataSource[indexPath.row + 1] is InteractionsEntity : true
+            cell.config(with: item as! InteractionsDetailEntity, separatorVisible: (indexPath.row + 1 == dataSource.count) ? false : sepVisible)
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
  
     // MARK:- UITableViewDelegate
     
@@ -96,13 +134,13 @@ class InteractionsResultController: BaseViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
-    }
+    }    
 }
 
 extension InteractionsResultController {
-    static func controller(_ entity: InteractionsEntity?) -> InteractionsResultController {
+    static func controller(_ entities: [InteractionsEntity]?) -> InteractionsResultController {
         let controller = InteractionsResultController.controllerFromStoryboard(.interactions)
-        controller.entity = entity
+        controller.entities = entities
         controller.title = "Search Result"
         
         return controller

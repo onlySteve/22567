@@ -15,6 +15,7 @@ import RxCocoa
 import Moya_ObjectMapper
 import RxOptional
 
+
 final class EntitiesManager {
 
     // MARK:- Private properties
@@ -245,18 +246,30 @@ final class EntitiesManager {
     }
     
     //MARK:- Interactions
-    func interactionsSearch(_ searchItems:Array<String>, onSuccess: @escaping ((InteractionsEntity?) -> Void ), onFail: voidBlock?) {
+    func interactionsSearch(_ searchItems:Array<String>, onSuccess: @escaping (([InteractionsEntity]?) -> Void ), onFail: voidBlock?) {
     
         let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
         
         provider
             .request(.interactions(values: searchItems))
-            .mapObject(InteractionsEntity.self)
+            .mapJSON()
             .subscribe{
                 event in
                 switch event {
-                case .next(let interactionsEntity):
-                    onSuccess(interactionsEntity)
+                case .next(let json as Dictionary<String,Any>):
+                    
+                    guard let jsonArray = json["DATA"] as! Array<Dictionary<String, Any>>? else {
+                        onSuccess(nil)
+                        return
+                    }
+                    
+                    if let itemsMappedArray = Mapper<InteractionsEntity>().mapArray(JSONArray:  jsonArray) {
+                        onSuccess(itemsMappedArray)
+                        return
+                    }
+                    
+                    onSuccess(nil)
+                    
                     break
                 case .error(let error):
                     print(error.localizedDescription)

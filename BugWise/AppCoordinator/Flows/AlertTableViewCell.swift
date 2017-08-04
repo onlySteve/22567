@@ -21,7 +21,10 @@ class AlertTableViewCell: BaseCell {
     func config(with alert:AlertEntity) {
         
         if let imagePath = alert.imagePath {
-            alertImageView.kf.setImage(with: URL(string: imagePath))
+            alertImageView
+                .kf
+                .setImage(with: URL(string: imagePath),
+                          placeholder: UIImage(named: "bg_main"), progressBlock: nil, completionHandler: nil)
         }
         
         titleLabel.attributedText = alert.title?.stringFromHtml(textColor: .white, font: BoldFontWithSize(size: 19))

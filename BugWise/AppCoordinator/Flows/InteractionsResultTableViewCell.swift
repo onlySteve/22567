@@ -15,7 +15,7 @@ final class InteractionsResultTableViewCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.textColor = CommonAppearance.boldGreyColor
+        titleLabel.textColor = UIColor(netHex: 0x69828F)
         titleLabel.font = RegularFontWithSize()
         
         descriptionLabel.font = RegularFontWithSize(size: 14)

@@ -20,6 +20,9 @@ class InteractionsResultHeaderTableViewCell: BaseCell {
         super.awakeFromNib()
         
         titleLabel.textColor = CommonAppearance.blueColor
+        titleLabel.font = RegularFontWithSize()
+        
+        descLabel.font = RegularFontWithSize(size: 14)
         statusImage.image = nil
     }
     

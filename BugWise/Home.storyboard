@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,45 +33,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U93-tg-Zp6">
-                                                    <rect key="frame" x="38" y="0.0" width="300" height="66"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infection" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-5F-qg2">
-                                                            <rect key="frame" x="0.0" y="3.5" width="60" height="60"/>
-                                                            <color key="backgroundColor" red="0.085505180060000005" green="0.50838899609999999" blue="0.99870699640000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="YMA-Uw-Dxy"/>
-                                                                <constraint firstAttribute="width" secondItem="9N1-5F-qg2" secondAttribute="height" id="uur-F2-WN0"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="30"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib8-Jf-Ewd">
-                                                            <rect key="frame" x="72" y="22.5" width="228" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib8-Jf-Ewd">
+                                                    <rect key="frame" x="139" y="23" width="221" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infection" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-5F-qg2">
+                                                    <rect key="frame" x="67" y="4" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="0.085505180060000005" green="0.50838899609999999" blue="0.99870699640000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="leading" secondItem="9N1-5F-qg2" secondAttribute="trailing" constant="12" id="9i7-ZA-QuI"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Ib8-Jf-Ewd" secondAttribute="trailing" id="azi-dl-Jjm"/>
-                                                        <constraint firstItem="9N1-5F-qg2" firstAttribute="leading" secondItem="U93-tg-Zp6" secondAttribute="leading" id="g9k-Ru-Ajg"/>
-                                                        <constraint firstItem="9N1-5F-qg2" firstAttribute="centerY" secondItem="U93-tg-Zp6" secondAttribute="centerY" id="osB-sW-a8P"/>
-                                                        <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="centerY" secondItem="U93-tg-Zp6" secondAttribute="centerY" id="rNl-4q-S3d"/>
+                                                        <constraint firstAttribute="height" constant="60" id="YMA-Uw-Dxy"/>
+                                                        <constraint firstAttribute="width" secondItem="9N1-5F-qg2" secondAttribute="height" id="uur-F2-WN0"/>
                                                     </constraints>
-                                                </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="U93-tg-Zp6" firstAttribute="width" secondItem="7Ql-eu-nly" secondAttribute="width" multiplier="0.8" id="4J1-EY-D9x"/>
-                                                <constraint firstAttribute="bottom" secondItem="U93-tg-Zp6" secondAttribute="bottom" id="Dbn-zM-clj"/>
-                                                <constraint firstItem="U93-tg-Zp6" firstAttribute="centerX" secondItem="7Ql-eu-nly" secondAttribute="centerX" id="hxZ-lV-XUh"/>
-                                                <constraint firstItem="U93-tg-Zp6" firstAttribute="top" secondItem="7Ql-eu-nly" secondAttribute="top" id="ieQ-RA-1Dg"/>
+                                                <constraint firstItem="9N1-5F-qg2" firstAttribute="centerY" secondItem="7Ql-eu-nly" secondAttribute="centerY" id="1Hw-Nf-HDU"/>
+                                                <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="leading" secondItem="9N1-5F-qg2" secondAttribute="trailing" constant="12" id="5ek-fO-qYz"/>
+                                                <constraint firstItem="9N1-5F-qg2" firstAttribute="leading" secondItem="7Ql-eu-nly" secondAttribute="leading" constant="67" id="cBV-5l-b9A"/>
+                                                <constraint firstItem="Ib8-Jf-Ewd" firstAttribute="centerY" secondItem="7Ql-eu-nly" secondAttribute="centerY" id="ogq-oI-LOa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ib8-Jf-Ewd" secondAttribute="trailing" constant="15" id="ypd-AM-GGe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

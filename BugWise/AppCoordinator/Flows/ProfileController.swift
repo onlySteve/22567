@@ -247,8 +247,6 @@ final class ProfileViewController: BaseViewController, ProfileView {
             })
         }, onFail: { errorDesc in
             
-            EntitiesManager.shared.dropDB()
-            
             showHud(success: false, message: errorDesc ?? " Fail ", completion: {
             })
         })

@@ -77,6 +77,8 @@ final class EntitiesManager {
                         self.microbeEntitiesMap(microbesJSON)
                         self.infectionEntitiesMap(infectionsJSON)
                         
+                        self.updateFavouriteStatus()
+                        
                         onSuccess?()
                     } else {
                         onFail?()
@@ -307,11 +309,25 @@ final class EntitiesManager {
     }
     
     func dropDB() {
+        UserDefaults.standard.set(searcItems()?.filter{$0.isFavorite}.map{ $0.id }, forKey: String(format: "Favorites %@", BusinessModel.shared.usr.mail.value ?? ""))
+        
         try! realm?.write {
             realm?.deleteAll()
         }
     }
     
+    private func updateFavouriteStatus() {
+    
+        guard let favList = UserDefaults.standard.value(forKey: String(format: "Favorites %@", BusinessModel.shared.usr.mail.value ?? "")) as? Array<String> else {
+            return
+        }
+    
+        searcItems()?.forEach({ [weak self] (item) in
+            if favList.contains(item.id) {
+                self?.updateEntity(item, favStatus: true)
+            }
+        })
+    }
 }
 
 

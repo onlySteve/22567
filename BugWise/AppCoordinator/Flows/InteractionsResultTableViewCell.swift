@@ -26,8 +26,6 @@ final class InteractionsResultTableViewCell: BaseCell {
         descriptionLabel.text = entity.desc
         
         separatorView.isHidden = !separatorVisible
-    }
-    
-    
+    }    
 }
 

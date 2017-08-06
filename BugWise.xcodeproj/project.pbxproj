@@ -64,6 +64,7 @@
 		617E19521F09B77D00E34838 /* DisclaimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 617E19511F09B77D00E34838 /* DisclaimerView.xib */; };
 		617E19541F09B78B00E34838 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E19531F09B78B00E34838 /* DisclaimerView.swift */; };
 		617E19561F09BBA500E34838 /* DuplicationsResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E19551F09BBA500E34838 /* DuplicationsResultController.swift */; };
+		61821B171F37590500F0B009 /* StartSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61821B161F37590500F0B009 /* StartSplashScreen.swift */; };
 		618530621F22B30600D8EB1F /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618530611F22B30600D8EB1F /* PlaceholderView.xib */; };
 		618530641F22B31200D8EB1F /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618530631F22B31200D8EB1F /* PlaceholderView.swift */; };
 		61A005171EF1EC6400AC7BA7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A005161EF1EC6400AC7BA7 /* BaseViewController.swift */; };
@@ -239,6 +240,7 @@
 		617E19511F09B77D00E34838 /* DisclaimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisclaimerView.xib; sourceTree = "<group>"; };
 		617E19531F09B78B00E34838 /* DisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		617E19551F09BBA500E34838 /* DuplicationsResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicationsResultController.swift; sourceTree = "<group>"; };
+		61821B161F37590500F0B009 /* StartSplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSplashScreen.swift; sourceTree = "<group>"; };
 		618530611F22B30600D8EB1F /* PlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		618530631F22B31200D8EB1F /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		61A005161EF1EC6400AC7BA7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -835,6 +837,7 @@
 		61EC7CF11EE1F07500E04DBD /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				61821B161F37590500F0B009 /* StartSplashScreen.swift */,
 				61ACE9F11EE2B7F7006FADFA /* TabBar */,
 				61B221C21EDF064A003CCF3E /* PinCode */,
 				61B221961EDD353A003CCF3E /* Starter */,
@@ -1296,6 +1299,7 @@
 				612187641F06A04E0046857C /* SurveillanceDataController.swift in Sources */,
 				61ACEA201EE4D7FF006FADFA /* Alerts.swift in Sources */,
 				61E5F0E61EEF34C80045CE37 /* SearchModuleItem.swift in Sources */,
+				61821B171F37590500F0B009 /* StartSplashScreen.swift in Sources */,
 				61ACE9EE1EE21761006FADFA /* BaseLabel.swift in Sources */,
 				61A005261EF55FDC00AC7BA7 /* OfflineDataTableViewModels.swift in Sources */,
 				61ACEA151EE3FE76006FADFA /* CommonUI.swift in Sources */,

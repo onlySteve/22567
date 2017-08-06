@@ -30,7 +30,6 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
     }
     
     override func start() {
-        
         tabBarView.onViewDidLoad = runProfileFlow()
         tabBarView.onHomeFlowSelect = runHomeFlow()
         tabBarView.onAboutFlowSelect = runAboutFlow()
@@ -40,7 +39,7 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
         }
         tabBarView.onProfileFlowSelect = runProfileFlow()
     }
-    
+        
     private func runHomeFlow() -> ((UINavigationController) -> ()) {
         return { navController in
             if navController.viewControllers.isEmpty == true {

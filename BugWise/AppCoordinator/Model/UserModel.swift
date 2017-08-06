@@ -54,6 +54,8 @@ fileprivate enum synchronizeUsr: String {
     case loggedIn = "UsrLoggedIn"
     case notificationsEnabled = "UsrNotificationsEnabled"
     case token = "UsrToken"
+    case providerMD5 = "UsrProviderMD5"
+    case patientMD5 = "UsrPatientMD5"
 }
 
 class UserModel {
@@ -76,6 +78,8 @@ class UserModel {
     var workInHospital: Variable<Bool> = Variable(UserDefaults.standard.bool(forKey: synchronizeUsr.workInHospital.rawValue))
     var loggedIn: ReplaySubject<Bool> = ReplaySubject<Bool>.create(bufferSize: 1)
     var notificationsEnabled: Variable<Bool> = Variable(UserDefaults.standard.bool(forKey: synchronizeUsr.notificationsEnabled.rawValue))
+    var providerMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.providerMD5.rawValue))
+    var patientMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.patientMD5.rawValue))
     
     init() {
         
@@ -117,6 +121,8 @@ class UserModel {
         userDefaults.set(privateLoggedIn, forKey: synchronizeUsr.loggedIn.rawValue)
         userDefaults.set(notificationsEnabled.value, forKey: synchronizeUsr.notificationsEnabled.rawValue)
         userDefaults.set(token.value, forKey: synchronizeUsr.token.rawValue)
+        userDefaults.set(patientMD5.value, forKey: synchronizeUsr.patientMD5.rawValue)
+        userDefaults.set(providerMD5.value, forKey: synchronizeUsr.providerMD5.rawValue)
         
         userDefaults.synchronize()
     }
@@ -133,6 +139,9 @@ class UserModel {
         sector = Variable(.privateType)
         workInHospital = Variable(false)
         token = Variable(nil)
+        patientMD5 = Variable(nil)
+        providerMD5 = Variable(nil)
+        
         save()
     }
 }

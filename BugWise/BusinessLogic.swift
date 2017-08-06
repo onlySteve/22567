@@ -48,14 +48,36 @@ class BusinessModel {
             .subscribe { event in
                 switch event {
                 case .next(let json as [String: Any]):
+                    
                     if let token = json["token"] as? String {
                         self.usr.token.value = token
                     }
 
-                    EntitiesManager.shared.alertEntitiesMap(json["news"] as! [[String : Any]])
- 
+                    var providerVersionNeedUpdate = false
+                    
+                    if let providerMD5 = json["static_content_signature"] as? String {
+                        providerVersionNeedUpdate = self.usr.providerMD5.value != providerMD5
+                        self.usr.providerMD5.value = providerMD5
+                    }
+                    
+                    var patientVersionNeedUpdate = false
+                    
+                    if let patientMD5 = json["patient_static_content_signature"] as? String {
+                        patientVersionNeedUpdate = self.usr.patientMD5.value != patientMD5
+                        self.usr.patientMD5.value = patientMD5
+                    }
+                    
+                    //For the next version need to add if user.provider && providerVersionNeedUpdate != true, and the same staff for the patient
+                    
+                    if providerVersionNeedUpdate != true {
+                        onSuccess?()
+                        break
+                    }
+                    
                     EntitiesManager.shared.offlineData(onSuccess: {
                         self.usr.loggedIn.onNext(true)
+                        
+                        EntitiesManager.shared.alertEntitiesMap(json["news"] as! [[String : Any]])
                         onSuccess?()
                     }, onFail:  {
                         self.performLogout()

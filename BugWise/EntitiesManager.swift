@@ -68,6 +68,7 @@ final class EntitiesManager {
             .subscribe{ event in
                 switch event {
                 case .next(let json as [String: Any]):
+                    self.dropDB()
                     if let searchItems = json["searchTerms"] as? [String:[[String: Any]]],
                         let microbesJSON = json["Microbes"] as? [[String: Any]],
                         let infectionsJSON = json["Conditions"] as? [[String: Any]] {

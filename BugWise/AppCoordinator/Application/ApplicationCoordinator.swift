@@ -29,7 +29,7 @@ final class ApplicationCoordinator: BaseCoordinator {
                 guard let value = value.element else { return }
                 
                 if value {
-                    self.runMainFlow()
+                    self.updateOnStart()
                 } else {
                     self.runStarterFlow()
                 }
@@ -38,7 +38,6 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     //MARK: - Run coordinators (switch to another flow)
-    
     
     private func runStarterFlow() {
         let coordinator = coordinatorFactory.makeStartCoordinator(router: router)
@@ -79,25 +78,38 @@ final class ApplicationCoordinator: BaseCoordinator {
         addDependency(coordinator)
         router.setRootModule(module, hideBar: true)
         coordinator.start()
-        
-//        let coordinator = coordinatorFactory.makeTabBarCoordinator(router: router)
-//        
-//        coordinator.finishFlow = { [weak self] flow in
-//            
-//            self?.router.dismissModule()
-//            self?.removeDependency(coordinator)
-//            self?.router.popToRootModule(animated: false)
-//        }
-//        
-//        coordinator.onBackAction = { [weak self] in
-//            
-//            self?.router.dismissModule()
-//            self?.removeDependency(coordinator)
-//        }
-//
-//        addDependency(coordinator)
-//        coordinator.start()
     }
+    
+    private func updateOnStart() {
+        
+        if BusinessModel.shared.notReachableNetwork {
+            runMainFlow()
+            return
+        }
+        
+        let splashScreen = StartSplashController.controllerFromStoryboard(.start)
+        
+        self.router.setRootModule(splashScreen, hideBar: true)
+        
+        showHud()
+        
+        BusinessModel.shared.performLogIn(onSuccess: { [weak self] _ in
+            splashScreen.dismiss(animated: true, completion: nil)
+            hideHud()
+            self?.runMainFlow()
+            
+        }, onFail: { (errorMsg) in
+            
+            hideHud()
+            
+            let alertController = alertWith(title: "", message: errorMsg ?? "", okAction: { [weak self] _ in
+                self?.runStarterFlow()
+            })
+            
+            UIApplication.shared.keyWindow?.topMostController()?.present(alertController, animated: true, completion: nil)
+        })
+    }
+
 }
 
 

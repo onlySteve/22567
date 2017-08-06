@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S6d-V1-Ojm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S6d-V1-Ojm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -239,8 +239,49 @@
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="755.17241379310349"/>
         </scene>
+        <!--Start Splash Controller-->
+        <scene sceneID="NIa-pH-4d8">
+            <objects>
+                <viewController storyboardIdentifier="StartSplashController" id="wrD-15-jLc" customClass="StartSplashController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C8I-M3-P2A"/>
+                        <viewControllerLayoutGuide type="bottom" id="gzL-gb-EAg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lbD-hN-b3u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-mm-3la">
+                                <rect key="frame" x="0.0" y="20" width="375" height="333.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wyP-Wd-fIJ">
+                                        <rect key="frame" x="83" y="105.5" width="209" height="123"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wyP-Wd-fIJ" firstAttribute="centerY" secondItem="d1i-mm-3la" secondAttribute="centerY" id="ETf-QM-cDD"/>
+                                    <constraint firstItem="wyP-Wd-fIJ" firstAttribute="centerX" secondItem="d1i-mm-3la" secondAttribute="centerX" id="wRf-ud-z8F"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d1i-mm-3la" firstAttribute="leading" secondItem="lbD-hN-b3u" secondAttribute="leading" id="0a5-h9-hc4"/>
+                            <constraint firstItem="d1i-mm-3la" firstAttribute="top" secondItem="C8I-M3-P2A" secondAttribute="bottom" id="A4k-s5-dTt"/>
+                            <constraint firstItem="d1i-mm-3la" firstAttribute="height" secondItem="lbD-hN-b3u" secondAttribute="height" multiplier="0.5" id="Lah-VK-uM5"/>
+                            <constraint firstItem="d1i-mm-3la" firstAttribute="width" secondItem="lbD-hN-b3u" secondAttribute="width" id="Of1-f5-TFu"/>
+                            <constraint firstAttribute="trailing" secondItem="d1i-mm-3la" secondAttribute="trailing" id="YMB-ec-dht"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lI3-1T-MT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62" y="-685"/>
+        </scene>
     </scenes>
     <resources>
         <image name="header" width="121" height="130"/>
+        <image name="logo" width="209" height="123"/>
     </resources>
 </document>

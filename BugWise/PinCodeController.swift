@@ -34,7 +34,7 @@ final class PinCodeViewController: UIViewController, PinCodeView {
         hintLabel.textColor = CommonAppearance.blueColor
         
         //TODO:- Remove it
-        searchTextField.text = "04E4523A6C45C287"
+//        searchTextField.text = "04E4523A6C45C287"
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         view.addGestureRecognizer(tap)

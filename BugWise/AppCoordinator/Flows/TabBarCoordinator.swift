@@ -76,8 +76,31 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
                 
                 let favController = FavouritesViewController.controller()
                 
-                favController.onItemSelect = { [weak self] (item) in
-                    self?.homeCoordinator?.showDetailedFromFavourite(searchItem: item)
+                favController.onItemSelect = { [weak self] (searchItem) in
+                    
+                    switch searchItem.typeEnum {
+                    case .condition:
+                        self?.homeCoordinator?.showDetailedFromFavourite(searchItem: searchItem)
+                        break
+                    case .drug:
+                        
+                        if (BusinessModel.shared.notReachableNetwork) {
+                            showNetworkReachabilityAlert()
+                            break
+                        }
+                        
+                        showHud()
+                        EntitiesManager.shared.antibiotic(id: searchItem.id, onSucces: { (entity) in
+                            hideHud()
+                            self?.homeCoordinator?.showDetailedFromFavourite(searchItem: searchItem)
+                        }, onFail: {
+                            showHud(success: false, time: 0.3, message: "Fail", completion: nil)
+                        })
+                        break
+                    case .microbe:
+                        self?.homeCoordinator?.showDetailedFromFavourite(searchItem: searchItem)
+                        break
+                    }
                 }
                 
                 navController.setViewControllers([favController], animated: false)

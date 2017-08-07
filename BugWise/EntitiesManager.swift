@@ -120,16 +120,15 @@ final class EntitiesManager {
         return realm?.object(ofType: MicrobeEntity.self, forPrimaryKey: id)
     }
     
+    func antibioticCached(id: String) -> AntibioticEntity? {
+        return realm?.objects(AntibioticEntity.self).filter("parentID == %@", id).first
+    }
+    
     func antibiotic(id: String, onSucces:@escaping ((AntibioticEntity?) -> Void), onFail:voidBlock?) {
         
         //Fucking ServerSide Magic
         let index = id.index(after: id.startIndex)
         let serverID = id.substring(from: index)
-        
-        if let entity = realm?.object(ofType: AntibioticEntity.self, forPrimaryKey: serverID) {
-            onSucces(entity)
-            return
-        }
         
         let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
 

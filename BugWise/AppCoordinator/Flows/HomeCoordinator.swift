@@ -138,11 +138,7 @@ final class HomeCoordinator: BaseCoordinator {
             entity = EntitiesManager.shared.infection(id: searchItem.id)
             break
         case .drug:
-            EntitiesManager.shared.antibiotic(id: searchItem.id, onSucces: { (antibioticEntity) in
-                entity = antibioticEntity
-            }, onFail: {
-                entity = nil
-            })
+            entity = EntitiesManager.shared.antibioticCached(id: searchItem.id)
             break
         case .microbe:
             entity = EntitiesManager.shared.microbe(id: searchItem.id)

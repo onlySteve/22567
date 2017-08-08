@@ -171,9 +171,6 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Creatinine Clearance"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="measureText" value="mL/min"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLineCount">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-x9-zFj" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">

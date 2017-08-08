@@ -56,6 +56,7 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
         
         dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchModuleItem) in
             let cell = tv.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
+            cell.textLabel?.numberOfLines = 0
             cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
             
             if let modal = self.isModalPresentation, modal == true {
@@ -135,6 +136,14 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
         if let headerView = view as? UITableViewHeaderFooterView  {
             headerView.textLabel?.textColor = CommonAppearance.lighBlueColor
         }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 46
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 

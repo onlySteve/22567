@@ -67,6 +67,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         
         dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchEntity) in
             let cell = tv.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
+            cell.textLabel?.numberOfLines = 0
             cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
             if let modal = self.isModalPresentation, modal == true {
                 cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "add"))
@@ -147,6 +148,14 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         if let headerView = view as? UITableViewHeaderFooterView  {
             headerView.textLabel?.textColor = CommonAppearance.lighBlueColor
         }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 46
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 

@@ -37,7 +37,7 @@ class CalculatorField: CommonCustomUIBase, UITextFieldDelegate {
         }
     }
     
-    @IBInspectable var titleLineCount: Int = 1 {
+    @IBInspectable var titleLineCount: Int = 2 {
         didSet {
             titleLabel.numberOfLines = titleLineCount
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Rv6-OL-Pxf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uEw-mk-iiq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-ma-I6U" userLabel="headerView" customClass="CommonTitleHeaderView" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="vM3-es-yCi"/>
@@ -37,10 +37,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-6f-Kir">
-                                <rect key="frame" x="0.0" y="150" width="375" height="243"/>
+                                <rect key="frame" x="0.0" y="150" width="320" height="243"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-tV-ARY" userLabel="microbeTextField" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9k2-i0-AeC"/>
@@ -51,11 +51,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-aP-bSo" userLabel="microbeClearButton">
-                                        <rect key="frame" x="340" y="14" width="20" height="22"/>
+                                        <rect key="frame" x="285" y="14" width="20" height="22"/>
                                         <state key="normal" image="remove"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-uJ-SfM" userLabel="antimicrobials" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Antimicrobials"/>
@@ -66,7 +66,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vx2-d9-ke5" userLabel="sector" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Sector"/>
@@ -74,7 +74,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-bb-pry" userLabel="location" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Location"/>
@@ -85,14 +85,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4i-Ib-vRp" userLabel="antibioticClearButton">
-                                        <rect key="frame" x="340" y="64" width="20" height="22"/>
+                                        <rect key="frame" x="285" y="64" width="20" height="22"/>
                                         <state key="normal" image="remove"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-3n-FNe">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="43"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="43"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location limited to available surveillance data in South Africa. Choose your closest location " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-U0-8yE" userLabel="Location limited to available surveillance data in South Africa. Choose your closest location">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="43"/>
+                                                <rect key="frame" x="20" y="0.0" width="280" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.72141474490000002" green="0.72116762400000001" blue="0.74595600370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -134,8 +134,8 @@
                                     <constraint firstItem="zdj-bb-pry" firstAttribute="top" secondItem="Vx2-d9-ke5" secondAttribute="bottom" id="vWW-8c-dk8"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oog-3F-4cJ" customClass="BaseButton" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="94" y="596" width="188" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oog-3F-4cJ" customClass="BaseButton" customModule="BugWise" customModuleProvider="target">
+                                <rect key="frame" x="80" y="502" width="160" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Zcy-wn-1yc"/>
                                 </constraints>
@@ -144,7 +144,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rv6-OL-Pxf" firstAttribute="top" secondItem="oog-3F-4cJ" secondAttribute="bottom" constant="35" id="5ha-9L-e9y"/>
+                            <constraint firstItem="Rv6-OL-Pxf" firstAttribute="top" relation="lessThanOrEqual" secondItem="oog-3F-4cJ" secondAttribute="bottom" constant="30" id="5ha-9L-e9y"/>
                             <constraint firstItem="oog-3F-4cJ" firstAttribute="centerX" secondItem="uEw-mk-iiq" secondAttribute="centerX" id="Lnh-JO-OFg"/>
                             <constraint firstItem="ClN-ma-I6U" firstAttribute="top" secondItem="uEw-mk-iiq" secondAttribute="top" id="TdC-lM-47o"/>
                             <constraint firstItem="ClN-ma-I6U" firstAttribute="leading" secondItem="uEw-mk-iiq" secondAttribute="leading" id="UlG-eY-7hG"/>
@@ -178,21 +178,21 @@
                         <viewControllerLayoutGuide type="bottom" id="U4J-RO-Agq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2fi-cP-Nwi" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U81-MW-5va" customClass="PlaceholderView" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="msgText" value="No data currently available in South Africa for your search criteria. Please try again"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4u-4D-avC" userLabel="titleView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-PP-2ep">
-                                        <rect key="frame" x="10" y="10" width="355" height="34"/>
+                                        <rect key="frame" x="10" y="10" width="300" height="34"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Data does not inform treatment decisions. For information purposes only –">
                                                 <attributes>
@@ -219,25 +219,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cL-18-dsU">
-                                        <rect key="frame" x="10" y="54" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="54" width="300" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV9-b8-UO9">
-                                        <rect key="frame" x="10" y="80" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="80" width="300" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE3-Qq-hLM">
-                                        <rect key="frame" x="10" y="109" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="109" width="300" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ou9-3i-pRd" customClass="SeparatorView" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="139" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="139" width="320" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Uh1-5r-4Kg"/>
@@ -265,17 +265,17 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-xd-76n">
-                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
+                                <rect key="frame" x="0.0" y="140" width="320" height="428"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SurveillanceTableViewCell" rowHeight="55" id="RDS-IF-bWw" customClass="SurveillanceTableViewCell" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RDS-IF-bWw" id="K89-Aw-eKr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWn-B4-T3N">

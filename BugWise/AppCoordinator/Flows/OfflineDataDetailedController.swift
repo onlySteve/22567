@@ -181,14 +181,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-//        guard let cell = tableView.cellForRow(at: indexPath) else {
-//            return UITableViewAutomaticDimension
-//        }
-        
         return UITableViewAutomaticDimension
-        
-//        return cell.isKind(of: ReturnSectionActionsTableViewCell.self) ? ReturnSectionActionsTableViewCell.cellHeight : UITableViewAutomaticDimension
     }
     
     // MARK: - Private

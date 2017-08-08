@@ -165,6 +165,7 @@
                                     <constraint firstAttribute="trailing" secondItem="wcd-VF-agn" secondAttribute="trailing" constant="15" id="LCY-VT-esv"/>
                                     <constraint firstItem="pSM-8e-XBp" firstAttribute="top" secondItem="wcd-VF-agn" secondAttribute="bottom" constant="20" id="Oi5-HR-Kjr"/>
                                     <constraint firstItem="wcd-VF-agn" firstAttribute="leading" secondItem="2tq-Ft-tqv" secondAttribute="leading" constant="15" id="UXD-DB-hVZ"/>
+                                    <constraint firstItem="Lix-Pz-4HU" firstAttribute="top" secondItem="pSM-8e-XBp" secondAttribute="bottom" constant="14" id="ZyB-P2-nXl"/>
                                     <constraint firstItem="pSM-8e-XBp" firstAttribute="centerX" secondItem="2tq-Ft-tqv" secondAttribute="centerX" id="mqa-Mb-aO4"/>
                                     <constraint firstItem="wcd-VF-agn" firstAttribute="top" secondItem="2tq-Ft-tqv" secondAttribute="top" constant="5" id="oEo-nf-EmP"/>
                                     <constraint firstAttribute="bottom" secondItem="Lix-Pz-4HU" secondAttribute="bottom" constant="30" id="qdw-lY-EEI"/>
@@ -211,7 +212,6 @@
                             <constraint firstItem="Lix-Pz-4HU" firstAttribute="width" secondItem="Hoj-3y-q3m" secondAttribute="width" id="0uv-KV-exd"/>
                             <constraint firstItem="NgT-9Z-xg1" firstAttribute="leading" secondItem="k0i-BF-LQy" secondAttribute="leading" id="5UW-92-CC1"/>
                             <constraint firstItem="NgT-9Z-xg1" firstAttribute="top" secondItem="KCN-J2-Y2d" secondAttribute="bottom" id="5zc-72-wlo"/>
-                            <constraint firstItem="2tq-Ft-tqv" firstAttribute="height" secondItem="k0i-BF-LQy" secondAttribute="height" multiplier="0.25" id="8es-G2-4oD"/>
                             <constraint firstItem="2tq-Ft-tqv" firstAttribute="leading" secondItem="k0i-BF-LQy" secondAttribute="leading" id="EYI-aW-1ps"/>
                             <constraint firstItem="g5A-rD-zta" firstAttribute="height" secondItem="k0i-BF-LQy" secondAttribute="height" multiplier="0.35" id="LPq-8j-aZo"/>
                             <constraint firstAttribute="trailing" secondItem="KCN-J2-Y2d" secondAttribute="trailing" id="RyB-Ya-9Dd"/>

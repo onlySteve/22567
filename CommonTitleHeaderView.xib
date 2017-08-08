@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +47,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-3S-Aba">
-                    <rect key="frame" x="15" y="90" width="345" height="21"/>
+                    <rect key="frame" x="15" y="85" width="345" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.35686274509999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -62,12 +62,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="hNs-kN-qpB" firstAttribute="top" secondItem="Apt-3S-Aba" secondAttribute="bottom" constant="10" id="LQd-uB-cyL"/>
                 <constraint firstItem="lUa-1w-FKM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dEe-0T-YxY"/>
                 <constraint firstAttribute="trailing" secondItem="hNs-kN-qpB" secondAttribute="trailing" id="jAh-yg-S6F"/>
                 <constraint firstItem="Apt-3S-Aba" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="lJ4-nm-rq0"/>
                 <constraint firstItem="hNs-kN-qpB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oih-yU-zmw"/>
                 <constraint firstItem="lUa-1w-FKM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="w01-al-gqv"/>
-                <constraint firstItem="Apt-3S-Aba" firstAttribute="top" secondItem="lUa-1w-FKM" secondAttribute="bottom" constant="20" id="yFS-mD-h2g"/>
+                <constraint firstItem="Apt-3S-Aba" firstAttribute="top" relation="lessThanOrEqual" secondItem="lUa-1w-FKM" secondAttribute="bottom" constant="15" id="yFS-mD-h2g"/>
                 <constraint firstAttribute="bottom" secondItem="hNs-kN-qpB" secondAttribute="bottom" id="ygd-lV-wYp"/>
                 <constraint firstAttribute="trailing" secondItem="Apt-3S-Aba" secondAttribute="trailing" constant="15" id="zXJ-tf-gEn"/>
             </constraints>

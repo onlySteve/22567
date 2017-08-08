@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="440" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-Ye-Zzp">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-Ye-Zzp">
                     <rect key="frame" x="15" y="25" width="145.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -50,7 +50,7 @@
                 <constraint firstItem="tiB-jP-kWH" firstAttribute="centerY" secondItem="Iid-kg-tPJ" secondAttribute="centerY" id="Ild-eh-5T9"/>
                 <constraint firstItem="tiB-jP-kWH" firstAttribute="leading" secondItem="Iid-kg-tPJ" secondAttribute="trailing" constant="10" id="SdB-xm-0Pt"/>
                 <constraint firstItem="aPq-Ye-Zzp" firstAttribute="centerY" secondItem="Iid-kg-tPJ" secondAttribute="centerY" id="dB1-2j-YPt"/>
-                <constraint firstAttribute="trailing" secondItem="tiB-jP-kWH" secondAttribute="trailing" constant="47" id="dng-at-Eik"/>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="tiB-jP-kWH" secondAttribute="trailing" constant="47" id="dng-at-Eik"/>
                 <constraint firstItem="Iid-kg-tPJ" firstAttribute="leading" secondItem="aPq-Ye-Zzp" secondAttribute="trailing" constant="10" id="mtJ-ne-3o4"/>
                 <constraint firstItem="Iid-kg-tPJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rfi-st-ofP"/>
                 <constraint firstItem="aPq-Ye-Zzp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="roP-5k-5lG"/>

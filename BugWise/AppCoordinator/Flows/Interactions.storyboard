@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-Ej-WVB" userLabel="placeHolder" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-Ej-WVB" userLabel="placeHolder" customClass="UIScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COD-ln-l3c">
@@ -153,11 +153,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="COD-ln-l3c" secondAttribute="bottom" constant="132" id="1Sd-T4-hRC"/>
                                     <constraint firstItem="COD-ln-l3c" firstAttribute="leading" secondItem="Jsd-Ej-WVB" secondAttribute="leading" id="EQ9-Q9-Di2"/>
                                     <constraint firstItem="COD-ln-l3c" firstAttribute="centerX" secondItem="Jsd-Ej-WVB" secondAttribute="centerX" id="WbB-Lf-Kok"/>
-                                    <constraint firstItem="COD-ln-l3c" firstAttribute="centerY" secondItem="Jsd-Ej-WVB" secondAttribute="centerY" id="XrH-jl-jkl"/>
                                     <constraint firstAttribute="trailing" secondItem="COD-ln-l3c" secondAttribute="trailing" id="l9J-p8-0uw"/>
+                                    <constraint firstItem="COD-ln-l3c" firstAttribute="top" secondItem="Jsd-Ej-WVB" secondAttribute="top" constant="133" id="ttA-GH-NAi"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yoB-7X-Dfh">
@@ -259,7 +261,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-3h-1ds" customClass="UIScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-j3-R5l">
@@ -307,11 +309,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="centerY" secondItem="soc-3h-1ds" secondAttribute="centerY" id="BEh-3J-eQp"/>
+                                    <constraint firstAttribute="bottom" secondItem="5gg-j3-R5l" secondAttribute="bottom" constant="82" id="Fv6-6j-Fg5"/>
                                     <constraint firstAttribute="trailing" secondItem="5gg-j3-R5l" secondAttribute="trailing" id="IBz-Nb-Mxl"/>
                                     <constraint firstItem="5gg-j3-R5l" firstAttribute="centerX" secondItem="soc-3h-1ds" secondAttribute="centerX" id="dTg-Fe-xjK"/>
+                                    <constraint firstItem="5gg-j3-R5l" firstAttribute="top" secondItem="soc-3h-1ds" secondAttribute="top" constant="82.5" id="l8N-dV-GSq"/>
                                     <constraint firstItem="5gg-j3-R5l" firstAttribute="leading" secondItem="soc-3h-1ds" secondAttribute="leading" id="yVP-gA-Zb3"/>
                                 </constraints>
                             </view>

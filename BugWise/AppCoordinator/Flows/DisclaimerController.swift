@@ -19,6 +19,7 @@ class DisclaimerViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var disclaimerView: UIView!
     @IBOutlet weak var agreeButton: BaseRedButton!
     @IBOutlet weak var disagreeButton: UIButton!
@@ -81,8 +82,9 @@ class DisclaimerViewController: UIViewController {
         
         groupAnimation.animations = [fadeOut, positionY]
         
-        CATransaction.setCompletionBlock {
+        CATransaction.setCompletionBlock { [weak self] in
             completionBlock()
+            self?.textView.setContentOffset(CGPoint.zero, animated: false)
         }
         
         animatedView.layer.add(groupAnimation, forKey: nil)

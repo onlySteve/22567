@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,155 +19,183 @@
                         <viewControllerLayoutGuide type="bottom" id="Rv6-OL-Pxf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uEw-mk-iiq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-ma-I6U" userLabel="headerView" customClass="CommonTitleHeaderView" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="vM3-es-yCi"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Search antibiotic susceptibility information. Not intended to guide empiric treatment"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="data_w"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-6f-Kir">
-                                <rect key="frame" x="0.0" y="150" width="320" height="243"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-PA-qJC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-tV-ARY" userLabel="microbeTextField" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="9k2-i0-AeC"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Microbes"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="microbe_g"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-aP-bSo" userLabel="microbeClearButton">
-                                        <rect key="frame" x="285" y="14" width="20" height="22"/>
-                                        <state key="normal" image="remove"/>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-uJ-SfM" userLabel="antimicrobials" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Antimicrobials"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="antibiotic_g"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="inputColor">
-                                                <color key="value" red="0.1137254902" green="0.4549019608" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vx2-d9-ke5" userLabel="sector" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Sector"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="sector_g"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-bb-pry" userLabel="location" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Location"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="location"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
-                                                <color key="value" red="0.0" green="0.35686274509803922" blue="0.70588235294117641" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4i-Ib-vRp" userLabel="antibioticClearButton">
-                                        <rect key="frame" x="285" y="64" width="20" height="22"/>
-                                        <state key="normal" image="remove"/>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-3n-FNe">
-                                        <rect key="frame" x="0.0" y="200" width="320" height="43"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqn-12-agt">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="490"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location limited to available surveillance data in South Africa. Choose your closest location " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-U0-8yE" userLabel="Location limited to available surveillance data in South Africa. Choose your closest location">
-                                                <rect key="frame" x="20" y="0.0" width="280" height="43"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.72141474490000002" green="0.72116762400000001" blue="0.74595600370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-ma-I6U" userLabel="headerView" customClass="CommonTitleHeaderView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="vM3-es-yCi"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Search antibiotic susceptibility information. Not intended to guide empiric treatment"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="data_w"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" red="1" green="0.15686274509803921" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-6f-Kir" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="150" width="320" height="243"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlC-tV-ARY" userLabel="microbeTextField" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="9k2-i0-AeC"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Microbes"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="microbe_g"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-aP-bSo" userLabel="microbeClearButton">
+                                                        <rect key="frame" x="285" y="14" width="20" height="22"/>
+                                                        <state key="normal" image="remove"/>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-uJ-SfM" userLabel="antimicrobials" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Antimicrobials"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="antibiotic_g"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="inputColor">
+                                                                <color key="value" red="0.1137254902" green="0.4549019608" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vx2-d9-ke5" userLabel="sector" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Sector"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="sector_g"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-bb-pry" userLabel="location" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Location"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="location"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
+                                                                <color key="value" red="0.0" green="0.35686274509803922" blue="0.70588235294117641" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4i-Ib-vRp" userLabel="antibioticClearButton">
+                                                        <rect key="frame" x="285" y="64" width="20" height="22"/>
+                                                        <state key="normal" image="remove"/>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-3n-FNe">
+                                                        <rect key="frame" x="0.0" y="200" width="320" height="43"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location limited to available surveillance data in South Africa. Choose your closest location " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-U0-8yE" userLabel="Location limited to available surveillance data in South Africa. Choose your closest location">
+                                                                <rect key="frame" x="20" y="0.0" width="280" height="43"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" red="0.72141474490000002" green="0.72116762400000001" blue="0.74595600370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="uEI-U0-8yE" firstAttribute="leading" secondItem="HyR-3n-FNe" secondAttribute="leading" constant="20" id="eQ0-Jk-AVW"/>
+                                                            <constraint firstItem="uEI-U0-8yE" firstAttribute="top" secondItem="HyR-3n-FNe" secondAttribute="top" id="en1-nm-Hmi"/>
+                                                            <constraint firstAttribute="bottom" secondItem="uEI-U0-8yE" secondAttribute="bottom" id="rra-Up-vKS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="uEI-U0-8yE" secondAttribute="trailing" constant="20" id="wBY-Y5-aty"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="R4i-Ib-vRp" firstAttribute="trailing" secondItem="Wyf-aP-bSo" secondAttribute="trailing" id="1Mb-9J-NCJ"/>
+                                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="2MZ-BZ-wxo"/>
+                                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="5Ky-Ks-OL7"/>
+                                                    <constraint firstItem="Wyf-aP-bSo" firstAttribute="centerY" secondItem="SlC-tV-ARY" secondAttribute="centerY" id="8Bo-bL-eRH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HyR-3n-FNe" secondAttribute="trailing" id="BGG-QU-KYq"/>
+                                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="top" secondItem="Pza-6f-Kir" secondAttribute="top" id="Fwx-Do-lvh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Vx2-d9-ke5" secondAttribute="trailing" id="MNa-3M-2Jf"/>
+                                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="PQa-OE-oNL"/>
+                                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="trailing" secondItem="Wyf-aP-bSo" secondAttribute="trailing" constant="15" id="Pwx-Z9-bN3"/>
+                                                    <constraint firstItem="HyR-3n-FNe" firstAttribute="top" secondItem="zdj-bb-pry" secondAttribute="bottom" id="QNl-MU-M7V"/>
+                                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="QWC-l5-vqQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gvD-uJ-SfM" secondAttribute="trailing" id="Rev-ve-D6f"/>
+                                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="top" secondItem="gvD-uJ-SfM" secondAttribute="bottom" id="S0B-Ih-f1z"/>
+                                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="top" secondItem="SlC-tV-ARY" secondAttribute="bottom" id="WbB-Cx-30b"/>
+                                                    <constraint firstItem="zdj-bb-pry" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="aYu-Ax-JG6"/>
+                                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="b90-Fb-xWZ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HyR-3n-FNe" secondAttribute="bottom" id="cdF-tP-oU6"/>
+                                                    <constraint firstItem="HyR-3n-FNe" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="dVq-ZJ-kE5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zdj-bb-pry" secondAttribute="trailing" id="lpS-nt-UfY"/>
+                                                    <constraint firstItem="R4i-Ib-vRp" firstAttribute="centerY" secondItem="gvD-uJ-SfM" secondAttribute="centerY" id="lzy-TC-2tQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SlC-tV-ARY" secondAttribute="trailing" id="pEP-uV-MFS"/>
+                                                    <constraint firstItem="zdj-bb-pry" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="qiO-dj-QZU"/>
+                                                    <constraint firstItem="zdj-bb-pry" firstAttribute="top" secondItem="Vx2-d9-ke5" secondAttribute="bottom" id="vWW-8c-dk8"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oog-3F-4cJ" customClass="BaseButton" customModule="BugWise" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="434" width="160" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="Zcy-wn-1yc"/>
+                                                </constraints>
+                                                <state key="normal" title="Search"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="uEI-U0-8yE" firstAttribute="leading" secondItem="HyR-3n-FNe" secondAttribute="leading" constant="20" id="eQ0-Jk-AVW"/>
-                                            <constraint firstItem="uEI-U0-8yE" firstAttribute="top" secondItem="HyR-3n-FNe" secondAttribute="top" id="en1-nm-Hmi"/>
-                                            <constraint firstAttribute="bottom" secondItem="uEI-U0-8yE" secondAttribute="bottom" id="rra-Up-vKS"/>
-                                            <constraint firstAttribute="trailing" secondItem="uEI-U0-8yE" secondAttribute="trailing" constant="20" id="wBY-Y5-aty"/>
+                                            <constraint firstAttribute="bottom" secondItem="oog-3F-4cJ" secondAttribute="bottom" constant="20" id="B63-TL-pEY"/>
+                                            <constraint firstItem="ClN-ma-I6U" firstAttribute="leading" secondItem="vqn-12-agt" secondAttribute="leading" id="Kqb-ux-BnP"/>
+                                            <constraint firstItem="Pza-6f-Kir" firstAttribute="top" secondItem="ClN-ma-I6U" secondAttribute="bottom" id="OPd-iW-igX"/>
+                                            <constraint firstItem="Pza-6f-Kir" firstAttribute="leading" secondItem="vqn-12-agt" secondAttribute="leading" id="RT3-h6-zK2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pza-6f-Kir" secondAttribute="trailing" id="Sdd-MW-Jy1"/>
+                                            <constraint firstItem="oog-3F-4cJ" firstAttribute="centerX" secondItem="vqn-12-agt" secondAttribute="centerX" id="bC8-ai-j8K"/>
+                                            <constraint firstAttribute="trailing" secondItem="ClN-ma-I6U" secondAttribute="trailing" id="fc5-2Y-l5G"/>
+                                            <constraint firstItem="ClN-ma-I6U" firstAttribute="top" secondItem="vqn-12-agt" secondAttribute="top" id="gxd-X9-ny6"/>
+                                            <constraint firstAttribute="height" constant="490" id="nOa-2f-Rje"/>
+                                            <constraint firstItem="Pza-6f-Kir" firstAttribute="width" secondItem="vqn-12-agt" secondAttribute="width" id="pES-bJ-3RV"/>
+                                            <constraint firstItem="oog-3F-4cJ" firstAttribute="width" secondItem="vqn-12-agt" secondAttribute="width" multiplier="0.5" id="vVl-S1-hDl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="R4i-Ib-vRp" firstAttribute="trailing" secondItem="Wyf-aP-bSo" secondAttribute="trailing" id="1Mb-9J-NCJ"/>
-                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="2MZ-BZ-wxo"/>
-                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="5Ky-Ks-OL7"/>
-                                    <constraint firstItem="Wyf-aP-bSo" firstAttribute="centerY" secondItem="SlC-tV-ARY" secondAttribute="centerY" id="8Bo-bL-eRH"/>
-                                    <constraint firstAttribute="trailing" secondItem="HyR-3n-FNe" secondAttribute="trailing" id="BGG-QU-KYq"/>
-                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="top" secondItem="Pza-6f-Kir" secondAttribute="top" id="Fwx-Do-lvh"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vx2-d9-ke5" secondAttribute="trailing" id="MNa-3M-2Jf"/>
-                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="PQa-OE-oNL"/>
-                                    <constraint firstItem="SlC-tV-ARY" firstAttribute="trailing" secondItem="Wyf-aP-bSo" secondAttribute="trailing" constant="15" id="Pwx-Z9-bN3"/>
-                                    <constraint firstItem="HyR-3n-FNe" firstAttribute="top" secondItem="zdj-bb-pry" secondAttribute="bottom" id="QNl-MU-M7V"/>
-                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="QWC-l5-vqQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="gvD-uJ-SfM" secondAttribute="trailing" id="Rev-ve-D6f"/>
-                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="top" secondItem="gvD-uJ-SfM" secondAttribute="bottom" id="S0B-Ih-f1z"/>
-                                    <constraint firstItem="gvD-uJ-SfM" firstAttribute="top" secondItem="SlC-tV-ARY" secondAttribute="bottom" id="WbB-Cx-30b"/>
-                                    <constraint firstItem="zdj-bb-pry" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="aYu-Ax-JG6"/>
-                                    <constraint firstItem="Vx2-d9-ke5" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="b90-Fb-xWZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="HyR-3n-FNe" secondAttribute="bottom" id="cdF-tP-oU6"/>
-                                    <constraint firstItem="HyR-3n-FNe" firstAttribute="leading" secondItem="Pza-6f-Kir" secondAttribute="leading" id="dVq-ZJ-kE5"/>
-                                    <constraint firstAttribute="trailing" secondItem="zdj-bb-pry" secondAttribute="trailing" id="lpS-nt-UfY"/>
-                                    <constraint firstItem="R4i-Ib-vRp" firstAttribute="centerY" secondItem="gvD-uJ-SfM" secondAttribute="centerY" id="lzy-TC-2tQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="SlC-tV-ARY" secondAttribute="trailing" id="pEP-uV-MFS"/>
-                                    <constraint firstItem="zdj-bb-pry" firstAttribute="height" secondItem="SlC-tV-ARY" secondAttribute="height" id="qiO-dj-QZU"/>
-                                    <constraint firstItem="zdj-bb-pry" firstAttribute="top" secondItem="Vx2-d9-ke5" secondAttribute="bottom" id="vWW-8c-dk8"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqn-12-agt" secondAttribute="bottom" id="Lu3-lo-7py"/>
+                                    <constraint firstItem="vqn-12-agt" firstAttribute="leading" secondItem="FdX-PA-qJC" secondAttribute="leading" id="hp9-vD-1Tt"/>
+                                    <constraint firstAttribute="trailing" secondItem="vqn-12-agt" secondAttribute="trailing" id="ogW-dd-fog"/>
+                                    <constraint firstItem="vqn-12-agt" firstAttribute="top" secondItem="FdX-PA-qJC" secondAttribute="top" id="vv2-aR-qbj"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oog-3F-4cJ" customClass="BaseButton" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="80" y="502" width="160" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Zcy-wn-1yc"/>
-                                </constraints>
-                                <state key="normal" title="Search"/>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rv6-OL-Pxf" firstAttribute="top" relation="lessThanOrEqual" secondItem="oog-3F-4cJ" secondAttribute="bottom" constant="30" id="5ha-9L-e9y"/>
-                            <constraint firstItem="oog-3F-4cJ" firstAttribute="centerX" secondItem="uEw-mk-iiq" secondAttribute="centerX" id="Lnh-JO-OFg"/>
-                            <constraint firstItem="ClN-ma-I6U" firstAttribute="top" secondItem="uEw-mk-iiq" secondAttribute="top" id="TdC-lM-47o"/>
-                            <constraint firstItem="ClN-ma-I6U" firstAttribute="leading" secondItem="uEw-mk-iiq" secondAttribute="leading" id="UlG-eY-7hG"/>
-                            <constraint firstItem="oog-3F-4cJ" firstAttribute="width" secondItem="uEw-mk-iiq" secondAttribute="width" multiplier="0.5" id="Umc-8i-Yjw"/>
-                            <constraint firstItem="Pza-6f-Kir" firstAttribute="leading" secondItem="uEw-mk-iiq" secondAttribute="leading" id="e8p-Ky-4Xr"/>
-                            <constraint firstAttribute="trailing" secondItem="Pza-6f-Kir" secondAttribute="trailing" id="k3j-Bw-xp8"/>
-                            <constraint firstAttribute="trailing" secondItem="ClN-ma-I6U" secondAttribute="trailing" id="mpJ-nZ-HX0"/>
-                            <constraint firstItem="Pza-6f-Kir" firstAttribute="top" secondItem="ClN-ma-I6U" secondAttribute="bottom" id="yXJ-zq-qQA"/>
+                            <constraint firstItem="vqn-12-agt" firstAttribute="width" secondItem="uEw-mk-iiq" secondAttribute="width" id="Caj-yz-Dei"/>
+                            <constraint firstItem="Rv6-OL-Pxf" firstAttribute="top" secondItem="FdX-PA-qJC" secondAttribute="bottom" id="E5I-ph-GGd"/>
+                            <constraint firstItem="FdX-PA-qJC" firstAttribute="top" secondItem="uEw-mk-iiq" secondAttribute="top" id="RII-Yb-ax6"/>
+                            <constraint firstAttribute="trailing" secondItem="FdX-PA-qJC" secondAttribute="trailing" id="c8J-6X-VEF"/>
+                            <constraint firstItem="FdX-PA-qJC" firstAttribute="leading" secondItem="uEw-mk-iiq" secondAttribute="leading" id="hdW-kW-ouM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="antibioticClearButton" destination="R4i-Ib-vRp" id="I4P-m0-5OC"/>
                         <outlet property="antimicrobialField" destination="gvD-uJ-SfM" id="A6P-Cy-xGh"/>
+                        <outlet property="contentHeightConstraint" destination="nOa-2f-Rje" id="X7E-BA-cYK"/>
                         <outlet property="locationField" destination="zdj-bb-pry" id="HnQ-PN-h8r"/>
                         <outlet property="microbeClearButton" destination="Wyf-aP-bSo" id="zNc-xM-UqY"/>
                         <outlet property="microbeField" destination="SlC-tV-ARY" id="jSO-Fz-3Bc"/>
+                        <outlet property="scrollView" destination="FdX-PA-qJC" id="bnZ-Xn-a5K"/>
                         <outlet property="searchButton" destination="oog-3F-4cJ" id="Ufq-Pp-mRi"/>
                         <outlet property="sectorField" destination="Vx2-d9-ke5" id="oCG-St-kKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xw-JQ-uHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="40"/>
+            <point key="canvasLocation" x="-204.375" y="40"/>
         </scene>
         <!--Surveillance Detail Controller-->
         <scene sceneID="Vre-R3-eRT">
@@ -178,12 +206,12 @@
                         <viewControllerLayoutGuide type="bottom" id="U4J-RO-Agq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2fi-cP-Nwi" customClass="DefaultBGView" customModule="BugWise" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U81-MW-5va" customClass="PlaceholderView" customModule="BugWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="msgText" value="No data currently available in South Africa for your search criteria. Please try again"/>
                                 </userDefinedRuntimeAttributes>
@@ -265,7 +293,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-xd-76n">
-                                <rect key="frame" x="0.0" y="140" width="320" height="428"/>
+                                <rect key="frame" x="0.0" y="140" width="320" height="340"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -285,7 +313,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3F-Yk-r3W">
-                                                    <rect key="frame" x="245" y="5" width="103" height="21"/>
+                                                    <rect key="frame" x="284" y="5" width="103" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="103" id="4rK-Cw-8IT"/>
                                                     </constraints>
@@ -294,13 +322,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2m-yt-jaf">
-                                                    <rect key="frame" x="5" y="29.5" width="365" height="20.5"/>
+                                                    <rect key="frame" x="5" y="29.5" width="404" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDh-rE-pKW">
-                                                    <rect key="frame" x="190" y="5" width="47.5" height="21"/>
+                                                    <rect key="frame" x="229" y="5" width="47.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="47.5" id="SHN-2S-HQX"/>
                                                     </constraints>
@@ -337,17 +365,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U81-MW-5va" firstAttribute="height" secondItem="2fi-cP-Nwi" secondAttribute="height" id="Zj2-jD-10n"/>
+                            <constraint firstItem="U81-MW-5va" firstAttribute="top" secondItem="2fi-cP-Nwi" secondAttribute="top" id="W6a-iD-ruV"/>
+                            <constraint firstAttribute="trailing" secondItem="U81-MW-5va" secondAttribute="trailing" id="agK-Wl-yaV"/>
                             <constraint firstItem="U4J-RO-Agq" firstAttribute="top" secondItem="YeI-xd-76n" secondAttribute="bottom" id="bAV-an-3x5"/>
-                            <constraint firstItem="U81-MW-5va" firstAttribute="centerY" secondItem="2fi-cP-Nwi" secondAttribute="centerY" id="hi0-2E-cDt"/>
-                            <constraint firstItem="U81-MW-5va" firstAttribute="centerX" secondItem="2fi-cP-Nwi" secondAttribute="centerX" id="hqP-8b-gUs"/>
                             <constraint firstAttribute="trailing" secondItem="YeI-xd-76n" secondAttribute="trailing" id="ic5-po-z7A"/>
                             <constraint firstItem="Q4u-4D-avC" firstAttribute="leading" secondItem="2fi-cP-Nwi" secondAttribute="leading" id="j4I-Pd-flU"/>
                             <constraint firstAttribute="trailing" secondItem="Q4u-4D-avC" secondAttribute="trailing" id="n5Q-za-mjG"/>
                             <constraint firstItem="Q4u-4D-avC" firstAttribute="top" secondItem="2fi-cP-Nwi" secondAttribute="top" id="oDh-sR-Vvw"/>
+                            <constraint firstItem="U81-MW-5va" firstAttribute="width" secondItem="2fi-cP-Nwi" secondAttribute="width" id="pxg-DP-FmE"/>
                             <constraint firstItem="YeI-xd-76n" firstAttribute="leading" secondItem="2fi-cP-Nwi" secondAttribute="leading" id="rlo-j5-G5G"/>
-                            <constraint firstItem="U81-MW-5va" firstAttribute="width" secondItem="2fi-cP-Nwi" secondAttribute="width" id="tQJ-qz-aKL"/>
+                            <constraint firstItem="U81-MW-5va" firstAttribute="leading" secondItem="2fi-cP-Nwi" secondAttribute="leading" id="suK-e9-eMK"/>
                             <constraint firstItem="YeI-xd-76n" firstAttribute="top" secondItem="Q4u-4D-avC" secondAttribute="bottom" id="u4K-Ub-r2D"/>
+                            <constraint firstAttribute="bottom" secondItem="U81-MW-5va" secondAttribute="bottom" id="y3m-6Z-qLr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -360,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5WL-RM-rzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="775.86206896551732"/>
+            <point key="canvasLocation" x="-204.375" y="775.35211267605632"/>
         </scene>
     </scenes>
     <resources>

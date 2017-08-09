@@ -30,10 +30,22 @@ class SurveillanceDataController: BaseViewController {
     
     @IBOutlet weak var searchButton: BaseButton!
     
+    @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
     private let disposeBag = DisposeBag()
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Appstore hotFix for iPhone 4 layout
+        let viewHeight = view.frame.size.height - 20 - 40 - 39
+        
+        if viewHeight <= 381 {
+            contentHeightConstraint.constant = 450
+        } else {
+            scrollView.isScrollEnabled = false
+            contentHeightConstraint.constant = viewHeight
+        }
         
         bindUI()
     }

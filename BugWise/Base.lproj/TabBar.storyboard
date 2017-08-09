@@ -592,6 +592,7 @@ All copyrights in respect of the information conveyed to the user on this Applic
                         <outlet property="agreeButton" destination="wmV-b8-Ss9" id="b1c-Zv-T43"/>
                         <outlet property="disagreeButton" destination="aRV-dB-4Jh" id="V3b-km-iZi"/>
                         <outlet property="disclaimerView" destination="ikR-Xp-X4P" id="PVa-26-OcU"/>
+                        <outlet property="textView" destination="5sd-98-60z" id="21G-BT-Ziw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTa-vA-VR2" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -111,3 +111,16 @@ func showDisclaimerAlert(preview: Bool = false, agreeAction: (() -> ())? = nil, 
     
     disclaimerController.showAnimated()
 }
+
+func showNotificationAlert(_ data: [AnyHashable : Any]) {
+    
+    guard let notification = data["aps"] as? [String: Any] else { return }
+    
+    guard let text = notification["alert"] as? String else { return }
+    
+    guard let window = UIApplication.shared.keyWindow else { return }
+    
+    let notificationAlert = alert(title: "Notification", message: text)
+    
+    window.topMostController()?.present(notificationAlert, animated: true, completion: nil)
+}

@@ -43,6 +43,7 @@
 		612187891F082BBA0046857C /* Interactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612187881F082BBA0046857C /* Interactions.storyboard */; };
 		6121878B1F082CF20046857C /* CommonTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121878A1F082CF20046857C /* CommonTitleHeaderView.swift */; };
 		6121878F1F0830B10046857C /* CommonTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6121878E1F0830B10046857C /* CommonTitleHeaderView.xib */; };
+		614628151F40D63A009A7D80 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614628141F40D63A009A7D80 /* UserNotifications.framework */; };
 		614ABB3F1EF575DC00215820 /* MicrobeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614ABB3E1EF575DC00215820 /* MicrobeEntity.swift */; };
 		6152807A1EF0540600D8BE7D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 615280791EF0540600D8BE7D /* Search.storyboard */; };
 		6152807C1EF0574200D8BE7D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6152807B1EF0574200D8BE7D /* SearchController.swift */; };
@@ -219,6 +220,8 @@
 		612187881F082BBA0046857C /* Interactions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interactions.storyboard; sourceTree = "<group>"; };
 		6121878A1F082CF20046857C /* CommonTitleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTitleHeaderView.swift; sourceTree = "<group>"; };
 		6121878E1F0830B10046857C /* CommonTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTitleHeaderView.xib; sourceTree = "<group>"; };
+		614628131F40D5EC009A7D80 /* BugWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BugWise.entitlements; sourceTree = "<group>"; };
+		614628141F40D63A009A7D80 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		614ABB3E1EF575DC00215820 /* MicrobeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrobeEntity.swift; sourceTree = "<group>"; };
 		615280791EF0540600D8BE7D /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		6152807B1EF0574200D8BE7D /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -358,6 +361,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				614628151F40D63A009A7D80 /* UserNotifications.framework in Frameworks */,
 				8E92A112896D7B384DE28CBB /* Pods_BugWise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +667,7 @@
 		61B221651EDD3532003CCF3E /* BugWise */ = {
 			isa = PBXGroup;
 			children = (
+				614628131F40D5EC009A7D80 /* BugWise.entitlements */,
 				61EC7CE61EE1F07500E04DBD /* AppCoordinator */,
 				61B221CF1EDF4DB7003CCF3E /* BusinessLogic */,
 				61B221BC1EDF04A8003CCF3E /* Application */,
@@ -897,6 +902,7 @@
 		F7392B47B0E3FD57C3E1C5ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				614628141F40D63A009A7D80 /* UserNotifications.framework */,
 				ACDDF8911E9A0916C1A737A8 /* Pods_BugWise.framework */,
 				DD0EC257501C7EA78B922024 /* Pods_BugWiseTests.framework */,
 				FF861C051A3F7B6D23051E58 /* Pods_BugWiseUITests.framework */,
@@ -983,6 +989,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = J3QB7455QC;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					61B221781EDD3533003CCF3E = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1485,6 +1496,7 @@
 			baseConfigurationReference = 5FFDBBCE0D3E3E15BDA3B519 /* Pods-BugWise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BugWise/BugWise.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = J3QB7455QC;
 				INFOPLIST_FILE = BugWise/Info.plist;
@@ -1492,8 +1504,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pharmadynamicsappdev.BugWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c1b2b36-0f40-4539-8aab-3d6c89dbed93";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.pharmadynamicsappdev.BugWise";
+				PROVISIONING_PROFILE = "d1f3cde9-56f8-4c0f-b44d-8c6cc23eee24";
+				PROVISIONING_PROFILE_SPECIFIER = BugWiseAdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "BugWise/BugWise-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1505,6 +1517,7 @@
 			baseConfigurationReference = 93EB1835331BFA7A2DBFBF59 /* Pods-BugWise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BugWise/BugWise.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = J3QB7455QC;
 				INFOPLIST_FILE = BugWise/Info.plist;
@@ -1512,8 +1525,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pharmadynamicsappdev.BugWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c1b2b36-0f40-4539-8aab-3d6c89dbed93";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.pharmadynamicsappdev.BugWise";
+				PROVISIONING_PROFILE = "d1f3cde9-56f8-4c0f-b44d-8c6cc23eee24";
+				PROVISIONING_PROFILE_SPECIFIER = BugWiseAdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "BugWise/BugWise-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

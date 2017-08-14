@@ -27,14 +27,13 @@ final class PinCodeViewController: UIViewController, PinCodeView {
     @IBOutlet weak var signInButton: BaseOrangeButton!
     
     @IBOutlet weak var requestCodeButton: BaseRedButton!
+    @IBOutlet weak var pushNotificationTextField: UITextField!
+    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         
         hintLabel.textColor = CommonAppearance.blueColor
-        
-        //TODO:- Remove it
-//        searchTextField.text = "04E4523A6C45C287"
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         view.addGestureRecognizer(tap)
@@ -54,10 +53,22 @@ final class PinCodeViewController: UIViewController, PinCodeView {
             }).addDisposableTo(disposeBag)
         
         textFieldSetup()
+        
+        setupDebugHelpers()
     }
 
     
     // MARK:- Private
+    
+    private func setupDebugHelpers() {
+        if isDebug {
+            searchTextField.text = "04E4523A6C45C287"
+            pushNotificationTextField.text = BusinessModel.shared.pushNotificationToken
+        } else {
+            pushNotificationTextField.isHidden = true
+        }
+    }
+    
     @objc private func handleTap(sender: UITapGestureRecognizer? = nil) {
         if searchTextField.isFirstResponder {
             view.endEditing(false)

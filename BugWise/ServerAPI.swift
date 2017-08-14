@@ -44,7 +44,7 @@ extension API: TargetType {
     
     var parameters: [String: Any]? {
         switch self {
-        case .authorization(let pincode, let name, let surename, let phone, let mail, let location, let userType, let sector, let inHospital ): return ["PDCode": pincode, "FirstName": name, "Surname": surename, "MobileNumber": phone, "Email": mail, "Location": location, "UserType": userType, "Sector": sector, "InHospital": inHospital]
+        case .authorization(let pincode, let name, let surename, let phone, let mail, let location, let userType, let sector, let inHospital ): return ["PDCode": pincode, "FirstName": name, "Surname": surename, "MobileNumber": phone, "Email": mail, "Location": location, "UserType": userType, "Sector": sector, "InHospital": inHospital, "PushToken": BusinessModel.shared.pushNotificationToken ?? ""]
         case .offlineContent: return nil
         case .antibioticDetails(let id): return ["lst" : id]
         case .surviallanceData(let requestEntity):

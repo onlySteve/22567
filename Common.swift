@@ -117,3 +117,14 @@ func hideHud() {
     }
 }
 
+var isDebug: Bool = {
+    guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else { return false }
+    
+    let url = URL(fileURLWithPath: path)
+    guard let data = try? Data(contentsOf: url) else { return false }
+    guard let plist = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String: Any] else { return false }
+    
+    guard let debugEnabled = plist?["isDebug"] as? Bool else { return false }
+    
+    return debugEnabled
+}()

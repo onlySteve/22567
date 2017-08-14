@@ -19,6 +19,16 @@ class BusinessModel {
     
     let usr: UserModel = UserModel()
     
+    var pushNotificationToken: String? {
+        get{
+            return UserDefaults.standard.string(forKey: "UsrPushNotitficationToken")
+        }
+        set(newToken){
+            UserDefaults.standard.set(newToken, forKey: "UsrPushNotitficationToken")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     var notReachableNetwork: Bool {
         let reachabil = Reachability()!
         

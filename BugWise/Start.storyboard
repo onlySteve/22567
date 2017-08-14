@@ -128,10 +128,19 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-wF-fO9">
                                         <rect key="frame" x="127" y="58.5" width="121" height="130"/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeO-aX-qWy">
+                                        <rect key="frame" x="8" y="8" width="359" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="WeO-aX-qWy" firstAttribute="top" secondItem="g5A-rD-zta" secondAttribute="top" constant="8" id="Uet-Vu-Mso"/>
                                     <constraint firstItem="g6K-wF-fO9" firstAttribute="centerY" secondItem="g5A-rD-zta" secondAttribute="centerY" id="gpc-G8-WgL"/>
+                                    <constraint firstAttribute="trailing" secondItem="WeO-aX-qWy" secondAttribute="trailing" constant="8" id="p86-PJ-HfR"/>
+                                    <constraint firstItem="WeO-aX-qWy" firstAttribute="leading" secondItem="g5A-rD-zta" secondAttribute="leading" constant="8" id="vI6-lu-B0k"/>
                                     <constraint firstItem="g6K-wF-fO9" firstAttribute="centerX" secondItem="g5A-rD-zta" secondAttribute="centerX" id="wtq-db-noc"/>
                                 </constraints>
                             </view>
@@ -230,6 +239,7 @@
                     </view>
                     <connections>
                         <outlet property="hintLabel" destination="wcd-VF-agn" id="cBZ-hl-iv5"/>
+                        <outlet property="pushNotificationTextField" destination="WeO-aX-qWy" id="5ir-Pz-Xed"/>
                         <outlet property="requestCodeButton" destination="Hoj-3y-q3m" id="4B5-ON-UJe"/>
                         <outlet property="searchTextField" destination="pSM-8e-XBp" id="TeK-82-7n3"/>
                         <outlet property="signInButton" destination="Lix-Pz-4HU" id="Mf4-P0-0pS"/>

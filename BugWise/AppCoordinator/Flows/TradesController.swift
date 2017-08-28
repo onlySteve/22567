@@ -12,11 +12,12 @@ import RealmSwift
 import RxSwift
 import RxCocoa
 
+
 class TradesController: BaseViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var items = [TradeEntity]()
+    var items = List<TradeEntity>()
     
     fileprivate let disposeBag = DisposeBag()
     
@@ -43,14 +44,14 @@ class TradesController: BaseViewController, UITableViewDelegate {
             }.addDisposableTo(disposeBag)
     }
         
-    private func generatePriceList(trades: Array<TradeEntity>) -> Array<TradeStruct> {
+    private func generatePriceList(trades: List<TradeEntity>) -> Array<TradeStruct> {
         var resultArray = Array<TradeStruct>()
         
         for trade in trades {
             
             let title = String(format: "%@ %@ %@\n(%@)", trade.title ?? "", trade.strength ?? "", trade.form ?? "", trade.manuf ?? "")
             
-            for price in trade.price.toArray() {
+            for price in trade.price {
                 resultArray.append(TradeStruct(title: title, size: price.packageSize ?? "--", price: price.price ?? ""))
             }
         }
@@ -71,7 +72,7 @@ class TradesController: BaseViewController, UITableViewDelegate {
 }
 
 extension TradesController {
-    static func controller(items:[TradeEntity]) -> TradesController {
+    static func controller(items:List<TradeEntity>) -> TradesController {
         let controller = TradesController.controllerFromStoryboard(.search)
         controller.items = items
         return controller

@@ -9,13 +9,14 @@
 import RxSwift
 import RxCocoa
 import RxGesture
-
+import ObjectMapper
+import RealmSwift
 
 class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var onTradeItemSelect: (([TradeEntity]) -> ())?
+    var onTradeItemSelect: ((List<TradeEntity>) -> ())?
     var onAssociatedItemSelect: ((SearchModuleItem) -> ())?
     var onSurveillanceDataSelect: ((SearchModuleItem?) -> ())?
     var onFavoriteItemSelect: ((Bool)->())?
@@ -274,7 +275,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
             let antibioticEntity = entity as! AntibioticEntity
             
             let tradeAction: voidBlock = { [weak self] in
-                self?.onTradeItemSelect?(antibioticEntity.trades.toArray())
+                self?.onTradeItemSelect?(antibioticEntity.trades)
             }
             
             let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, title: antibioticEntity.heading, subtitle: "Bug Wise provides drug references. For guidelines see Infections (where available)", tradeAction:tradeAction)], selected: false)

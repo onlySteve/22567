@@ -179,7 +179,7 @@ final class HomeCoordinator: BaseCoordinator {
     }
     
     
-    private func showTrades(_ trades:[TradeEntity]) {
+    private func showTrades(_ trades:List<TradeEntity>) {
         router.push(TradesController.controller(items: trades))
     }
     

@@ -47,7 +47,7 @@ final class TradeEntity: Object, Mappable {
         }
         
         
-        id = "\(title) + \(strength) + \(form) + \(schedule) + \(manuf)".hash
+        id = ("\(String(describing: title)) + \(String(describing: strength)) + \(String(describing: form)) + \(String(describing: schedule)) + \(String(describing: manuf))").hash
     }
     
     override class func primaryKey() -> String? {
@@ -73,7 +73,7 @@ final class PriceEntity: Object, Mappable {
         packageSize <- map["Packsize"]
         price <- map["Price"]
         
-        id = "\(packageSize) + \(price)".hash
+        id = ("\(String(describing: packageSize)) + \(String(describing: price))").hash
     }
     
     override class func primaryKey() -> String? {

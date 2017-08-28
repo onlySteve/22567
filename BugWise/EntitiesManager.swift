@@ -18,6 +18,8 @@ import RxOptional
 
 final class EntitiesManager {
 
+    var antibioticEntity: AntibioticEntity?
+    
     // MARK:- Private properties
     private let disposeBag = DisposeBag()
     
@@ -121,7 +123,11 @@ final class EntitiesManager {
     }
     
     func antibioticCached(id: String) -> AntibioticEntity? {
-        return realm?.objects(AntibioticEntity.self).filter("parentID == %@", id).first
+        guard let antibiotic = antibioticEntity else {
+            return nil
+        }
+        return (antibiotic.parentID == id) ? antibioticEntity : nil
+//        return realm?.objects(AntibioticEntity.self).filter("parentID == %@", id).first
     }
     
     func antibiotic(id: String, onSucces:@escaping ((AntibioticEntity?) -> Void), onFail:voidBlock?) {
@@ -141,9 +147,11 @@ final class EntitiesManager {
                     
                     entity.parentID = id
                     
-                    try! self.realm?.write {
-                        self.realm?.add(entity, update: true)
-                    }
+                    self.antibioticEntity = entity
+                    
+//                    try! self.realm?.write {
+//                        self.realm?.add(entity, update: true)
+//                    }
                     
                     onSucces(entity)
                     

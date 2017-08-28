@@ -77,7 +77,7 @@ class UserModel {
     var sector: Variable<Sector> = Variable(Sector(rawValue: UserDefaults.standard.string(forKey: synchronizeUsr.sector.rawValue) ?? Sector.privateType.rawValue)!)
     var workInHospital: Variable<Bool> = Variable(UserDefaults.standard.bool(forKey: synchronizeUsr.workInHospital.rawValue))
     var loggedIn: ReplaySubject<Bool> = ReplaySubject<Bool>.create(bufferSize: 1)
-    var notificationsEnabled: Variable<Bool> = Variable(UserDefaults.standard.bool(forKey: synchronizeUsr.notificationsEnabled.rawValue))
+    var notificationsEnabled: Variable<Bool> = Variable((UserDefaults.standard.object(forKey: synchronizeUsr.notificationsEnabled.rawValue) != nil) ? UserDefaults.standard.bool(forKey: synchronizeUsr.notificationsEnabled.rawValue) : true)
     var providerMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.providerMD5.rawValue))
     var patientMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.patientMD5.rawValue))
     

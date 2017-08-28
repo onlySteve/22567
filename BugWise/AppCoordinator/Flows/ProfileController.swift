@@ -185,7 +185,7 @@ final class ProfileViewController: BaseViewController, ProfileView {
         notificationButton.rx
             .tap
             .subscribe(onNext: { [weak self] _ in
-                let notificationsAlert = alert(title: "Notifications", message: "We need this information if you would like to be informed about general alerts")
+                let notificationsAlert = alert(title: "Notifications", message: "Enable notifications to keep up to date on the latest surveillance data and general alerts")
                 self?.present(notificationsAlert, animated: false, completion: nil)
             }).addDisposableTo(disposeBag)
         

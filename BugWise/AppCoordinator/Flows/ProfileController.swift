@@ -230,7 +230,7 @@ final class ProfileViewController: BaseViewController, ProfileView {
         
         if BusinessModel.shared.usr.isValidCredentials == false {
             
-            let hintAlert = alert(title: "", message: "We need this information so that you can access the Bug Wise application")
+            let hintAlert = alert(title: "", message: "Please complete all data fields to be able to access the Bug Wise application")
             self.present(hintAlert, animated: true, completion: nil)
             return
         }

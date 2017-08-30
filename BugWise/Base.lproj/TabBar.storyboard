@@ -460,7 +460,7 @@ no favourites data for selected type.</string>
         <!--About-->
         <scene sceneID="Ypx-Fq-CIz">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" title="About" id="pFk-T8-lbj" customClass="AboutViewController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" title="About" automaticallyAdjustsScrollViewInsets="NO" id="pFk-T8-lbj" customClass="AboutViewController" customModule="BugWise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oFW-df-zLP"/>
                         <viewControllerLayoutGuide type="bottom" id="9Tx-VN-2Y3"/>
@@ -469,19 +469,23 @@ no favourites data for selected type.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutContent" translatesAutoresizingMaskIntoConstraints="NO" id="PGM-TM-zjd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-Ov-cYn" customClass="ImageScrollView" customModule="ImageScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PGM-TM-zjd" firstAttribute="leading" secondItem="u4s-U8-o20" secondAttribute="leading" id="0qc-zd-tqU"/>
-                            <constraint firstAttribute="trailing" secondItem="PGM-TM-zjd" secondAttribute="trailing" id="aR1-hs-tha"/>
-                            <constraint firstAttribute="bottom" secondItem="PGM-TM-zjd" secondAttribute="bottom" id="jNy-V1-3Kj"/>
-                            <constraint firstItem="PGM-TM-zjd" firstAttribute="top" secondItem="u4s-U8-o20" secondAttribute="top" id="lRt-EM-ZpQ"/>
+                            <constraint firstItem="Xbz-Ov-cYn" firstAttribute="height" secondItem="u4s-U8-o20" secondAttribute="height" id="1zJ-y0-voy"/>
+                            <constraint firstItem="Xbz-Ov-cYn" firstAttribute="top" secondItem="u4s-U8-o20" secondAttribute="top" id="DDx-7e-zRs"/>
+                            <constraint firstItem="Xbz-Ov-cYn" firstAttribute="leading" secondItem="u4s-U8-o20" secondAttribute="leading" id="DuU-jK-4MR"/>
+                            <constraint firstAttribute="bottom" secondItem="Xbz-Ov-cYn" secondAttribute="bottom" id="M7i-v1-2Xy"/>
+                            <constraint firstAttribute="trailing" secondItem="Xbz-Ov-cYn" secondAttribute="trailing" id="UkO-G5-RtB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="m8R-0Y-LhV"/>
+                    <connections>
+                        <outlet property="imageScrollView" destination="Xbz-Ov-cYn" id="7Mx-tc-v8G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wY-5w-Wog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -696,7 +700,6 @@ All copyrights in respect of the information conveyed to the user on this Applic
         </scene>
     </scenes>
     <resources>
-        <image name="aboutContent" width="720" height="1080"/>
         <image name="email" width="19" height="14"/>
         <image name="location" width="19" height="19"/>
         <image name="nav_disclaimer" width="20" height="22"/>

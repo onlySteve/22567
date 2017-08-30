@@ -7,15 +7,40 @@
 //
 
 import UIKit
+import ImageScrollView
 
 // MARK:- Implementation
 
-final class AboutViewController: BaseViewController {
+final class AboutViewController: BaseViewController, UIScrollViewDelegate {
+    
+    @IBOutlet weak var imageScrollView: ImageScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let image = UIImage(named: "aboutContent.jpg")  else {
+            return
+        }
+        
+        imageScrollView.display(image: image)
     }
+
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+
 }
+
+
 
 extension AboutViewController {
     static func controller() -> AboutViewController {

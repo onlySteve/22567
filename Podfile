@@ -20,6 +20,7 @@ target 'BugWise' do
   pod 'Moya-ObjectMapper'
   pod 'RxOptional'
   pod 'Moya-ObjectMapper/RxSwift'
+  pod 'ImageScrollView'
   
   use_frameworks!
   

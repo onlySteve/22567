@@ -14,6 +14,7 @@ import RxDataSources
 import RxCocoa
 import Moya
 
+
 class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableViewTopOffset: NSLayoutConstraint!
@@ -25,7 +26,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     var isModalPresentation: Bool?
     
     var onSearchBarCancelSelect: voidBlock?
-    var onSearchItemSelect: ((SearchEntity) -> ())?
+    var onSearchItemSelect: ((SearchModuleItem) -> ())?
     
     private var provider: RxMoyaProvider<API>!
     private var searchTrackerModel: SearchTrackerModel!
@@ -38,7 +39,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
             .distinctUntilChanged()
     }
 
-    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SearchEntity>>()
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SearchModuleItem>>()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -65,7 +66,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     
     private func setupTableView() {
         
-        dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchEntity) in
+        dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchModuleItem) in
             let cell = tv.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
@@ -84,7 +85,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         
         tableView
             .rx
-            .modelSelected(SearchEntity.self)
+            .modelSelected(SearchModuleItem.self)
             .subscribe(onNext: { [weak self] searchItem  in
                 self?.onSearchItemSelect?(searchItem)
             }).addDisposableTo(disposeBag)
@@ -94,17 +95,6 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     }
     
     private func setupSearch() {
-        
-        if let cancelBlock = onSearchBarCancelSelect {
-            searchBar.showsCancelButton = true
-            
-            searchBar
-                .rx
-                .cancelButtonClicked
-                .subscribe { _ in
-                    cancelBlock()
-                }.addDisposableTo(self.disposeBag)
-        }
         
         // First part of the puzzle, create our Provider
         provider = RxMoyaProvider<API>(endpointClosure: EntitiesManager.shared.endpointClosure)
@@ -122,12 +112,27 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
             }
             .bindTo(tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
+        
+        if isModalPresentation == false && onSearchBarCancelSelect == nil {
+            return
+        }
+        
+        if let cancelBlock = onSearchBarCancelSelect {
+            searchBar.showsCancelButton = true
+            
+            searchBar
+                .rx
+                .cancelButtonClicked
+                .subscribe { _ in
+                    cancelBlock()
+                }.addDisposableTo(self.disposeBag)
+        }
     }
     
     
-    private func generateSections(input: [SearchEntity]?) -> [SectionModel<String, SearchEntity>] {
+    private func generateSections(input: [SearchModuleItem]?) -> [SectionModel<String, SearchModuleItem>] {
         
-        var resultArray = [SectionModel<String, SearchEntity>]()
+        var resultArray = [SectionModel<String, SearchModuleItem>]()
         
         guard let input = input else { return resultArray }
         

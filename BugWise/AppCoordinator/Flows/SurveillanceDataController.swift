@@ -161,7 +161,7 @@ class SurveillanceDataController: BaseViewController {
                     return
                 }
                 
-                guard let items = EntitiesManager.shared.searcItems(type: searchType) else {
+                guard let items = EntitiesManager.shared.searcItemsOfflineData(type: searchType) else {
                     completion(nil)
                     return
                 }

@@ -115,7 +115,7 @@ final class HomeViewController: BaseViewController, HomeView, UITableViewDelegat
         searchController?.onSearchItemSelect =  onSearchItemSelect
         guard let search = searchController  else { return }
         
-        guard let items = EntitiesManager.shared.searcItems() else { return }
+        guard let items = EntitiesManager.shared.searcItemsOfflineData() else { return }
 
         search.items = items
         

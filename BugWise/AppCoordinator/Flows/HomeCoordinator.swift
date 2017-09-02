@@ -31,7 +31,7 @@ final class HomeCoordinator: BaseCoordinator {
                 self.showSearch(.condition, title: menuItem.title)
                 break
             case .antibiotics:
-                self.showSearch(.drug, title: menuItem.title)
+                self.showOnlineSearch(.drug, title: menuItem.title)
                 break
             case .microbes:
                 self.showSearch(.microbe, title: menuItem.title)
@@ -85,7 +85,7 @@ final class HomeCoordinator: BaseCoordinator {
     
     private func showSearch(_ type: ModuleSearchType, title: String) {
         
-        guard let items = EntitiesManager.shared.searcItems(type: type) else { return }
+        guard let items = EntitiesManager.shared.searcItemsOfflineData(type: type) else { return }
         
         let search = SearchController.controller()
         
@@ -119,6 +119,51 @@ final class HomeCoordinator: BaseCoordinator {
         router.push(search)
     }
     
+    func showOnlineSearch(_ type: ModuleSearchType, title: String) {
+        
+        if (BusinessModel.shared.notReachableNetwork) {
+            showNetworkReachabilityAlert()
+            return
+        }
+        
+        let search = SearchOnlinceController.controller()
+        
+        search.onSearchItemSelect = { searchItem in
+            
+            searchItem.typeEnum = type
+            searchItem.isOfflineData = false
+                
+            EntitiesManager.shared.saveSearchModuleItem(searchItem)
+            
+            switch searchItem.typeEnum {
+            case .condition:
+                self.showOfflineDetailed(searchItem: searchItem)
+                break
+            case .drug:
+                
+                if (BusinessModel.shared.notReachableNetwork) {
+                    showNetworkReachabilityAlert()
+                    break
+                }
+                
+                showHud()
+                EntitiesManager.shared.antibiotic(id: searchItem.id, onSucces: { (entity) in
+                    hideHud()
+                    self.showOfflineDetailed(searchItem: searchItem)
+                }, onFail: {
+                    showHud(success: false, time: 0.3, message: "Fail", completion: nil)
+                })
+                break
+            case .microbe:
+                self.showOfflineDetailed(searchItem: searchItem)
+                break
+            }
+        }
+        
+        search.title = title
+        
+        router.push(search)
+    }
     
     func showDetailedFromFavourite(searchItem: SearchModuleItem?) {
         NotificationCenter.default.post(name: showHomeTabNotificationName, object: nil)
@@ -152,7 +197,6 @@ final class HomeCoordinator: BaseCoordinator {
         let controller = OfflineDataDetailedController.controllerFromStoryboard(.search)
         
         controller.entity = entity
-        controller.title = searchItem.title
         
         controller.onTradeItemSelect = { [weak self] (trades) in
             self?.showTrades(trades)

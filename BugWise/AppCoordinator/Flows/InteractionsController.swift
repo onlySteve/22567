@@ -18,7 +18,7 @@ class InteractionsController: BaseViewController, UITableViewDelegate {
     
     var type: SearchType?
     
-    private let resultItems = Variable(Array<SearchEntity>())
+    private let resultItems = Variable(Array<SearchModuleItem>())
     
     @IBOutlet weak var titleView: CommonTitleHeaderView!
     @IBOutlet weak var searchButton: BaseButton!
@@ -123,7 +123,7 @@ class InteractionsController: BaseViewController, UITableViewDelegate {
     
     private func setupSearchButton() {
         
-        resultItems.asObservable().startWith([SearchEntity]()).subscribe { [weak self] _ in
+        resultItems.asObservable().startWith([SearchModuleItem]()).subscribe { [weak self] _ in
             self?.updateSearchButton()
         }.addDisposableTo(disposeBag)
         

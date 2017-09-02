@@ -26,6 +26,7 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     
     var items: [SearchModuleItem]?
     var isModalPresentation: Bool?
+    var sectionsArray = Array<String>()
     
     private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SearchModuleItem>>()
     private let disposeBag = DisposeBag()
@@ -52,6 +53,8 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     
     // MARK:- Private
     
+    
+    
     private func setupTableView() {
         
         dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchModuleItem) in
@@ -65,6 +68,12 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
             
             return cell
         }
+        
+//        dataSource.sectionForSectionIndexTitle = { title in
+//            return sectionsArray.index(of: title)
+//        }
+//        
+//        dataSource.
         
         dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
             let section = dataSource[sectionIndex]
@@ -110,6 +119,7 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     private func generateSections(input: [SearchModuleItem]?, filterText: String) -> [SectionModel<String, SearchModuleItem>] {
         
         var resultArray = [SectionModel<String, SearchModuleItem>]()
+        sectionsArray.removeAll()
         
         guard let input = input else { return resultArray }
         
@@ -123,12 +133,26 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
         let sections = Set(filteredArray.map{ $0.firstLetter.uppercased() }).sorted()
         for section in sections {
             let sectionModel = SectionModel(model: section, items: filteredArray.filter{ $0.firstLetter.uppercased() == section })
-            
+
+            sectionsArray.append(sectionModel.identity)
             resultArray.append(sectionModel)
         }
         
         return resultArray
     }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionsArray
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        
+        return sectionsArray.index(of: title)!
+        
+    }// tell table which section corresponds to section title/index (e.g. "B",1))
+
+    
+    
     
     // MARK:- UITableViewDelegate
     

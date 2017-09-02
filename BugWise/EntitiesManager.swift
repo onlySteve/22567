@@ -60,6 +60,12 @@ final class EntitiesManager {
     
     //MARK:- OfflineData
     
+    func saveSearchModuleItem(_ searchItem: SearchModuleItem) {
+        try! realm?.write {
+            realm?.add(searchItem, update: true)
+        }
+    }
+    
     func offlineData(onSuccess: voidBlock?, onFail: voidBlock?) {
         
         let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
@@ -195,7 +201,15 @@ final class EntitiesManager {
     }
     
     //MARK:- SearchItems
-    func searcItems(type: ModuleSearchType? = nil) -> [SearchModuleItem]? {
+    func searcItemsOfflineData(type: ModuleSearchType? = nil) -> [SearchModuleItem]? {
+        if (type != nil) {
+            return realm?.objects(SearchModuleItem.self).toArray().filter{ $0.typeEnum == type && $0.isOfflineData == true }
+        } else {
+            return realm?.objects(SearchModuleItem.self).toArray().filter{ $0.isOfflineData == true }
+        }
+    }
+    
+    func searcItemsAll(type: ModuleSearchType? = nil) -> [SearchModuleItem]? {
         if (type != nil) {
             return realm?.objects(SearchModuleItem.self).toArray().filter{ $0.typeEnum == type }
         } else {
@@ -316,7 +330,7 @@ final class EntitiesManager {
     }
     
     func dropDB() {
-        UserDefaults.standard.set(searcItems()?.filter{$0.isFavorite}.map{ $0.id }, forKey: String(format: "Favorites %@", BusinessModel.shared.usr.mail.value ?? ""))
+        UserDefaults.standard.set(searcItemsAll()?.filter{$0.isFavorite}.map{ $0.id }, forKey: String(format: "Favorites %@", BusinessModel.shared.usr.mail.value ?? ""))
         
         try! realm?.write {
             realm?.deleteAll()
@@ -329,7 +343,7 @@ final class EntitiesManager {
             return
         }
     
-        searcItems()?.forEach({ [weak self] (item) in
+        searcItemsAll()?.forEach({ [weak self] (item) in
             if favList.contains(item.id) {
                 self?.updateEntity(item, favStatus: true)
             }

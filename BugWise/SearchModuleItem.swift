@@ -39,6 +39,16 @@ extension ModuleSearchType {
     }
 }
 
+enum SearchType: String {
+    case antimicrobial = "antimicrobial"
+    case medicine = "medicine"
+}
+
+struct SearchOnlineRequestEntity {
+    var text: String?
+    var type: SearchType
+}
+
 final class SearchModuleItem: Object, Mappable {
     dynamic var type = ModuleSearchType.condition.rawValue
     
@@ -55,6 +65,7 @@ final class SearchModuleItem: Object, Mappable {
     dynamic var isFavorite: Bool = false
     dynamic var id: String = "0"
     dynamic var title: String?
+    dynamic var isOfflineData: Bool = true
     
     // MARK: JSON
     required convenience init?(map: Map) {
@@ -63,10 +74,17 @@ final class SearchModuleItem: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        title <- map["Name"]
         id <- map["ID"]
         
-        firstLetter <- (map["Name"], TransformOf<String, String>(fromJSON: { $0![0] }, toJSON: { $0 }))
+        title <- map["Name"]
+        
+        if title == nil {
+            title <- map["FullName"]
+            firstLetter <- (map["FullName"], TransformOf<String, String>(fromJSON: { $0![0] }, toJSON: { $0 }))
+        } else {
+            firstLetter <- (map["Name"], TransformOf<String, String>(fromJSON: { $0![0] }, toJSON: { $0 }))
+        }
+        
     }
     
     override class func primaryKey() -> String? {

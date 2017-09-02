@@ -36,7 +36,6 @@
 		612187771F071C950046857C /* SurveillanceTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612187761F071C950046857C /* SurveillanceTableViewFooter.xib */; };
 		612187791F071CA10046857C /* SurveillanceTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612187781F071CA10046857C /* SurveillanceTableViewFooter.swift */; };
 		6121877B1F07D9B60046857C /* searchExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6121877A1F07D9B60046857C /* searchExample.json */; };
-		6121877D1F07D9D50046857C /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121877C1F07D9D50046857C /* SearchEntity.swift */; };
 		6121877F1F07E2500046857C /* SearchOnlinceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121877E1F07E2500046857C /* SearchOnlinceController.swift */; };
 		612187841F0816C00046857C /* SearchTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612187831F0816C00046857C /* SearchTrackerModel.swift */; };
 		612187861F082B6A0046857C /* InteractionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612187851F082B6A0046857C /* InteractionsController.swift */; };
@@ -213,7 +212,6 @@
 		612187761F071C950046857C /* SurveillanceTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurveillanceTableViewFooter.xib; sourceTree = "<group>"; };
 		612187781F071CA10046857C /* SurveillanceTableViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveillanceTableViewFooter.swift; sourceTree = "<group>"; };
 		6121877A1F07D9B60046857C /* searchExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchExample.json; sourceTree = "<group>"; };
-		6121877C1F07D9D50046857C /* SearchEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		6121877E1F07E2500046857C /* SearchOnlinceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOnlinceController.swift; sourceTree = "<group>"; };
 		612187831F0816C00046857C /* SearchTrackerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTrackerModel.swift; sourceTree = "<group>"; };
 		612187851F082B6A0046857C /* InteractionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionsController.swift; sourceTree = "<group>"; };
@@ -490,7 +488,6 @@
 				61F430D01EF5762000A76362 /* InfectionEntity.swift */,
 				61F430D21EF5776400A76362 /* EntitiesManager.swift */,
 				6121876C1F0704310046857C /* SurveillanceEntity.swift */,
-				6121877C1F07D9D50046857C /* SearchEntity.swift */,
 				617E19451F098CFD00E34838 /* InteractionsEntity.swift */,
 				617E19471F09A53E00E34838 /* DuplicationsEntity.swift */,
 			);
@@ -1298,7 +1295,6 @@
 				6152807C1EF0574200D8BE7D /* SearchController.swift in Sources */,
 				61EC7D271EE1F07500E04DBD /* Router.swift in Sources */,
 				61ACE9E81EE21046006FADFA /* PinCodeController.swift in Sources */,
-				6121877D1F07D9D50046857C /* SearchEntity.swift in Sources */,
 				615280801EF0885F00D8BE7D /* BaseSearchBar.swift in Sources */,
 				6121874C1F026C9B0046857C /* CalculatorsController.swift in Sources */,
 				617E19481F09A53E00E34838 /* DuplicationsEntity.swift in Sources */,

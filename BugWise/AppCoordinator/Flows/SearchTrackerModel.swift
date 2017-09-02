@@ -18,17 +18,17 @@ struct SearchTrackerModel {
     let text: Observable<String>
     let type: SearchType
     
-    func trackItems() -> Observable<[SearchEntity]> {
+    func trackItems() -> Observable<[SearchModuleItem]> {
         return text
             .observeOn(MainScheduler.instance)
-            .flatMapLatest { searchText -> Observable<[SearchEntity]> in
+            .flatMapLatest { searchText -> Observable<[SearchModuleItem]> in
                 return self.searchItems(searchText)
             }
     }
     
-    internal func searchItems(_ searchText: String) -> Observable<[SearchEntity]> {
+    internal func searchItems(_ searchText: String) -> Observable<[SearchModuleItem]> {
         return provider
             .request(.search(type: type.rawValue, searchString: searchText))
-            .mapArray(SearchEntity.self)
+            .mapArray(SearchModuleItem.self)
     }
 }

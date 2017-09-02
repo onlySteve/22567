@@ -88,7 +88,7 @@ final class FavouritesViewController: BaseViewController, UITableViewDataSource,
             break
         }
         
-        guard let entities = EntitiesManager.shared.searcItems(type: type) else {
+        guard let entities = EntitiesManager.shared.searcItemsAll(type: type) else {
             placeholderView.isHidden = false
             view.bringSubview(toFront: placeholderView)
             return

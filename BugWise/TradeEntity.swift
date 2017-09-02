@@ -17,6 +17,7 @@ final class TradeEntity: Object, Mappable {
     dynamic var form: String?
     dynamic var schedule: String?
     dynamic var manuf: String?
+    dynamic var priority = 0
     var price = List<PriceEntity>()
     
     // MARK: JSON
@@ -34,6 +35,7 @@ final class TradeEntity: Object, Mappable {
         form <- map["Form"]
         schedule <- map["Schedule"]
         manuf <- map["Manuf"]
+        priority <- map["priority"]
         
         var priceArray: [Dictionary<String, Any>]?
         priceArray <- map["Price"]

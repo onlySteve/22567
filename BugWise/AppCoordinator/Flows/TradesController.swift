@@ -25,6 +25,7 @@ class TradesController: BaseViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         title = "Trades"
+        navigationItem.backBarButtonItem?.title = "Back"
         
         tableView.tableFooterView = UIView()
         tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
@@ -47,7 +48,7 @@ class TradesController: BaseViewController, UITableViewDelegate {
     private func generatePriceList(trades: List<TradeEntity>) -> Array<TradeStruct> {
         var resultArray = Array<TradeStruct>()
         
-        for trade in trades {
+        for trade in trades.toArray().sorted(by: { $0.priority < $1.priority }) {
             
             let title = String(format: "%@ %@ %@\n(%@)", trade.title ?? "", trade.strength ?? "", trade.form ?? "", trade.manuf ?? "")
             

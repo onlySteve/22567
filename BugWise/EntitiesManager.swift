@@ -138,37 +138,46 @@ final class EntitiesManager {
     
     func antibiotic(id: String, onSucces:@escaping ((AntibioticEntity?) -> Void), onFail:voidBlock?) {
         
-        //Fucking ServerSide Magic
-        let index = id.index(after: id.startIndex)
-        let serverID = id.substring(from: index)
-        
-        let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
-
-        provider
-            .request(.antibioticDetails(id: serverID))
-            .mapObject(AntibioticEntity.self)
-            .subscribe { event in
-                switch event {
-                case .next(let entity):
-                    
-                    entity.parentID = id
-                    
-                    self.antibioticEntity = entity
-                    
-//                    try! self.realm?.write {
-//                        self.realm?.add(entity, update: true)
-//                    }
-                    
-                    onSucces(entity)
-                    
-                    break
-                case .error(_):
-                    onFail?()
-                    break
-                default:
-                    break
-                }
-            }.addDisposableTo(disposeBag)
+        BusinessModel.shared.performActionWitValidToken { [weak self] in
+            
+            guard let strongSelf = self else {
+                onFail?()
+                return
+            }
+            
+            
+            //Fucking ServerSide Magic
+            let index = id.index(after: id.startIndex)
+            let serverID = id.substring(from: index)
+            
+            let provider = RxMoyaProvider<API>(endpointClosure: strongSelf.endpointClosure)
+            
+            provider
+                .request(.antibioticDetails(id: serverID))
+                .mapObject(AntibioticEntity.self)
+                .subscribe { event in
+                    switch event {
+                    case .next(let entity):
+                        
+                        entity.parentID = id
+                        
+                        strongSelf.antibioticEntity = entity
+                        
+                        //                    try! self.realm?.write {
+                        //                        self.realm?.add(entity, update: true)
+                        //                    }
+                        
+                        onSucces(entity)
+                        
+                        break
+                    case .error(_):
+                        onFail?()
+                        break
+                    default:
+                        break
+                    }
+                }.addDisposableTo(strongSelf.disposeBag)
+        }
     }
     
     func microbeEntitiesMap(_ microbesJSON: [[String: Any]], save: Bool = true) {
@@ -249,84 +258,108 @@ final class EntitiesManager {
     //MARK:- SurveillanceData
     func surveillanceData(_ requestData: SurveillanceRequestEntity, onSuccess: @escaping ((Array<SurveillanceEntity>?) -> Void ), onFail: voidBlock?) {
         
-        
-        let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
-        
-        provider
-            .request(.surviallanceData(requestData))
-            .mapArray(SurveillanceEntity.self)
-            .subscribe { event in
-                switch event {
-                case .next(let surveillanceArray):
+        BusinessModel.shared.performActionWitValidToken { [weak self] in
+            
+            guard let strongSelf = self else {
+                onFail?()
+                return
+            }
+            
+            let provider = RxMoyaProvider<API>(endpointClosure: strongSelf.endpointClosure)
+            
+            provider
+                .request(.surviallanceData(requestData))
+                .mapArray(SurveillanceEntity.self)
+                .subscribe { event in
+                    switch event {
+                    case .next(let surveillanceArray):
                         onSuccess(surveillanceArray)
-                    break
-                case .error(_):
-                    onFail?()
-                    break
-                default:
-                    break
-                }
-            }.addDisposableTo(disposeBag)
+                        break
+                    case .error(_):
+                        onFail?()
+                        break
+                    default:
+                        break
+                    }
+                }.addDisposableTo(strongSelf.disposeBag)
+        }
     }
     
     //MARK:- Interactions
     func interactionsSearch(_ searchItems:Array<String>, onSuccess: @escaping (([InteractionsEntity]?) -> Void ), onFail: voidBlock?) {
     
-        let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
         
-        provider
-            .request(.interactions(values: searchItems))
-            .mapJSON()
-            .subscribe{
-                event in
-                switch event {
-                case .next(let json as Dictionary<String,Any>):
-                    
-                    guard let jsonArray = json["DATA"] as! Array<Dictionary<String, Any>>? else {
+        BusinessModel.shared.performActionWitValidToken { [weak self] in
+            
+            guard let strongSelf = self else {
+                onFail?()
+                return
+            }
+            
+            let provider = RxMoyaProvider<API>(endpointClosure: strongSelf.endpointClosure)
+            
+            provider
+                .request(.interactions(values: searchItems))
+                .mapJSON()
+                .subscribe{
+                    event in
+                    switch event {
+                    case .next(let json as Dictionary<String,Any>):
+                        
+                        guard let jsonArray = json["DATA"] as! Array<Dictionary<String, Any>>? else {
+                            onSuccess(nil)
+                            return
+                        }
+                        
+                        if let itemsMappedArray = Mapper<InteractionsEntity>().mapArray(JSONArray:  jsonArray) {
+                            onSuccess(itemsMappedArray)
+                            return
+                        }
+                        
                         onSuccess(nil)
-                        return
+                        
+                        break
+                    case .error(let error):
+                        print(error.localizedDescription)
+                        onFail?()
+                        break
+                    default:
+                        break
                     }
-                    
-                    if let itemsMappedArray = Mapper<InteractionsEntity>().mapArray(JSONArray:  jsonArray) {
-                        onSuccess(itemsMappedArray)
-                        return
-                    }
-                    
-                    onSuccess(nil)
-                    
-                    break
-                case .error(let error):
-                    print(error.localizedDescription)
-                    onFail?()
-                    break
-                default:
-                    break
-                }
-            }.addDisposableTo(disposeBag)
+                }.addDisposableTo(strongSelf.disposeBag)
+        }
     }
     
     //MARK:- Duplications
     func duplicationsSearch(_ searchItems:Array<String>, onSuccess: @escaping ((DuplicationsEntity?) -> Void ), onFail: voidBlock?) {
         
-        let provider = RxMoyaProvider<API>(endpointClosure: endpointClosure)
-        
-        provider
-            .request(.duplications(values: searchItems))
-            .mapObject(DuplicationsEntity.self)
-            .debug()
-            .subscribe{
-                event in
-                switch event {
-                case .next(let duplicationsEntity):
-                    onSuccess(duplicationsEntity)
-                    break
-                case .error(let error):
-                    onFail?()
-                    break
-                default:
-                    break
-                }
-            }.addDisposableTo(disposeBag)
+        BusinessModel.shared.performActionWitValidToken { [weak self] in
+            
+            guard let strongSelf = self else {
+                onFail?()
+                return
+            }
+            
+            let provider = RxMoyaProvider<API>(endpointClosure: strongSelf.endpointClosure)
+            
+            provider
+                .request(.duplications(values: searchItems))
+                .mapObject(DuplicationsEntity.self)
+                .debug()
+                .subscribe{
+                    event in
+                    switch event {
+                    case .next(let duplicationsEntity):
+                        onSuccess(duplicationsEntity)
+                        break
+                    case .error(let error):
+                        onFail?()
+                        break
+                    default:
+                        break
+                    }
+                }.addDisposableTo(strongSelf.disposeBag)
+        }
     }
     
     func dropDB() {

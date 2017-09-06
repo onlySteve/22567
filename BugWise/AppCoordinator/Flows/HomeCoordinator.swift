@@ -128,11 +128,10 @@ final class HomeCoordinator: BaseCoordinator {
         
         let search = SearchOnlinceController.controller()
         
+        search.needToShowOfflineData = true
+        
         search.onSearchItemSelect = { searchItem in
             
-            searchItem.typeEnum = type
-            searchItem.isOfflineData = false
-                
             EntitiesManager.shared.saveSearchModuleItem(searchItem)
             
             switch searchItem.typeEnum {

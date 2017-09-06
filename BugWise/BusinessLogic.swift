@@ -62,6 +62,10 @@ class BusinessModel {
                     if let token = json["token"] as? String {
                         self.usr.token.value = token
                     }
+                    
+                    if let expires = json["expires_in"] as? Int64 {
+                        self.usr.expiresDate.value = Date(timeIntervalSinceNow: TimeInterval(expires)).UTC
+                    }
 
                     var providerVersionNeedUpdate = false
                     
@@ -111,4 +115,39 @@ class BusinessModel {
         
         usr.loggedIn.onNext(false)
     }
+    
+    func performActionWitValidToken(_ action: voidBlock?) {
+        
+        if needUpdateToken() {
+            showHud()
+            performLogIn(onSuccess: {
+                hideHud()
+                action?()
+            }, onFail: { str in
+                hideHud()
+            })
+        } else {
+            action?()
+        }
+    }
+    
+    private func needUpdateToken() -> Bool {
+        
+        guard let expiresStr = usr.expiresDate.value else {
+            return true
+        }
+        
+        guard let expiresDate = Date.dateFormatterUTC.date(from: expiresStr) else {
+            return true
+        }
+        
+        let currentDate = Date()
+        
+        if currentDate > expiresDate {
+            return true
+        }
+        
+        return false
+    }
+    
 }

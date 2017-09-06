@@ -17,6 +17,8 @@ struct SearchTrackerModel {
     let provider: RxMoyaProvider<API>
     let text: Observable<String>
     let type: SearchType
+    var needToShowOfflineData: Bool = false
+    
     
     func trackItems() -> Observable<[SearchModuleItem]> {
         return text
@@ -27,8 +29,34 @@ struct SearchTrackerModel {
     }
     
     internal func searchItems(_ searchText: String) -> Observable<[SearchModuleItem]> {
+        
+        if searchText.characters.count == 0 && needToShowOfflineData {
+                
+            var items = [SearchModuleItem]()
+            
+            if let searchItems = EntitiesManager.shared.searcItemsOfflineData(type: ModuleSearchType.drug) {
+                items = searchItems
+            }
+            
+            return Observable.just(items)
+        }
+        
+        
         return provider
             .request(.search(type: type.rawValue, searchString: searchText))
             .mapArray(SearchModuleItem.self)
+            .map({
+                
+                var resultArray = [SearchModuleItem]()
+                
+                for item in $0 {
+                    item.isOfflineData = false
+                    item.typeEnum = .drug
+                    resultArray.append(item)
+                }
+                
+                return resultArray
+                })
+            .asObservable()
     }
 }

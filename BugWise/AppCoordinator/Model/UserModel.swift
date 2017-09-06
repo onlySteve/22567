@@ -56,6 +56,7 @@ fileprivate enum synchronizeUsr: String {
     case token = "UsrToken"
     case providerMD5 = "UsrProviderMD5"
     case patientMD5 = "UsrPatientMD5"
+    case expiresDate = "UsrExpiresDate"
 }
 
 class UserModel {
@@ -80,6 +81,7 @@ class UserModel {
     var notificationsEnabled: Variable<Bool> = Variable((UserDefaults.standard.object(forKey: synchronizeUsr.notificationsEnabled.rawValue) != nil) ? UserDefaults.standard.bool(forKey: synchronizeUsr.notificationsEnabled.rawValue) : true)
     var providerMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.providerMD5.rawValue))
     var patientMD5: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.patientMD5.rawValue))
+    var expiresDate: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.expiresDate.rawValue))
     
     init() {
         
@@ -123,6 +125,7 @@ class UserModel {
         userDefaults.set(token.value, forKey: synchronizeUsr.token.rawValue)
         userDefaults.set(patientMD5.value, forKey: synchronizeUsr.patientMD5.rawValue)
         userDefaults.set(providerMD5.value, forKey: synchronizeUsr.providerMD5.rawValue)
+        userDefaults.set(expiresDate.value, forKey: synchronizeUsr.expiresDate.rawValue)
         
         userDefaults.synchronize()
     }
@@ -141,6 +144,7 @@ class UserModel {
         token = Variable(nil)
         patientMD5 = Variable(nil)
         providerMD5 = Variable(nil)
+        expiresDate = Variable(nil)
         
         save()
     }

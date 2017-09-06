@@ -27,6 +27,7 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     
     var onSearchBarCancelSelect: voidBlock?
     var onSearchItemSelect: ((SearchModuleItem) -> ())?
+    var needToShowOfflineData = false
     
     private var provider: RxMoyaProvider<API>!
     private var searchTrackerModel: SearchTrackerModel!
@@ -34,7 +35,6 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     private var latestSearchText: Observable<String> {
         return searchBar.rx.text
             .orEmpty
-            .skipWhile{ $0.characters.count < 3 }
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
@@ -96,36 +96,43 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     
     private func setupSearch() {
         
-        // First part of the puzzle, create our Provider
-        provider = RxMoyaProvider<API>(endpointClosure: EntitiesManager.shared.endpointClosure)
-        
-        // Now we will setup our model
-        searchTrackerModel = SearchTrackerModel(provider: provider, text: latestSearchText, type: type)
-        
-        // And bind issues to table view
-        // Here is where the magic happens, with only one binding
-        // we have filled up about 3 table view data source methods
-        searchTrackerModel
-            .trackItems()
-            .map{ (searchResult) in
-                return self.generateSections(input: searchResult)
-            }
-            .bindTo(tableView.rx.items(dataSource: dataSource))
-            .addDisposableTo(disposeBag)
-        
-        if isModalPresentation == false && onSearchBarCancelSelect == nil {
-            return
-        }
-        
-        if let cancelBlock = onSearchBarCancelSelect {
-            searchBar.showsCancelButton = true
+        BusinessModel.shared.performActionWitValidToken { [weak self] in
             
-            searchBar
-                .rx
-                .cancelButtonClicked
-                .subscribe { _ in
-                    cancelBlock()
-                }.addDisposableTo(self.disposeBag)
+            guard let strongSelf = self else {
+                return
+            }
+            
+            // First part of the puzzle, create our Provider
+            strongSelf.provider = RxMoyaProvider<API>(endpointClosure: EntitiesManager.shared.endpointClosure)
+            
+            // Now we will setup our model
+            strongSelf.searchTrackerModel = SearchTrackerModel(provider: strongSelf.provider, text: strongSelf.latestSearchText, type: strongSelf.type, needToShowOfflineData: strongSelf.needToShowOfflineData)
+            
+            // And bind issues to table view
+            // Here is where the magic happens, with only one binding
+            // we have filled up about 3 table view data source methods
+            strongSelf.searchTrackerModel
+                .trackItems()
+                .map{ (searchResult) in
+                    return strongSelf.generateSections(input: searchResult)
+                }
+                .bindTo(strongSelf.tableView.rx.items(dataSource: strongSelf.dataSource))
+                .addDisposableTo(strongSelf.disposeBag)
+            
+            if strongSelf.isModalPresentation == false && strongSelf.onSearchBarCancelSelect == nil {
+                return
+            }
+            
+            if let cancelBlock = strongSelf.onSearchBarCancelSelect {
+                strongSelf.searchBar.showsCancelButton = true
+                
+                strongSelf.searchBar
+                    .rx
+                    .cancelButtonClicked
+                    .subscribe { _ in
+                        cancelBlock()
+                    }.addDisposableTo(strongSelf.disposeBag)
+            }
         }
     }
     
@@ -161,6 +168,10 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

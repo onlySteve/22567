@@ -29,6 +29,8 @@ final class FavouritesViewController: BaseViewController, UITableViewDataSource,
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         
+        setupSegmentedControl()
+        
         title = "Favourites"
     }
     
@@ -39,6 +41,30 @@ final class FavouritesViewController: BaseViewController, UITableViewDataSource,
     }
     
     // MARK: -Private
+    
+    private func typeFromInt(_ intValue: Int) -> (ModuleSearchType) {
+        var type = ModuleSearchType.drug
+        
+        switch intValue {
+        case 0: type = .drug
+            break
+        case 1: type = .microbe
+            break
+        case 2: type = .condition
+            break
+            
+        default:
+            break
+        }
+        
+        return type
+    }
+    
+    private func setupSegmentedControl() {
+        segmentedControl.setTitle(typeFromInt(0).title, forSegmentAt: 0)
+        segmentedControl.setTitle(typeFromInt(1).title, forSegmentAt: 1)
+        segmentedControl.setTitle(typeFromInt(2).title, forSegmentAt: 2)
+    }
     
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
         updateDatasource()
@@ -74,19 +100,7 @@ final class FavouritesViewController: BaseViewController, UITableViewDataSource,
     
     private func updateDatasource() {
         
-        var type = ModuleSearchType.drug
-        
-        switch segmentedControl.selectedSegmentIndex {
-        case 0: type = .drug
-            break
-        case 1: type = .microbe
-            break
-        case 2: type = .condition
-            break
-            
-        default:
-            break
-        }
+        let type = typeFromInt(segmentedControl.selectedSegmentIndex)
         
         guard let entities = EntitiesManager.shared.searcItemsAll(type: type) else {
             placeholderView.isHidden = false

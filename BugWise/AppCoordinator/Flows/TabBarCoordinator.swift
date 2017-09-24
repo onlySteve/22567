@@ -34,9 +34,6 @@ final class TabBarCoordinator: BaseCoordinator, TabBarCoordinatorOutput {
         tabBarView.onHomeFlowSelect = runHomeFlow()
         tabBarView.onAboutFlowSelect = runAboutFlow()
         tabBarView.onFavouritesFlowSelect = runFavouritesFlow()
-        tabBarView.onLogoutFlowSelect = { [weak self] in
-            self?.onLogoutFlow?()
-        }
         tabBarView.onProfileFlowSelect = runProfileFlow()
     }
         

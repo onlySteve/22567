@@ -14,7 +14,7 @@ import RxCocoa
 import RxRealm
 import RxRealmDataSources
 
-class AlertsController: UIViewController {
+class AlertsController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +22,7 @@ class AlertsController: UIViewController {
     
     override func viewDidLoad() {
         
-        title = "General Alerts"
+        title = BusinessModel.shared.applicationState == .patient ? "Get Bug Wise" : "General Alerts"
         
         bindUI()
         
@@ -34,7 +34,7 @@ class AlertsController: UIViewController {
         let alerts = Observable.just(alertsArray)
         
         alerts
-            .bindTo(tableView.rx.items(cellIdentifier: AlertTableViewCell.nameOfClass, cellType: AlertTableViewCell.self)) { index, model, cell in
+            .bindTo(tableView.rx.items(cellIdentifier: AlertTableViewCell.identifier(), cellType: AlertTableViewCell.self)) { index, model, cell in
                 cell.config(with: model)
             }.addDisposableTo(disposeBag)
         
@@ -43,7 +43,14 @@ class AlertsController: UIViewController {
             .modelSelected(AlertEntity.self).subscribe(onNext: { [weak self] (alert) in
                 self?.navigationController?.pushViewController(AlertDetailedController.controller(with: alert), animated: true)
             }).addDisposableTo(disposeBag)
+        
+        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
 
+    }
+    
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return AlertTableViewCell.height()
     }
 }
 

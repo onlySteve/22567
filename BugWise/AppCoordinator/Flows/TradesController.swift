@@ -17,12 +17,23 @@ class TradesController: BaseViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    @IBOutlet weak var patientHeaderView: UIView!
+    
     var items = List<TradeEntity>()
     
     fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+            super.viewDidLoad()
+        
+        if BusinessModel.shared.applicationState == .patient {
+            headerView.isHidden = true
+            headerHeight.constant = 30
+        } else {
+            patientHeaderView.isHidden = true
+        }
         
         title = "Trades"
         navigationItem.backBarButtonItem?.title = "Back"
@@ -40,7 +51,7 @@ class TradesController: BaseViewController, UITableViewDelegate {
         
         let itemsObservable = Observable.just(generatePriceList(trades: items))
         
-        itemsObservable.bindTo(tableView.rx.items(cellIdentifier: TradeTableViewCell.nameOfClass, cellType: TradeTableViewCell.self)) { index, model, cell in
+        itemsObservable.bindTo(tableView.rx.items(cellIdentifier: TradeTableViewCell.identifier(), cellType: TradeTableViewCell.self)) { index, model, cell in
             cell.config(with: model)
             }.addDisposableTo(disposeBag)
     }
@@ -48,12 +59,25 @@ class TradesController: BaseViewController, UITableViewDelegate {
     private func generatePriceList(trades: List<TradeEntity>) -> Array<TradeStruct> {
         var resultArray = Array<TradeStruct>()
         
-        for trade in trades.toArray().sorted(by: { $0.priority < $1.priority }) {
-            
-            let title = String(format: "%@ %@ %@\n(%@)", trade.title ?? "", trade.strength ?? "", trade.form ?? "", trade.manuf ?? "")
-            
-            for price in trade.price {
-                resultArray.append(TradeStruct(title: title, size: price.packageSize ?? "--", price: price.price ?? ""))
+        let sortedTrades = trades.toArray().sorted(by: { $0.priority < $1.priority })
+        
+        for trade in sortedTrades {
+            if BusinessModel.shared.applicationState == .patient {
+                resultArray.append(TradeStruct(title: trade.title ?? "",
+                                               size: "",
+                                               price: "",
+                                               manuf: trade.manuf ?? "",
+                                               strength: trade.strength ?? "",
+                                               form: trade.form ?? ""))
+            } else {
+                for price in trade.price {
+                    resultArray.append(TradeStruct(title: trade.title ?? "",
+                                                   size: price.packageSize ?? "--",
+                                                   price: price.price ?? "",
+                                                   manuf: trade.manuf ?? "",
+                                                   strength: trade.strength ?? "",
+                                                   form: trade.form ?? ""))
+                }
             }
         }
         

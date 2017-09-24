@@ -20,6 +20,12 @@ final class AntibioticEntity: BaseEntity {
     dynamic var indication: String?
     dynamic var administration: String?
     var trades = List<TradeEntity>()
+    
+    dynamic var picture: String?
+    dynamic var storage: String?
+    dynamic var contraindication: String?
+    dynamic var sideEffect: String?
+
 
     // MARK: JSON
     required convenience init?(map: Map) {
@@ -36,7 +42,10 @@ final class AntibioticEntity: BaseEntity {
         indication <- map["Indication"]
         administration <- map["Administration"]
         
-        
+        storage <- map["Storage"]
+        picture <- map["picture"]
+        contraindication <- map ["Contraindication"]
+        sideEffect <- map["SideEffect"]
         var tradesArray: [Dictionary<String, Any>]?
         tradesArray <- map["Trades"]
         

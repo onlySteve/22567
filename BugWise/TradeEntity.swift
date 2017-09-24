@@ -87,4 +87,7 @@ struct TradeStruct {
     var title: String
     var size: String
     var price: String
+    var manuf: String
+    var strength: String
+    var form: String
 }

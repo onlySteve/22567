@@ -15,9 +15,35 @@ import ReachabilitySwift
 
 typealias voidBlock = () -> ()
 
+enum ApplicationState: String {
+    case provider = "ApplicationStateProvider"
+    case patient = "ApplicationStatePatient"
+    case undefined = "ApplicationStateUndefined"
+}
+
 class BusinessModel {
     
     let usr: UserModel = UserModel()
+    
+    var applicationState: ApplicationState {
+        get{
+            
+            guard let state = UserDefaults.standard.string(forKey: "ApplicationState") else {
+                return ApplicationState.undefined
+            }
+            
+            guard let unwrapedState = ApplicationState(rawValue:state) else {
+                return ApplicationState.undefined
+            }
+            
+            return unwrapedState
+        }
+        set{
+            UserDefaults.standard.set(newValue.rawValue, forKey: "ApplicationState")
+            UserDefaults.standard.synchronize()
+        }
+    }
+
     
     var pushNotificationToken: String? {
         get{

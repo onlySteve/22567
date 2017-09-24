@@ -20,22 +20,32 @@ enum RetrunSectionHeaderTypeEnum {
     case methodOfAdministration
     case associatedInfections
     case treatment
+    case availableAs
+    case storageInstructions
+    case uses
+    case inadvisibleUses
+    case sideEffects
 }
 
 extension RetrunSectionHeaderTypeEnum {
     var title: String {
         switch self {
-        case .description: return "Description"
+        case .description: return BusinessModel.shared.applicationState == .patient ? "What is it?" : "Description"
         case .diagnosis: return "Diagnosis"
-        case .associatedMicrobes: return "Associated Microbes"
+        case .associatedMicrobes: return BusinessModel.shared.applicationState == .patient ? "Linked Bugs" : "Associated Microbes"
         case .references: return "References"
         case .classType: return "Class"
         case .strength: return "Strength"
         case .dose: return "Dose"
         case .indication: return "Indication"
         case .methodOfAdministration: return "Administration"
-        case .associatedInfections: return "Associated Infections"
+        case .associatedInfections: return BusinessModel.shared.applicationState == .patient ? "Linked Infections" : "Associated Infections"
         case .treatment: return "Treatment"
+        case .availableAs: return "Available as"
+        case .storageInstructions: return "Storage instructions"
+        case .uses: return "Uses"
+        case .inadvisibleUses: return "Inadvisable Uses"
+        case .sideEffects: return "Possible Side Effects"
         }
     }
     
@@ -52,6 +62,25 @@ extension RetrunSectionHeaderTypeEnum {
         case .methodOfAdministration: return #imageLiteral(resourceName: "method_y")
         case .associatedInfections: return #imageLiteral(resourceName: "reference_y")
         case .treatment: return #imageLiteral(resourceName: " treatment_y")
+        case .availableAs: return #imageLiteral(resourceName: "description_y")
+        case .storageInstructions: return #imageLiteral(resourceName: "method_y")
+        case .uses: return #imageLiteral(resourceName: "indication_y")
+        case .inadvisibleUses: return #imageLiteral(resourceName: "description_y")
+        case .sideEffects: return #imageLiteral(resourceName: "description_y")
+        }
+    }
+}
+
+enum ReturnSectionHeaderImage: String {
+    case oral = "oral"
+    case iv = "iv"
+    case dual = "dual"
+    
+    var image: UIImage {
+        switch self {
+        case .oral: return #imageLiteral(resourceName: "oral")
+        case .iv: return #imageLiteral(resourceName: "iv")
+        case .dual: return #imageLiteral(resourceName: "dual")
         }
     }
 }
@@ -62,12 +91,14 @@ class BaseReturnModel: NSObject {
 
 class ReturnHeaderModel: BaseReturnModel {
     let type: EntitiesType
+    let titleImage: String?
     let title: String?
     let subtitle: String?
     let imagePath: String?
     let tradeAction: (voidBlock)?
     
-    init(type: EntitiesType, title: String?, subtitle: String? = nil, imagePath: String? = nil, tradeAction: (voidBlock)? = nil) {
+    init(type: EntitiesType, titleImage: String? = nil, title: String?, subtitle: String? = nil, imagePath: String? = nil, tradeAction: (voidBlock)? = nil) {
+        self.titleImage = titleImage
         self.type = type
         self.title = title
         self.subtitle = subtitle

@@ -18,7 +18,7 @@ enum MenuType {
     case generalAlerts
     case surveillanceData
     
-    static let allItems = [antibiotics, microbes, infections, interactions, duplications, doseCalculators, generalAlerts, surveillanceData]
+    static let allItems = BusinessModel.shared.applicationState == .provider ? [antibiotics, microbes, infections, interactions, duplications, doseCalculators, generalAlerts, surveillanceData] : [generalAlerts, infections, antibiotics, microbes]
 }
 
 extension MenuType {
@@ -26,12 +26,12 @@ extension MenuType {
     var title: String {
         switch self {
         case.antibiotics : return "Antibiotics"
-        case.microbes : return "Microbes"
+        case.microbes : return BusinessModel.shared.applicationState == .provider ? "Microbes" : "Bugs"
         case.infections : return "Infections"
         case.interactions : return "Interactions"
         case.duplications : return "Duplications"
         case.doseCalculators : return "Calculators"
-        case.generalAlerts : return "General Alerts"
+        case.generalAlerts : return BusinessModel.shared.applicationState == .provider ? "General Alerts" : "Get Bug Wise"
         case.surveillanceData : return "Surveillance Data"
         }
     }

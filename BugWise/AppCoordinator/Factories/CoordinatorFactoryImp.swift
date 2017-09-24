@@ -21,7 +21,7 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     
     
     func makeTabBarCoordinator() -> (configurator: Coordinator & TabBarCoordinatorOutput, toPresent: Presentable?) {
-        let controller = TabBarController.controllerFromStoryboard(.tabBar)
+        let controller = TabBarController.controllerFromStoryboard(BusinessModel.shared.applicationState == .patient ? .tabBarPatient : .tabBar)
         let coordinator = TabBarCoordinator(tabbarView: controller, coordinatorFactory: CoordinatorFactoryImp())
         return (coordinator, controller)
     }

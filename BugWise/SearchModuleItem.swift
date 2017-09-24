@@ -26,14 +26,14 @@ enum ModuleType: String {
 enum ModuleSearchType: String {
     case condition = "Condition"
     case microbe = "Microbe"
-    case drug = "Drug"
+    case drug = "Drug"   
 }
 
 extension ModuleSearchType {
     var title: String {
         switch self {
         case .condition: return "Infection"
-        case .microbe: return "Microbe"
+        case .microbe: return BusinessModel.shared.applicationState == .patient ? "Bugs" : "Microbe"
         case .drug: return "Antibiotic"
         }
     }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeaderReminderView" customModule="BugWise" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e53-Yk-2as">
+                    <rect key="frame" x="8" y="308.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="BIJ-Ye-jWw"/>
+                        <constraint firstAttribute="height" constant="50" id="xnr-ov-F7m"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-k0-E8y">
+                    <rect key="frame" x="76" y="322" width="167.5" height="23"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaQ-4j-Yal">
+                    <rect key="frame" x="355" y="322" width="12" height="23"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.12156862745098039" green="0.46274509803921571" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZaQ-4j-Yal" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0gL-lr-EFE"/>
+                <constraint firstItem="0ZX-k0-E8y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3NN-qE-TgP"/>
+                <constraint firstItem="e53-Yk-2as" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="73g-1g-u9c"/>
+                <constraint firstAttribute="trailing" secondItem="ZaQ-4j-Yal" secondAttribute="trailing" constant="8" id="E4v-gm-H5Y"/>
+                <constraint firstItem="0ZX-k0-E8y" firstAttribute="leading" secondItem="e53-Yk-2as" secondAttribute="trailing" constant="18" id="eNw-v9-cvl"/>
+                <constraint firstItem="ZaQ-4j-Yal" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ZX-k0-E8y" secondAttribute="trailing" constant="5" id="gdR-w1-EKi"/>
+                <constraint firstItem="e53-Yk-2as" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="yOh-hW-5Qu"/>
+            </constraints>
+            <point key="canvasLocation" x="102.5" y="83.5"/>
+        </view>
+    </objects>
+</document>

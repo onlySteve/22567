@@ -42,6 +42,9 @@
 		612187891F082BBA0046857C /* Interactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612187881F082BBA0046857C /* Interactions.storyboard */; };
 		6121878B1F082CF20046857C /* CommonTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121878A1F082CF20046857C /* CommonTitleHeaderView.swift */; };
 		6121878F1F0830B10046857C /* CommonTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6121878E1F0830B10046857C /* CommonTitleHeaderView.xib */; };
+		6129D1381F77B2580078FD0D /* TabBarPatient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6129D1361F77B2580078FD0D /* TabBarPatient.storyboard */; };
+		6129D13A1F78388A0078FD0D /* HomeHeaderReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129D1391F78388A0078FD0D /* HomeHeaderReminderView.swift */; };
+		6129D13C1F7838B40078FD0D /* HomeHeaderReminderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6129D13B1F7838B40078FD0D /* HomeHeaderReminderView.xib */; };
 		614628151F40D63A009A7D80 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614628141F40D63A009A7D80 /* UserNotifications.framework */; };
 		614ABB3F1EF575DC00215820 /* MicrobeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614ABB3E1EF575DC00215820 /* MicrobeEntity.swift */; };
 		6152807A1EF0540600D8BE7D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 615280791EF0540600D8BE7D /* Search.storyboard */; };
@@ -120,11 +123,8 @@
 		61B221A41EDD3BD6003CCF3E /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221A31EDD3BD6003CCF3E /* BaseButton.swift */; };
 		61B221A61EDD41D2003CCF3E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221A51EDD41D2003CCF3E /* Common.swift */; };
 		61B221A81EDD4392003CCF3E /* DefaultBGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221A71EDD4392003CCF3E /* DefaultBGView.swift */; };
-		61B221BE1EDF050F003CCF3E /* ApplicationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221BD1EDF050F003CCF3E /* ApplicationNavigator.swift */; };
 		61B221C81EDF0A33003CCF3E /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221C71EDF0A33003CCF3E /* UIImageExtensions.swift */; };
 		61B221CA1EDF0DD3003CCF3E /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221C91EDF0DD3003CCF3E /* UIButtonExtensions.swift */; };
-		61B221CC1EDF4211003CCF3E /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221CB1EDF4211003CCF3E /* AppSetup.swift */; };
-		61B221CE1EDF4372003CCF3E /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B221CD1EDF4372003CCF3E /* ApplicationModel.swift */; };
 		61CD2F3B1F2A74CF00169375 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD2F3A1F2A74CF00169375 /* DoubleExtensions.swift */; };
 		61E04BFD1EF72153007115B7 /* ReturnSectionActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E04BFC1EF72153007115B7 /* ReturnSectionActionCell.swift */; };
 		61E5F0E61EEF34C80045CE37 /* SearchModuleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5F0E51EEF34C80045CE37 /* SearchModuleItem.swift */; };
@@ -219,6 +219,9 @@
 		612187881F082BBA0046857C /* Interactions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interactions.storyboard; sourceTree = "<group>"; };
 		6121878A1F082CF20046857C /* CommonTitleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTitleHeaderView.swift; sourceTree = "<group>"; };
 		6121878E1F0830B10046857C /* CommonTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTitleHeaderView.xib; sourceTree = "<group>"; };
+		6129D1371F77B2580078FD0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarPatient.storyboard; sourceTree = "<group>"; };
+		6129D1391F78388A0078FD0D /* HomeHeaderReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderReminderView.swift; sourceTree = "<group>"; };
+		6129D13B1F7838B40078FD0D /* HomeHeaderReminderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderReminderView.xib; sourceTree = "<group>"; };
 		614628131F40D5EC009A7D80 /* BugWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BugWise.entitlements; sourceTree = "<group>"; };
 		614628141F40D63A009A7D80 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		614ABB3E1EF575DC00215820 /* MicrobeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrobeEntity.swift; sourceTree = "<group>"; };
@@ -306,11 +309,8 @@
 		61B221A31EDD3BD6003CCF3E /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		61B221A51EDD41D2003CCF3E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		61B221A71EDD4392003CCF3E /* DefaultBGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBGView.swift; sourceTree = "<group>"; };
-		61B221BD1EDF050F003CCF3E /* ApplicationNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationNavigator.swift; sourceTree = "<group>"; };
 		61B221C71EDF0A33003CCF3E /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		61B221C91EDF0DD3003CCF3E /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
-		61B221CB1EDF4211003CCF3E /* AppSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
-		61B221CD1EDF4372003CCF3E /* ApplicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
 		61CD2F3A1F2A74CF00169375 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		61E04BFC1EF72153007115B7 /* ReturnSectionActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSectionActionCell.swift; sourceTree = "<group>"; };
 		61E5F0E51EEF34C80045CE37 /* SearchModuleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleItem.swift; sourceTree = "<group>"; };
@@ -391,6 +391,8 @@
 				6107AE2C1EE8C5220090A299 /* HomeCell.swift */,
 				61EB1A201EEB5C4B002F7934 /* HomeAlertsPageController.swift */,
 				61EB1A221EEB5EFF002F7934 /* HomeAlertContentViewController.swift */,
+				6129D1391F78388A0078FD0D /* HomeHeaderReminderView.swift */,
+				6129D13B1F7838B40078FD0D /* HomeHeaderReminderView.xib */,
 			);
 			name = UIElements;
 			sourceTree = "<group>";
@@ -669,7 +671,6 @@
 				614628131F40D5EC009A7D80 /* BugWise.entitlements */,
 				61EC7CE61EE1F07500E04DBD /* AppCoordinator */,
 				61B221CF1EDF4DB7003CCF3E /* BusinessLogic */,
-				61B221BC1EDF04A8003CCF3E /* Application */,
 				61B2219B1EDD37B5003CCF3E /* Extensions */,
 				61B2219E1EDD38C4003CCF3E /* Common */,
 				61B221C11EDF063B003CCF3E /* Storyboards */,
@@ -749,21 +750,11 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		61B221BC1EDF04A8003CCF3E /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				61B221BD1EDF050F003CCF3E /* ApplicationNavigator.swift */,
-				61B221CB1EDF4211003CCF3E /* AppSetup.swift */,
-				61B221CD1EDF4372003CCF3E /* ApplicationModel.swift */,
-			);
-			name = Application;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		61B221C11EDF063B003CCF3E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				61EC7D321EE1F2C200E04DBD /* StoryboardsEnum.swift */,
+				6129D1361F77B2580078FD0D /* TabBarPatient.storyboard */,
 				61B2216C1EDD3532003CCF3E /* TabBar.storyboard */,
 				61B221991EDD3626003CCF3E /* Start.storyboard */,
 				61EB1A261EEC86C4002F7934 /* Home.storyboard */,
@@ -1042,6 +1033,7 @@
 				617E194C1F09A97C00E34838 /* InteractionsSectionLabel.xib in Resources */,
 				61ACEA261EE4DAD3006FADFA /* LICENSE in Resources */,
 				6170F5AB1EE5E4D200D171C8 /* offlineContentExamle.json in Resources */,
+				6129D1381F77B2580078FD0D /* TabBarPatient.storyboard in Resources */,
 				617E19421F09823800E34838 /* duplicationsExample.json in Resources */,
 				612187891F082BBA0046857C /* Interactions.storyboard in Resources */,
 				6170F5A91EE5D99700D171C8 /* authorizationExample.json in Resources */,
@@ -1054,6 +1046,7 @@
 				61ACEA131EE3FDE8006FADFA /* ProfileHeaderView.xib in Resources */,
 				617E19521F09B77D00E34838 /* DisclaimerView.xib in Resources */,
 				612187551F02C8AF0046857C /* CalculatorResultHeader.xib in Resources */,
+				6129D13C1F7838B40078FD0D /* HomeHeaderReminderView.xib in Resources */,
 				6152807A1EF0540600D8BE7D /* Search.storyboard in Resources */,
 				612187771F071C950046857C /* SurveillanceTableViewFooter.xib in Resources */,
 				612187751F0717DC0046857C /* SurveillanceTableViewHeader.xib in Resources */,
@@ -1247,7 +1240,6 @@
 				61B221C81EDF0A33003CCF3E /* UIImageExtensions.swift in Sources */,
 				6121876D1F0704310046857C /* SurveillanceEntity.swift in Sources */,
 				61A005201EF5542600AC7BA7 /* ReturnSectionDetailedTextCell.swift in Sources */,
-				61B221BE1EDF050F003CCF3E /* ApplicationNavigator.swift in Sources */,
 				61F430DB1EF682FA00A76362 /* OfflineSectionModel.swift in Sources */,
 				61F430CF1EF5761300A76362 /* AntibioticEntity.swift in Sources */,
 				61E04BFD1EF72153007115B7 /* ReturnSectionActionCell.swift in Sources */,
@@ -1259,6 +1251,7 @@
 				61A005171EF1EC6400AC7BA7 /* BaseViewController.swift in Sources */,
 				612187591F02D0770046857C /* CreatinineCalculatorController.swift in Sources */,
 				61F430E01EF6F6C800A76362 /* TradeTableViewCell.swift in Sources */,
+				6129D13A1F78388A0078FD0D /* HomeHeaderReminderView.swift in Sources */,
 				61ACE9EA1EE21057006FADFA /* PinCodeView.swift in Sources */,
 				61B221671EDD3532003CCF3E /* AppDelegate.swift in Sources */,
 				61AB133A1F5D57BC0015E204 /* DateExtensions.swift in Sources */,
@@ -1268,7 +1261,6 @@
 				61B221A01EDD38DE003CCF3E /* SeparatorView.swift in Sources */,
 				6121878B1F082CF20046857C /* CommonTitleHeaderView.swift in Sources */,
 				61F430D11EF5762000A76362 /* InfectionEntity.swift in Sources */,
-				61B221CC1EDF4211003CCF3E /* AppSetup.swift in Sources */,
 				61ACE9E41EE20482006FADFA /* ModuleFactoryImp.swift in Sources */,
 				61A0051E1EF5541400AC7BA7 /* ReturnSectionHeaderCell.swift in Sources */,
 				61B221CA1EDF0DD3003CCF3E /* UIButtonExtensions.swift in Sources */,
@@ -1321,7 +1313,6 @@
 				61ACEA271EE4DAD3006FADFA /* README.md in Sources */,
 				61EB1A231EEB5EFF002F7934 /* HomeAlertContentViewController.swift in Sources */,
 				61ACE9FF1EE2D697006FADFA /* ProfileView.swift in Sources */,
-				61B221CE1EDF4372003CCF3E /* ApplicationModel.swift in Sources */,
 				615280821EF08F5700D8BE7D /* SearchView.swift in Sources */,
 				61EB1A251EEC73B7002F7934 /* AlertEntity.swift in Sources */,
 				6121876F1F070E4B0046857C /* SurveillanceDetailController.swift in Sources */,
@@ -1379,6 +1370,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6129D1361F77B2580078FD0D /* TabBarPatient.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6129D1371F77B2580078FD0D /* Base */,
+			);
+			name = TabBarPatient.storyboard;
+			sourceTree = "<group>";
+		};
 		61B2216C1EDD3532003CCF3E /* TabBar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

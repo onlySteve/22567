@@ -21,7 +21,6 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
     var onHomeFlowSelect: ((UINavigationController) -> ())? 
     var onAboutFlowSelect: ((UINavigationController) -> ())? 
     var onFavouritesFlowSelect: ((UINavigationController) -> ())? 
-    var onLogoutFlowSelect: (()->())? 
     var onProfileFlowSelect: ((UINavigationController) -> ())? 
     var onViewDidLoad: ((UINavigationController) -> ())?
     
@@ -29,7 +28,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
     
     
     private enum ControllersOrder: Int {
-        case home = 0, profile, favourites, about, disclaimer, logout
+        case home = 0, profile, favourites, about, disclaimer
     }
     
     let disposeBag = DisposeBag()
@@ -40,15 +39,6 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
         
         setupTabBarAppearance()
         
-//        BusinessModel.shared.usr.loggedIn
-//            .asObservable()
-//            .distinctUntilChanged()
-//            .filter({ $0 == true })
-//            .subscribe { [weak self] in
-//                
-//            }.disposed(by: disposeBag)
-//        
-        
         BusinessModel.shared.usr.loggedIn
             .asObserver()
             .subscribe { value in
@@ -56,6 +46,9 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
                 guard let value = value.element else { return }
                 
                 if value == true {
+                    if (BusinessModel.shared.applicationState == .patient) {
+                        self.tabBarController?.viewControllers?.remove(at: ControllersOrder.profile.rawValue)
+                    }
                     self.selectHome()
                 } else {
                     self.selectProfile()
@@ -108,7 +101,9 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let controller = viewControllers?[selectedIndex] as? UINavigationController else { return }
         
-        switch ControllersOrder(rawValue: selectedIndex)! {
+        let index = (BusinessModel.shared.applicationState == .patient && selectedIndex != ControllersOrder.home.rawValue) ? selectedIndex + 1 : selectedIndex
+        
+        switch ControllersOrder(rawValue: index)! {
         case .home: onHomeFlowSelect?(controller)
             break
         case .profile: onProfileFlowSelect?(controller)
@@ -116,9 +111,6 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
         case .favourites: onFavouritesFlowSelect?(controller)
             break
         case .about: onAboutFlowSelect?(controller)
-            break
-        case .logout:
-//            BusinessModel.shared.performLogout()
             break
         case .disclaimer:
             break
@@ -132,7 +124,9 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate, Ta
         
         guard let selectedIndx = viewControllers?.index(of: viewController) else { return true }
         
-        switch ControllersOrder(rawValue: selectedIndx)! {
+        let index = (BusinessModel.shared.applicationState == .patient && selectedIndx != ControllersOrder.home.rawValue) ? selectedIndx + 1 : selectedIndx
+        
+        switch ControllersOrder(rawValue: index)! {
         case .disclaimer:
             showDisclaimerAlert(preview: true, agreeAction: nil, disagreeAction: nil)
             return false

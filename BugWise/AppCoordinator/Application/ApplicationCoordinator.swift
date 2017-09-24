@@ -42,10 +42,13 @@ final class ApplicationCoordinator: BaseCoordinator {
     private func runStarterFlow() {
         let coordinator = coordinatorFactory.makeStartCoordinator(router: router)
         coordinator.finishFlow = { [weak self] flow in
-            //TODO: - Add Flow status to bussines logic model
             switch flow {
-            case .healthCareProvider: self?.runPinCodeCoordinator()
-            case .patient: return
+            case .healthCareProvider:
+                self?.runPinCodeCoordinator()
+                break
+            case .patient:
+                self?.runMainFlow()
+                break
             }
         }
         addDependency(coordinator)

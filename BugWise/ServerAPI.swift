@@ -26,8 +26,8 @@ extension API: TargetType {
     var path: String {
         switch self {
         case .authorization: return "/getToken"
-        case .offlineContent: return "/offlineContent"
-        case .antibioticDetails: return "/medicineMonograph"
+        case .offlineContent: return BusinessModel.shared.applicationState == .patient ? "/offlineContent_Patient" : "/offlineContent"
+        case .antibioticDetails: return BusinessModel.shared.applicationState == .patient ? "/medicineMonograph_Patient" : "/medicineMonograph"
         case .surviallanceData: return "/sensitivity"
         case .search: return "/search"
         case .duplications: return "/duplications"

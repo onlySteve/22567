@@ -132,9 +132,12 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
             itemsObservable
                 .bindTo(cell.tableView.rx.items(cellIdentifier: ReturnSectionActionCell.nameOfClass, cellType: ReturnSectionActionCell.self)) { index, model, cell in
                     cell.config(with: model)
-                    
-                    
-                    
+                                        
+                    if BusinessModel.shared.applicationState == .patient {
+                        cell.labelTrailingToSuperview.constant = 8
+                        return
+                    }
+
                     guard let searchItem = EntitiesManager.shared.searcItem(id: model.id) else {
                         
                         cell.labelTrailingToSuperview.constant = 8
@@ -236,16 +239,18 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
         if entity.isKind(of: MicrobeEntity.self) {
             let microbeEntity = entity as! MicrobeEntity
             
-            
             let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .microbes, title: microbeEntity.title, imagePath: microbeEntity.imagePath)], selected: false)
 
             resultArray.append(headerSection)
             
-            let headerButtonSection = OfflineSectionModel(items: [ReturnHeaderButtonModel(action: {
+            if BusinessModel.shared.applicationState == .provider {
+                let headerButtonSection = OfflineSectionModel(items: [ReturnHeaderButtonModel(action: {
+                    
+                })], selected: false)
                 
-            })], selected: false)
+                resultArray.append(headerButtonSection)
+            }
             
-            resultArray.append(headerButtonSection)
             
             if let section = sectionModel(type: .description, descText: microbeEntity.desc) {
                 resultArray.append(section)
@@ -262,50 +267,91 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                 
             }
             
-            if let section = sectionModel(type: .treatment, descText: microbeEntity.treatment) {
-                resultArray.append(section)
-            }
-            
-            if let section = sectionModel(type: .references, descText: microbeEntity.references) {
-                resultArray.append(section)
+            if BusinessModel.shared.applicationState == .provider {
+                if let section = sectionModel(type: .treatment, descText: microbeEntity.treatment) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .references, descText: microbeEntity.references) {
+                    resultArray.append(section)
+                }
             }
         }
         
         if entity.isKind(of: AntibioticEntity.self) {
             let antibioticEntity = entity as! AntibioticEntity
             
-            let tradeAction: voidBlock = { [weak self] in
-                self?.onTradeItemSelect?(antibioticEntity.trades)
-            }
-            
-            let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, title: antibioticEntity.heading, subtitle: "Bug Wise provides drug references. For guidelines see Infections (where available)", tradeAction:tradeAction)], selected: false)
-            
-            resultArray.append(headerSection)
-            
-            let headerButtonSection = OfflineSectionModel(items: [ReturnHeaderButtonModel(action: {
+            if BusinessModel.shared.applicationState == .patient {
                 
-            })], selected: false)
-            
-            resultArray.append(headerButtonSection)
-            
-            if let section = sectionModel(type: .classType, descText: antibioticEntity.classType) {
-                resultArray.append(section)
-            }
-            
-            if let section = sectionModel(type: .strength, descText: antibioticEntity.strength) {
-                resultArray.append(section)
-            }
-            
-            if let section = sectionModel(type: .dose, descText: antibioticEntity.dose) {
-                resultArray.append(section)
-            }
-            
-            if let section = sectionModel(type: .indication, descText: antibioticEntity.indication) {
-                resultArray.append(section)
-            }
-            
-            if let section = sectionModel(type: .methodOfAdministration, descText: antibioticEntity.administration) {
-                resultArray.append(section)
+                let tradeAction: voidBlock = { [weak self] in
+                    self?.onTradeItemSelect?(antibioticEntity.trades)
+                }
+                
+                let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, title: antibioticEntity.heading, subtitle: "The information below is for formulations taken by mouth. Please consult your healthcare provider for treatment advice", tradeAction:tradeAction)], selected: false)
+                
+                resultArray.append(headerSection)
+                
+                let headerButtonSection = OfflineSectionModel(items: [ReturnHeaderButtonModel(action: {
+                    
+                })], selected: false)
+                
+                resultArray.append(headerButtonSection)
+                
+                if let section = sectionModel(type: .availableAs, descText: antibioticEntity.strength) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .storageInstructions, descText: antibioticEntity.storage) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .uses, descText: antibioticEntity.indication) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .inadvisibleUses, descText: antibioticEntity.contraindication) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .sideEffects, descText: antibioticEntity.sideEffect) {
+                    resultArray.append(section)
+                }
+                
+            } else {
+                
+                let tradeAction: voidBlock = { [weak self] in
+                    self?.onTradeItemSelect?(antibioticEntity.trades)
+                }
+                
+                let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, title: antibioticEntity.heading, subtitle: "Bug Wise provides drug references. For guidelines see Infections (where available)", tradeAction:tradeAction)], selected: false)
+                
+                resultArray.append(headerSection)
+                
+                let headerButtonSection = OfflineSectionModel(items: [ReturnHeaderButtonModel(action: {
+                    
+                })], selected: false)
+                
+                resultArray.append(headerButtonSection)
+                
+                if let section = sectionModel(type: .classType, descText: antibioticEntity.classType) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .strength, descText: antibioticEntity.strength) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .dose, descText: antibioticEntity.dose) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .indication, descText: antibioticEntity.indication) {
+                    resultArray.append(section)
+                }
+                
+                if let section = sectionModel(type: .methodOfAdministration, descText: antibioticEntity.administration) {
+                    resultArray.append(section)
+                }
             }
         }
         
@@ -321,8 +367,10 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                 resultArray.append(section)
             }
             
-            if let section = sectionModel(type: .diagnosis, descText: infectionEntity.diagnosis) {
-                resultArray.append(section)
+            if BusinessModel.shared.applicationState == .provider {
+                if let section = sectionModel(type: .diagnosis, descText: infectionEntity.diagnosis) {
+                    resultArray.append(section)
+                }
             }
             
             let associated = infectionEntity.associatedMicrobes.toArray()
@@ -333,15 +381,16 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                 
                 let offlineSectionModel = OfflineSectionModel(items: [headerModel, cellModel], selected: false)
                 resultArray.append(offlineSectionModel)
-                
             }
             
             if let section = sectionModel(type: .treatment, descText: String(format: "%@\n%@", infectionEntity.firstLine ?? "", infectionEntity.secondLine ?? "")) {
                 resultArray.append(section)
             }
             
-            if let section = sectionModel(type: .references, descText: infectionEntity.references) {
-                resultArray.append(section)
+            if BusinessModel.shared.applicationState == .provider {
+                if let section = sectionModel(type: .references, descText: infectionEntity.references) {
+                    resultArray.append(section)
+                }
             }
         }
         

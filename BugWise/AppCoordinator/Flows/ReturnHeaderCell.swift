@@ -23,7 +23,18 @@ class ReturnHeaderCell: UITableViewCell {
         switch model.type {
         case .infections: typeImageView.image = #imageLiteral(resourceName: "bg_infection")
             break
-        case .antibiotics: typeImageView.image = #imageLiteral(resourceName: "bg_antibiotic")
+        case .antibiotics:
+            
+            var image = ReturnSectionHeaderImage.oral.image
+            
+            if BusinessModel.shared.applicationState != .patient {
+                if let stringType = model.titleImage, let headerImageType = ReturnSectionHeaderImage(rawValue: stringType) {
+                    image = headerImageType.image
+                }
+            }
+            
+            typeImageView.image = image
+            
             break
         case .microbes: typeImageView.image = #imageLiteral(resourceName: "bg_microbe")
             break

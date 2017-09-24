@@ -17,7 +17,6 @@ protocol TabBarView: class {
     var onHomeFlowSelect: ((UINavigationController) -> ())? { get set }
     var onAboutFlowSelect: ((UINavigationController) -> ())? { get set }
     var onFavouritesFlowSelect: ((UINavigationController) -> ())? { get set }
-    var onLogoutFlowSelect: (()->())? { get set }
     var onProfileFlowSelect: ((UINavigationController) -> ())? { get set }
     var onViewDidLoad: ((UINavigationController) -> ())? { get set }
 }

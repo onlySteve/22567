@@ -9,6 +9,7 @@
 enum Storyboards: String {
     
     case tabBar = "TabBar"
+    case tabBarPatient = "TabBarPatient"
     case start = "Start"
     case home = "Home"
     case search = "Search"

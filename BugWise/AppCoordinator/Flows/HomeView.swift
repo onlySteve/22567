@@ -16,4 +16,5 @@ protocol HomeView: BaseView {
     var onComplete: (()->())? { get set }
     var onMenuItemSelect: (MenuItemSelectAction)? { get set }
     var onSearchItemSelect: ((SearchModuleItem) -> ())? { get set }
+    var onMedicineReminderSelect: (() -> ())? { get set }
 }

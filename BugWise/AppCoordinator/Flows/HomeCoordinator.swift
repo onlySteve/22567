@@ -72,6 +72,10 @@ final class HomeCoordinator: BaseCoordinator {
             }
         }
 
+        homeOutput.onMedicineReminderSelect = {
+            self.showMedicineReminder()
+        }
+        
         router.setRootModule(homeOutput)
     }
     
@@ -212,7 +216,12 @@ final class HomeCoordinator: BaseCoordinator {
         }
         
         controller.onSurveillanceDataSelect = { [weak self] (surveillanceEntity) in
-            self?.showSurveilanceData(microbe: surveillanceEntity?.typeEnum == .microbe ? surveillanceEntity : nil, antibiotic: surveillanceEntity?.typeEnum == .drug ? surveillanceEntity : nil)
+            
+            if BusinessModel.shared.applicationState == .patient {
+                self?.showMedicineReminder(antibiotic:  surveillanceEntity?.typeEnum == .drug ? surveillanceEntity : nil)
+            } else {
+                self?.showSurveilanceData(microbe: surveillanceEntity?.typeEnum == .microbe ? surveillanceEntity : nil, antibiotic: surveillanceEntity?.typeEnum == .drug ? surveillanceEntity : nil)
+            }
         }
         
         controller.initialFavStatus = searchItem.isFavorite
@@ -236,5 +245,9 @@ final class HomeCoordinator: BaseCoordinator {
     
     private func showDuplications() {
         router.push(InteractionsController.duplicationsController())
+    }
+    
+    private func showMedicineReminder(antibiotic: SearchModuleItem? = nil) {
+        print("show reminder")
     }
 }

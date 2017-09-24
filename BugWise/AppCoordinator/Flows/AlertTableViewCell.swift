@@ -14,6 +14,16 @@ class AlertTableViewCell: BaseCell {
     
     @IBOutlet weak var subTitleLabel: UILabel!
     
+    static func identifier() -> String {
+        let className = AlertTableViewCell.nameOfClass
+        
+        return BusinessModel.shared.applicationState == .patient ? "\(className)Patient" : className
+    }
+    
+    static func height() -> CGFloat {
+        return BusinessModel.shared.applicationState == .patient ? 150.0 : 200.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

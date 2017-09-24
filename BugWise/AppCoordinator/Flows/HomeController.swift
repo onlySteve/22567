@@ -19,6 +19,7 @@ final class HomeViewController: BaseViewController, HomeView, UITableViewDelegat
     internal var onComplete: (()->())?
     internal var onMenuItemSelect: (MenuItemSelectAction)?
     internal var onSearchItemSelect: ((SearchModuleItem) -> ())?
+    internal var onMedicineReminderSelect: (() -> ())?
     
     private var searchController: SearchController?
     
@@ -30,11 +31,13 @@ final class HomeViewController: BaseViewController, HomeView, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "alert_s"),
-                                                                 style: .plain,
-                                                                 actionHandler: { [weak self] in
-                                       self?.onMenuItemSelect?(.generalAlerts)
-        })
+        if BusinessModel.shared.applicationState == .provider {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "alert_s"),
+                                                                     style: .plain,
+                                                                     actionHandler: { [weak self] in
+                                                                        self?.onMenuItemSelect?(.generalAlerts)
+            })
+        }
         
         tableView.tableFooterView = UIView()
         setupTableView()
@@ -65,23 +68,40 @@ final class HomeViewController: BaseViewController, HomeView, UITableViewDelegat
     }
     
     private func setupPageHeader() {
-        
-        let headerView = UIView(frame: CGRect(x:0, y:0, width:view.frame.width, height:CommonConstants.homeAlertsHeight))
-        headerView.backgroundColor = .black
-        tableView.tableHeaderView = headerView
-        
-        let pageController = HomeAlertsPageController.controller()
-        
-        addChildViewController(pageController)
-        
-        tableView.tableHeaderView?.addSubview(pageController.view)
-        
-        pageController.view?.snp.makeConstraints({ (make) -> Void in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
-        })
+        if BusinessModel.shared.applicationState == .patient {
+            let headerView = HomeHeaderReminderView(frame: CGRect(x:0, y:0, width:view.frame.width, height:CommonConstants.homeReminderHeight))
+            tableView.tableHeaderView = headerView
+            
+            let button = UIButton(frame: headerView.bounds)
+            button.backgroundColor = UIColor.clear
+            
+            headerView.addSubview(button)
+            
+            button
+                .rx
+                .tap
+                .subscribe { [weak self] _ in
+                    self?.onMedicineReminderSelect?()
+                }.addDisposableTo(disposeBag)
+            
+        } else {   
+            let headerView = UIView(frame: CGRect(x:0, y:0, width:view.frame.width, height:CommonConstants.homeAlertsHeight))
+            headerView.backgroundColor = .black
+            tableView.tableHeaderView = headerView
+            
+            let pageController = HomeAlertsPageController.controller()
+            
+            addChildViewController(pageController)
+            
+            tableView.tableHeaderView?.addSubview(pageController.view)
+            
+            pageController.view?.snp.makeConstraints({ (make) -> Void in
+                make.top.equalToSuperview()
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.bottom.equalToSuperview()
+            })
+        }
     }
     
     // MARK: - UITableViewDelegate
@@ -92,7 +112,13 @@ final class HomeViewController: BaseViewController, HomeView, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let searchBar = BaseSearchBar(frame: view.frame)
-
+        
+        if BusinessModel.shared.applicationState == .patient {
+            searchBar.barTintColor = CommonAppearance.reminderBlueColor
+            searchBar.layer.borderWidth = 1
+            searchBar.layer.borderColor = CommonAppearance.reminderBlueColor.cgColor
+        }
+        
         let button = UIButton(frame: searchBar.bounds)
         button.backgroundColor = UIColor.clear
         

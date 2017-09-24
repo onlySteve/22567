@@ -43,10 +43,12 @@ struct CommonAppearance {
     static let strongRedColor = UIColor(netHex: 0xEB1F05)
     static let duplicationsSeparatorColor = UIColor(netHex: 0xB6B6B6)
     static let boldGreyColor = UIColor(netHex: 0x8A8A8F)
+    static let reminderBlueColor = UIColor(netHex: 0x1F76BD)
 }
 
 struct CommonConstants {
     static let homeAlertsHeight: CGFloat = 200.0
+    static let homeReminderHeight: CGFloat = 80.0
     static let headerHeight: CGFloat = 200.0
     static let surveillanceHeaderHeight: CGFloat = 70.0
     static let surveillanceFooterHeight: CGFloat = 80.0

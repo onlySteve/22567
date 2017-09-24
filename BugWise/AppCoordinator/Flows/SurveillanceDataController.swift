@@ -53,7 +53,11 @@ class SurveillanceDataController: BaseViewController {
     private func bindUI() {
         
         microbeField.textField.text = microbeEntity?.title
-        antimicrobialField.textField.text = antibioticEntity?.title
+        
+        if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
+            antimicrobialField.textField.text = detailedAntibiotic.heading
+        }
+        
         
         let currentSectorType = BusinessModel.shared.usr.sector.value
         

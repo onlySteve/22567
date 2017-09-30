@@ -248,6 +248,6 @@ final class HomeCoordinator: BaseCoordinator {
     }
     
     private func showMedicineReminder(antibiotic: SearchModuleItem? = nil) {
-        print("show reminder")
+        router.push(ReminderViewController.controller(antibiotic:antibiotic))
     }
 }

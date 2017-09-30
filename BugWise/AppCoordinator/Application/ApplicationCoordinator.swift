@@ -27,8 +27,9 @@ final class ApplicationCoordinator: BaseCoordinator {
             .distinctUntilChanged()
             .subscribe { value in
                 guard let value = value.element else { return }
-                
-                if value {
+
+//                self.runMainFlow()
+                if value  && BusinessModel.shared.applicationState != .undefined {
                     self.updateOnStart()
                 } else {
                     self.runStarterFlow()

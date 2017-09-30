@@ -17,7 +17,6 @@ func RegularFontWithSize(size: CGFloat = 15) -> UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
-
 struct Number {
     static let numberFormatter: NumberFormatter = {
         let styler = NumberFormatter()

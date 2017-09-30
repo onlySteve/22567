@@ -15,37 +15,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e53-Yk-2as">
-                    <rect key="frame" x="8" y="308.5" width="50" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_alarm" translatesAutoresizingMaskIntoConstraints="NO" id="e53-Yk-2as">
+                    <rect key="frame" x="15" y="308.5" width="50" height="50"/>
+                    <color key="backgroundColor" red="0.95686274509803915" green="0.59999999999999998" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="BIJ-Ye-jWw"/>
                         <constraint firstAttribute="height" constant="50" id="xnr-ov-F7m"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-k0-E8y">
-                    <rect key="frame" x="76" y="322" width="167.5" height="23"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <rect key="frame" x="83" y="319.5" width="211" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaQ-4j-Yal">
-                    <rect key="frame" x="355" y="322" width="12" height="23"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_go_w" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-jL-LQj">
+                    <rect key="frame" x="344" y="321" width="16" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="K3i-nk-zxZ"/>
+                        <constraint firstAttribute="width" constant="16" id="rq8-Ar-THQ"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.12156862745098039" green="0.46274509803921571" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ZaQ-4j-Yal" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0gL-lr-EFE"/>
                 <constraint firstItem="0ZX-k0-E8y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3NN-qE-TgP"/>
                 <constraint firstItem="e53-Yk-2as" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="73g-1g-u9c"/>
-                <constraint firstAttribute="trailing" secondItem="ZaQ-4j-Yal" secondAttribute="trailing" constant="8" id="E4v-gm-H5Y"/>
+                <constraint firstItem="Twh-jL-LQj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ZX-k0-E8y" secondAttribute="trailing" constant="8" id="QQC-Mg-gdi"/>
                 <constraint firstItem="0ZX-k0-E8y" firstAttribute="leading" secondItem="e53-Yk-2as" secondAttribute="trailing" constant="18" id="eNw-v9-cvl"/>
-                <constraint firstItem="ZaQ-4j-Yal" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ZX-k0-E8y" secondAttribute="trailing" constant="5" id="gdR-w1-EKi"/>
-                <constraint firstItem="e53-Yk-2as" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="yOh-hW-5Qu"/>
+                <constraint firstAttribute="trailing" secondItem="Twh-jL-LQj" secondAttribute="trailing" constant="15" id="syN-rt-BWi"/>
+                <constraint firstItem="e53-Yk-2as" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="yOh-hW-5Qu"/>
+                <constraint firstItem="Twh-jL-LQj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yfU-fi-rhN"/>
             </constraints>
             <point key="canvasLocation" x="102.5" y="83.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow_go_w" width="8" height="13"/>
+        <image name="ic_alarm" width="19" height="19"/>
+    </resources>
 </document>

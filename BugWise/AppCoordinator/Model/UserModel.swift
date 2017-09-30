@@ -65,7 +65,7 @@ class UserModel {
     private let disposeBag = DisposeBag()
     
     private var privateLoggedIn: Bool = UserDefaults.standard.bool(forKey: synchronizeUsr.loggedIn.rawValue)
-    
+    let reminderModel = ReminderModel()
     var token: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.token.rawValue))
     
     var pinCode: Variable<String?> = Variable(UserDefaults.standard.string(forKey: synchronizeUsr.pinCode.rawValue))

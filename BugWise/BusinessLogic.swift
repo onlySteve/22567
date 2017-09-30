@@ -107,11 +107,16 @@ class BusinessModel {
                         self.usr.patientMD5.value = patientMD5
                     }
                     
-                    //For the next version need to add if user.provider && providerVersionNeedUpdate != true, and the same staff for the patient
-                    
-                    if providerVersionNeedUpdate != true {
-                        onSuccess?()
-                        break
+                    if self.applicationState == .patient {
+                        if patientVersionNeedUpdate != true {
+                            onSuccess?()
+                            break
+                        }
+                    } else {
+                        if providerVersionNeedUpdate != true {
+                            onSuccess?()
+                            break
+                        }
                     }
                     
                     EntitiesManager.shared.offlineData(onSuccess: {

@@ -16,4 +16,5 @@ enum Storyboards: String {
     case doseCalculator = "Calculators"
     case surveillance = "Surveillance"
     case interactions = "Interactions"
+    case reminder = "Reminder"
 }

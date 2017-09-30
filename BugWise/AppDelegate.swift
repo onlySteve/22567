@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .default
         
-        if ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 11, minorVersion: 0, patchVersion: 0)) {
-            return true
-        }
+//        if ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 11, minorVersion: 0, patchVersion: 0)) {
+//            return true
+//        }
         
         SVProgressHUD.setDefaultMaskType(.black)
         
@@ -117,6 +117,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         showNotificationAlert(data)
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("notification!")
+    }
+
+    
 
     //MARK: - Help Methods
     private func makeCoordinator() -> (() -> Coordinator) {

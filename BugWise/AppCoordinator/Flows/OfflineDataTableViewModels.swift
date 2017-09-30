@@ -62,11 +62,11 @@ extension RetrunSectionHeaderTypeEnum {
         case .methodOfAdministration: return #imageLiteral(resourceName: "method_y")
         case .associatedInfections: return #imageLiteral(resourceName: "reference_y")
         case .treatment: return #imageLiteral(resourceName: " treatment_y")
-        case .availableAs: return #imageLiteral(resourceName: "description_y")
-        case .storageInstructions: return #imageLiteral(resourceName: "method_y")
+        case .availableAs: return #imageLiteral(resourceName: "ic_available_y")
+        case .storageInstructions: return #imageLiteral(resourceName: "ic_storage_y")
         case .uses: return #imageLiteral(resourceName: "indication_y")
-        case .inadvisibleUses: return #imageLiteral(resourceName: "description_y")
-        case .sideEffects: return #imageLiteral(resourceName: "description_y")
+        case .inadvisibleUses: return #imageLiteral(resourceName: "ic_inadvisable_y")
+        case .sideEffects: return #imageLiteral(resourceName: "ic_sideeffect_y")
         }
     }
 }

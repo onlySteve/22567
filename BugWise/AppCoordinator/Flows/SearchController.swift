@@ -15,7 +15,7 @@ import RealmSwift
 import RxDataSources
 import RxCocoa
 
-class SearchController: BaseViewController, SearchView, UITableViewDelegate {
+class SearchController: BaseViewController, SearchView, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableViewTopOffset: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
@@ -26,9 +26,8 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     
     var items: [SearchModuleItem]?
     var isModalPresentation: Bool?
-    var sectionsArray = Array<String>()
     
-    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SearchModuleItem>>()
+    private var sections = [SectionModel<String, SearchModuleItem>]()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -53,43 +52,11 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     
     // MARK:- Private
     
-    
-    
     private func setupTableView() {
-        
-        dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchModuleItem) in
-            let cell = tv.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
-            
-            if let modal = self.isModalPresentation, modal == true {
-                cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "add"))
-            }
-            
-            return cell
-        }
-        
-//        dataSource.sectionForSectionIndexTitle = { title in
-//            return sectionsArray.index(of: title)
-//        }
-//        
-//        dataSource.
-        
-        dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
-            let section = dataSource[sectionIndex]
-            
-            return section.identity
-        }
-        
-        tableView
-            .rx
-            .modelSelected(SearchModuleItem.self)
-            .subscribe(onNext: { [weak self] searchItem  in
-                self?.onSearchItemSelect?(searchItem)
-            }).addDisposableTo(disposeBag)
-        
-        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.sectionIndexBackgroundColor = UIColor.clear
     }
     
     private func setupSearch() {
@@ -108,20 +75,23 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
         let search = searchBar.rx.text.orEmpty.changed.asDriver().startWith("")
         
         search
-            .map{ [unowned self] (searchText) in
-                self.generateSections(input: self.items, filterText: searchText)
-            }
-            .drive(tableView.rx.items(dataSource: dataSource))
+            .asObservable()
+            .subscribe(onNext: { [weak self] (searchText) in
+                guard let strongSelf = self else {
+                    return
+                }
+                strongSelf.sections = strongSelf.generateSections(filterText: searchText)
+                strongSelf.tableView.reloadData()
+            })
             .addDisposableTo(disposeBag)
     }
     
     
-    private func generateSections(input: [SearchModuleItem]?, filterText: String) -> [SectionModel<String, SearchModuleItem>] {
+    private func generateSections(filterText: String) -> [SectionModel<String, SearchModuleItem>] {
         
         var resultArray = [SectionModel<String, SearchModuleItem>]()
-        sectionsArray.removeAll()
         
-        guard let input = input else { return resultArray }
+        guard let input = items else { return resultArray }
         
         let filteredArray = filterText.characters.count > 0 ? input.filter{ ($0.title?.lowercased().contains(filterText.lowercased()))! } : input
         
@@ -133,28 +103,51 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
         let sections = Set(filteredArray.map{ $0.firstLetter.uppercased() }).sorted()
         for section in sections {
             let sectionModel = SectionModel(model: section, items: filteredArray.filter{ $0.firstLetter.uppercased() == section })
-
-            sectionsArray.append(sectionModel.identity)
+            
             resultArray.append(sectionModel)
         }
         
         return resultArray
     }
     
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionsArray
+    // MARK: - UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].identity
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
+        
+        let searchItem = sections[indexPath.section].items[indexPath.row]
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
+        if let modal = self.isModalPresentation, modal == true {
+            cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "add"))
+        }
+        
+        return cell
+    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sections.map{ $0.identity }
+    }
+    
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        
-        return sectionsArray.index(of: title)!
-        
-    }// tell table which section corresponds to section title/index (e.g. "B",1))
-
-    
-    
-    
-    // MARK:- UITableViewDelegate
+        guard let index = sections.map({ $0.identity }).index(of: title) else {
+            return -1
+        }
+        return index
+    }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView  {
@@ -168,6 +161,14 @@ class SearchController: BaseViewController, SearchView, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        view.endEditing(true)
+        
+        let searchItem = sections[indexPath.section].items[indexPath.row]
+        self.onSearchItemSelect?(searchItem)
     }
 }
 

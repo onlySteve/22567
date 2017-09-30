@@ -323,7 +323,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                     self?.onTradeItemSelect?(antibioticEntity.trades)
                 }
                 
-                let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, title: antibioticEntity.heading, subtitle: "Bug Wise provides drug references. For guidelines see Infections (where available)", tradeAction:tradeAction)], selected: false)
+                let headerSection = OfflineSectionModel(items: [ReturnHeaderModel(type: .antibiotics, titleImage:antibioticEntity.picture, title: antibioticEntity.heading, subtitle: "Bug Wise provides drug references. For guidelines see Infections (where available)", tradeAction:tradeAction)], selected: false)
                 
                 resultArray.append(headerSection)
                 

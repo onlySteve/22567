@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,10 +111,10 @@
                                                 <rect key="frame" x="15" y="143" width="345" height="504"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmd-Rd-FUo" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="KX8-hE-Rhd"/>
+                                                            <constraint firstAttribute="height" constant="65" id="KX8-hE-Rhd"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Antibiotic"/>
@@ -122,10 +122,16 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
                                                                 <color key="value" red="0.8784313725490196" green="0.8784313725490196" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="topOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAf-cc-27Z" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="345" height="50"/>
+                                                        <rect key="frame" x="0.0" y="65" width="345" height="65"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
@@ -133,38 +139,52 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Time of first dose"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="alarm"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="topOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="vjQ-nK-AG9">
-                                                        <rect key="frame" x="314" y="71" width="12" height="7"/>
+                                                        <rect key="frame" x="314" y="94" width="12" height="7"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHB-hm-rtb" userLabel="scheduleTime">
-                                                        <rect key="frame" x="0.0" y="100" width="345" height="40"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <rect key="frame" x="0.0" y="130" width="345" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="rAn-oB-UNr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCS-8u-9jJ">
-                                                        <rect key="frame" x="10" y="140" width="325" height="1"/>
+                                                        <rect key="frame" x="10" y="170" width="325" height="1"/>
                                                         <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="dKW-tD-6yS"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0A-ni-45a" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="141" width="345" height="50"/>
+                                                        <rect key="frame" x="0.0" y="171" width="345" height="65"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Start date"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="start_date"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
+                                                                <color key="value" red="0.87843137250000003" green="0.87843137250000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="topOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-li-91v">
-                                                        <rect key="frame" x="314" y="162" width="12" height="7"/>
+                                                        <rect key="frame" x="314" y="200" width="12" height="7"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URi-5c-MDS" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="191" width="345" height="50"/>
+                                                        <rect key="frame" x="0.0" y="236" width="345" height="65"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
@@ -172,15 +192,21 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="End date"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="end_date"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="topOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomOffset">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="XHv-cL-ADl">
-                                                        <rect key="frame" x="314" y="212" width="12" height="7"/>
+                                                        <rect key="frame" x="314" y="265" width="12" height="7"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="XHv-cL-ADl" firstAttribute="top" secondItem="URi-5c-MDS" secondAttribute="top" constant="21" id="0t2-oU-AaI"/>
+                                                    <constraint firstItem="XHv-cL-ADl" firstAttribute="top" secondItem="URi-5c-MDS" secondAttribute="top" constant="29" id="0t2-oU-AaI"/>
                                                     <constraint firstItem="mmd-Rd-FUo" firstAttribute="leading" secondItem="eUJ-ee-20M" secondAttribute="leading" id="1uz-iV-dhv"/>
                                                     <constraint firstItem="XHv-cL-ADl" firstAttribute="centerX" secondItem="pQg-li-91v" secondAttribute="centerX" id="32z-ju-AzT"/>
                                                     <constraint firstItem="T0A-ni-45a" firstAttribute="top" secondItem="rCS-8u-9jJ" secondAttribute="bottom" id="4A5-nI-YyC"/>
@@ -191,8 +217,8 @@
                                                     <constraint firstItem="CAf-cc-27Z" firstAttribute="height" secondItem="mmd-Rd-FUo" secondAttribute="height" id="9Dj-dh-5Id"/>
                                                     <constraint firstItem="URi-5c-MDS" firstAttribute="height" secondItem="mmd-Rd-FUo" secondAttribute="height" id="FdX-3f-ogb"/>
                                                     <constraint firstItem="hHB-hm-rtb" firstAttribute="leading" secondItem="eUJ-ee-20M" secondAttribute="leading" id="QCL-X9-krF"/>
-                                                    <constraint firstItem="pQg-li-91v" firstAttribute="top" secondItem="T0A-ni-45a" secondAttribute="top" constant="21" id="Udz-0F-WfJ"/>
-                                                    <constraint firstItem="vjQ-nK-AG9" firstAttribute="top" secondItem="CAf-cc-27Z" secondAttribute="top" constant="21" id="VQg-7l-IDI"/>
+                                                    <constraint firstItem="pQg-li-91v" firstAttribute="top" secondItem="T0A-ni-45a" secondAttribute="top" constant="29" id="Udz-0F-WfJ"/>
+                                                    <constraint firstItem="vjQ-nK-AG9" firstAttribute="top" secondItem="CAf-cc-27Z" secondAttribute="top" constant="29" id="VQg-7l-IDI"/>
                                                     <constraint firstItem="CAf-cc-27Z" firstAttribute="top" secondItem="mmd-Rd-FUo" secondAttribute="bottom" id="Xlw-CY-pBP"/>
                                                     <constraint firstItem="mmd-Rd-FUo" firstAttribute="top" secondItem="eUJ-ee-20M" secondAttribute="top" id="aEs-W8-7Z3"/>
                                                     <constraint firstItem="rCS-8u-9jJ" firstAttribute="top" secondItem="hHB-hm-rtb" secondAttribute="bottom" id="cdN-pC-cpE"/>

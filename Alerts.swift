@@ -122,5 +122,13 @@ func showNotificationAlert(_ data: [AnyHashable : Any]) {
     
     let notificationAlert = alert(title: "Notification", message: text)
     
-    window.topMostController()?.present(notificationAlert, animated: true, completion: nil)
+    window.currentViewController()?.present(notificationAlert, animated: true, completion: nil)
+}
+
+func showLocalNotificationAlert(title: String?, message: String?) {
+    
+    guard let window = UIApplication.shared.keyWindow else { return }
+    let notificationAlert = alert(title: title ?? "", message: message ?? "")
+    
+    window.currentViewController()?.present(notificationAlert, animated: true, completion: nil)
 }

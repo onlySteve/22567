@@ -15,7 +15,7 @@ import RxCocoa
 import Moya
 
 
-class SearchOnlinceController: BaseViewController, UITableViewDelegate {
+class SearchOnlinceController: BaseViewController,  UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableViewTopOffset: NSLayoutConstraint!
     
@@ -39,8 +39,8 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
             .distinctUntilChanged()
     }
 
-    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SearchModuleItem>>()
     private let disposeBag = DisposeBag()
+    private var sections = [SectionModel<String, SearchModuleItem>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,33 +65,10 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
     // MARK:- Private
     
     private func setupTableView() {
-        
-        dataSource.configureCell = { [unowned self] (_, tv, ip, searchItem: SearchModuleItem) in
-            let cell = tv.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
-            if let modal = self.isModalPresentation, modal == true {
-                cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "add"))
-            }
-            
-            return cell
-        }
-        
-        dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
-            let section = dataSource[sectionIndex]
-            
-            return section.identity
-        }
-        
-        tableView
-            .rx
-            .modelSelected(SearchModuleItem.self)
-            .subscribe(onNext: { [weak self] searchItem  in
-                self?.onSearchItemSelect?(searchItem)
-            }).addDisposableTo(disposeBag)
-        
-        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.sectionIndexBackgroundColor = UIColor.clear
     }
     
     private func setupSearch() {
@@ -113,10 +90,11 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
             // we have filled up about 3 table view data source methods
             strongSelf.searchTrackerModel
                 .trackItems()
-                .map{ (searchResult) in
-                    return strongSelf.generateSections(input: searchResult)
-                }
-                .bindTo(strongSelf.tableView.rx.items(dataSource: strongSelf.dataSource))
+                .asObservable()
+                .subscribe(onNext: { (searchResult) in
+                    strongSelf.sections = strongSelf.generateSections(input: searchResult)
+                    strongSelf.tableView.reloadData()
+                })
                 .addDisposableTo(strongSelf.disposeBag)
             
             if strongSelf.isModalPresentation == false && strongSelf.onSearchBarCancelSelect == nil {
@@ -154,7 +132,44 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         return resultArray
     }
     
-    // MARK:- UITableViewDelegate
+
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].identity
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCellIdentifier")!
+        
+        let searchItem = sections[indexPath.section].items[indexPath.row]
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.attributedText = searchItem.title?.highligtedString(self.searchBar.text)
+        if let modal = self.isModalPresentation, modal == true {
+            cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "add"))
+        }
+        
+        return cell
+    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.isModalPresentation == true ? nil : sections.map{ $0.identity }
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        guard let index = sections.map({ $0.identity }).index(of: title) else {
+            return -1
+        }
+        return index
+    }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView  {
@@ -170,8 +185,13 @@ class SearchOnlinceController: BaseViewController, UITableViewDelegate {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        view.endEditing(true)
+        
+        let searchItem = sections[indexPath.section].items[indexPath.row]
+        self.onSearchItemSelect?(searchItem)
     }
 }
 

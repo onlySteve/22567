@@ -15,8 +15,7 @@ import UserNotifications
 let messageText = "Medicines stay in your body for a certain amount of time. It is important to take your antibiotics at the same time every day according to the instruction from your doctor. Taking antibiotics irregularly allows bacteria to change and reproduce, contributing to the problem of antibiotic resistance."
 let errorMessage = "Please enter antibiotic name to proceed"
 
-let secInDay: Int = 240
-//86400
+let secInDay: Double = 86400
 
 struct ScheduleHeight {
     static let expanded: CGFloat = 38.0
@@ -31,8 +30,7 @@ struct TimesLabel {
 }
 
 
-let reminderNotificationTitle = "Medicine Reminder"
-
+let reminderNotificationTitle = "Medication reminder"
 
 class ReminderViewController: UIViewController {
     
@@ -51,40 +49,10 @@ class ReminderViewController: UIViewController {
     
     var antibioticEntity: SearchModuleItem? = nil
     private let disposeBag = DisposeBag()
+    var layoutBlock : voidBlock?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let notif = UNMutableNotificationContent()
-        notif.title = "Test"
-        notif.body = "Some text"
-        notif.sound = UNNotificationSound.default()
-        
-        var dateComponents = DateComponents()
-        dateComponents.year = 2017
-        let currentDay = Date()
-
-        dateComponents.month = 9
-
-            dateComponents.day = 29
-        dateComponents.minute = Calendar.current.component(.minute, from: currentDay) + 1
-        dateComponents.hour = 2
-        
-        
-        let dateTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: "myNotif", content: notif, trigger: dateTrigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            
-            if error != nil {
-                print("scheduleNotif is failed")
-            }
-        })
-
-        
-        if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
-            antibioticField.textField.text = detailedAntibiotic.heading
-        }
         
         switchControl.isOn = BusinessModel.shared.usr.reminderModel.isEnabled
         
@@ -106,7 +74,13 @@ class ReminderViewController: UIViewController {
         startDateField.textField.isUserInteractionEnabled = false
         endDateField.textField.isUserInteractionEnabled = false
         
-        bindWithExistingData()
+        layoutBlock = { [weak self] in
+            self?.bindWithExistingData()
+        }
+        
+        if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
+            antibioticField.textField.text = detailedAntibiotic.heading
+        }
         
         antibioticField.textField
             .rx
@@ -155,7 +129,15 @@ class ReminderViewController: UIViewController {
             .tapGesture()
             .when(.recognized)
             .subscribe{ [weak self] _ in
+                
+                var minDate = Date(timeIntervalSinceNow: secInDay)
+                
+                if let startDate = BusinessModel.shared.usr.reminderModel.startDate {
+                    minDate = startDate.addingTimeInterval(secInDay)
+                }
+                
                 let datepicker = ReminderPickerViewController.controller(type: .date,
+                                                                         minDate: minDate,
                                                                          onPickSelect: { (pickedTime) in
                                                                             BusinessModel.shared.usr.reminderModel.endDate = pickedTime.date
                                                                             self?.bindWithExistingData()
@@ -164,6 +146,13 @@ class ReminderViewController: UIViewController {
                 self?.showDatePicker(datepicker)
             }
             .addDisposableTo(disposeBag)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        layoutBlock?()
+        layoutBlock = nil
     }
     
     func bindWithExistingData() {
@@ -216,22 +205,21 @@ class ReminderViewController: UIViewController {
         
         let labelFullWidth = TimesLabel.width + TimesLabel.spaceBetween
         
-        var xOrigin = (scheduleView.frame.size.width - CGFloat(count)*labelFullWidth - TimesLabel.spaceBetween)/2.0
+        var xOrigin = (scheduleView.frame.size.width - CGFloat(count)*labelFullWidth + TimesLabel.spaceBetween)/2.0
         
         let yOrigin: CGFloat = 0
-        
         
         let dateformatter = DateFormatter()
         
         dateformatter.dateFormat = "hh:mm a"
         
-        let deltaSec = TimeInterval(secInDay/count)
+        let deltaSec = TimeInterval(secInDay/Double(count))
         
         var start = startTime
         
         for _ in 1...count {
             let label = UILabel(frame: CGRect(x: xOrigin, y: yOrigin, width: TimesLabel.width, height: TimesLabel.height))
-
+            
             xOrigin += labelFullWidth
             
             label.backgroundColor = UIColor(netHex: 0xFF9A10)
@@ -256,7 +244,6 @@ class ReminderViewController: UIViewController {
             self.present(errorAlert, animated: true, completion: nil)
             return
         }
-        
         
         
         let setupSchedule = !self.switchControl.isOn
@@ -294,39 +281,30 @@ class ReminderViewController: UIViewController {
         
         let cal = Calendar.current
         
-        var start = cal.startOfDay(for: startDate)
-        
         let days = endDate.interval(ofComponent: .day, fromDate: startDate)
         
         if days < 0 {
             return
         }
         
-        var dates = [Date]()
+        var dates = [Date?]()
         
         var i: Int = 0
         
+        var currentStartDate = cal.date(bySettingHour: cal.component(.hour, from: startTime),
+                                        minute: cal.component(.minute, from: startTime),
+                                        second: cal.component(.second, from: startTime),
+                                        of: startDate)
+        let deltaSec = TimeInterval(secInDay/Double(timesPerDay))
+        
         repeat {
-            
-            var currentStartDate = cal.date(bySettingHour: cal.component(.hour, from: startTime),
-                                            minute: cal.component(.minute, from: startTime),
-                                            second: cal.component(.second, from: startTime),
-                                            of: start)
-            
-            guard let currentWrapStartDate = currentStartDate else {
-                continue
-            }
-            
-            let deltaSec = TimeInterval(secInDay/timesPerDay)
-            
             for _ in 1 ... timesPerDay {
-                dates.append(currentWrapStartDate)
+                dates.append(currentStartDate)
                 currentStartDate?.addTimeInterval(deltaSec)
                 
             }
             
-            guard let daysBetween = cal.date(byAdding: .day, value: 1, to: startDate) else { return }
-            start = daysBetween
+            currentStartDate?.addTimeInterval(deltaSec)
             
             i += 1
             
@@ -336,20 +314,14 @@ class ReminderViewController: UIViewController {
         
     }
     
-    func scheduleNotif(dates: Array<Date>) {
-        
-        var dateComponents = DateComponents()
-        dateComponents.year = 2017
-        let currentDay = Date()
-        
-        dateComponents.month = 9
-        
-        dateComponents.day = 29
-        dateComponents.minute = Calendar.current.component(.minute, from: currentDay) + 1
-        dateComponents.hour = 2
-        
+    func scheduleNotif(dates: Array<Date?>) {
         
         for date in dates {
+            
+            guard let date = date else {
+                continue
+            }
+            
             let notif = UNMutableNotificationContent()
             notif.title = reminderNotificationTitle
             notif.body = antibioticField.textField.text ?? ""
@@ -365,12 +337,8 @@ class ReminderViewController: UIViewController {
             dateComponents.hour = calendar.component(.hour, from: date)
             dateComponents.minute = calendar.component(.minute, from: date)
             
-//            let dateInfo = cal.dateComponents([.calendar, .era, .year, .month, .day, .hour, .minute, .second], from: date)
-            
-            
-            
             let dateTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            let request = UNNotificationRequest(identifier: "myNotif", content: notif, trigger: dateTrigger)
+            let request = UNNotificationRequest(identifier:"\(dateComponents.year)+\(dateComponents.month)+\(dateComponents.day)+\(dateComponents.hour)+\(dateComponents.minute)", content: notif, trigger: dateTrigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
                 

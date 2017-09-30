@@ -11,7 +11,9 @@ import UIKit
 @IBDesignable
 
 class ProfileTextField: CommonCustomUIBase {
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var separatorView: SeparatorView!
@@ -37,6 +39,18 @@ class ProfileTextField: CommonCustomUIBase {
     @IBInspectable var separatorColor: UIColor = CommonAppearance.greyColor {
         didSet {
             separatorView.backgroundColor = separatorColor
+        }
+    }
+    
+    @IBInspectable var topOffset: CGFloat = 10 {
+        didSet {
+            topConstraint.constant = topOffset
+        }
+    }
+    
+    @IBInspectable var bottomOffset: CGFloat = 9 {
+        didSet {
+            bottomConstraint.constant = bottomOffset
         }
     }
     

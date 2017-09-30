@@ -181,7 +181,8 @@ final class EntitiesManager {
     }
     
     func microbeEntitiesMap(_ microbesJSON: [[String: Any]], save: Bool = true) {
-        if let itemsMappedArray = Mapper<MicrobeEntity>().mapArray(JSONArray: microbesJSON), save {
+        if save {
+            let itemsMappedArray = Mapper<MicrobeEntity>().mapArray(JSONArray: microbesJSON)
             try! realm?.write {
                 realm?.add(itemsMappedArray, update: true)
             }
@@ -189,7 +190,8 @@ final class EntitiesManager {
     }
     
     func infectionEntitiesMap(_ infectionsJSON: [[String: Any]], save: Bool = true) {
-        if let itemsMappedArray = Mapper<InfectionEntity>().mapArray(JSONArray: infectionsJSON), save {
+        if save {
+            let itemsMappedArray = Mapper<InfectionEntity>().mapArray(JSONArray: infectionsJSON)
             try! realm?.write {
                 realm?.add(itemsMappedArray, update: true)
             }
@@ -197,8 +199,8 @@ final class EntitiesManager {
     }
     
     func alertEntitiesMap(_ alertsJSON: [[String : Any]], save: Bool = true) {
-        if let mappedAlerts = Mapper<AlertEntity>().mapArray(JSONArray: alertsJSON), save {
-            
+        if save {
+           let mappedAlerts = Mapper<AlertEntity>().mapArray(JSONArray: alertsJSON)
             try! realm?.write {
                 realm?.add(mappedAlerts, update: true)
             }
@@ -237,19 +239,18 @@ final class EntitiesManager {
     
     func searchItemsMap(_ searchItemsJSON: [String:[[String: Any]]], save: Bool = true) {
         for (key, value) in searchItemsJSON {
-            if let itemsMappedArray = Mapper<SearchModuleItem>().mapArray(JSONArray: value) {
+            let itemsMappedArray = Mapper<SearchModuleItem>().mapArray(JSONArray: value)
                 
-                itemsMappedArray.forEach({ (item) in
-                    item.typeEnum = ModuleSearchType(rawValue: key)!
-                })
-                
-                if !save {
-                    return
-                }
-                
-                try! realm?.write {
-                    realm?.add(itemsMappedArray, update: true)
-                }
+            itemsMappedArray.forEach({ (item) in
+                item.typeEnum = ModuleSearchType(rawValue: key)!
+            })
+            
+            if !save {
+                return
+            }
+            
+            try! realm?.write {
+                realm?.add(itemsMappedArray, update: true)
             }
         }
     }
@@ -310,13 +311,11 @@ final class EntitiesManager {
                             onSuccess(nil)
                             return
                         }
-                        
-                        if let itemsMappedArray = Mapper<InteractionsEntity>().mapArray(JSONArray:  jsonArray) {
-                            onSuccess(itemsMappedArray)
-                            return
-                        }
-                        
-                        onSuccess(nil)
+                        let itemsMappedArray = Mapper<InteractionsEntity>().mapArray(JSONArray:  jsonArray)
+                    
+                        onSuccess(itemsMappedArray)
+
+//                        onSuccess(nil)
                         
                         break
                     case .error(let error):

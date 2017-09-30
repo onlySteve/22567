@@ -63,6 +63,7 @@ class ReminderPickerViewController: BaseViewController {
     var type: ReminderPickerType = .date
     var onPickButtonSelect: ((ReminderPickedDate) -> ())?
     var onCloseButtonSelect: voidBlock?
+    var minDate = Date()
     
     private let disposeBag = DisposeBag()
     
@@ -82,6 +83,10 @@ class ReminderPickerViewController: BaseViewController {
         pickButton.setTitle(type.pickButtonTitle, for: .normal)
         
         datePicker.datePickerMode = type.datePickerMode
+        
+        if type == .date {
+            datePicker.minimumDate = minDate
+        }
     }
     
     private func setupTimesCountButtons() {
@@ -213,11 +218,16 @@ class ReminderPickerViewController: BaseViewController {
 
 extension ReminderPickerViewController {
     static func controller(type: ReminderPickerType,
+                           minDate: Date? = nil,
                            onPickSelect: ((ReminderPickedDate) -> ())? = nil) -> ReminderPickerViewController {
         
         let controller = ReminderPickerViewController.controllerFromStoryboard(.reminder)
         controller.type = type
         controller.onPickButtonSelect = onPickSelect
+        
+        if let minDate = minDate {
+            controller.minDate = minDate
+        }
         
         return controller
     }

@@ -13,7 +13,7 @@ target 'BugWise' do
   pod "RxGesture"
   pod 'Kingfisher', '~> 3.0'
   pod 'ReachabilitySwift', '~> 3'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 2.8.3'  
   pod 'RxRealm', '0.4.1'
   pod 'ObjectMapper', '~> 2.2'
   pod 'SVProgressHUD', '~> 2.1'
@@ -23,6 +23,14 @@ target 'BugWise' do
   pod 'ImageScrollView'
   
   use_frameworks!
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
+end
   
   target 'BugWiseTests' do
     inherit! :search_paths

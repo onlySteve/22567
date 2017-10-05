@@ -96,11 +96,11 @@ final class ProfileViewController: BaseViewController, ProfileView {
     // MARK:- Private
     
     private func setupExistingData() {
-        usrNameInput.textField.text = BusinessModel.shared.usr.userName.value
-        surNameInput.textField.text = BusinessModel.shared.usr.sureName.value
+        usrNameInput.textField.text = BusinessModel.shared.usr.userName.value ?? ""
+        surNameInput.textField.text = BusinessModel.shared.usr.sureName.value ?? ""
         
-        phoneInput.textField.text = BusinessModel.shared.usr.phone.value
-        mailInput.textField.text = BusinessModel.shared.usr.mail.value
+        phoneInput.textField.text = BusinessModel.shared.usr.phone.value ?? ""
+        mailInput.textField.text = BusinessModel.shared.usr.mail.value ?? ""
         
         
         locationButton.setTitle(BusinessModel.shared.usr.location.value.rawValue, for: .normal)

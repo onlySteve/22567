@@ -22,11 +22,11 @@ class ReturnHeaderButtonCell: UITableViewCell {
         let title = BusinessModel.shared.applicationState == .patient ? "Medicine Reminder" : "Surveillance Data"
         
         if BusinessModel.shared.applicationState == .patient {
-            actionButtonPatientWidth.isActive = true
-            actionButtonWidth.isActive = false
+            if actionButtonPatientWidth != nil { actionButtonPatientWidth.isActive = true }
+            if actionButtonWidth != nil { actionButtonWidth.isActive = false }
         } else {
-            actionButtonPatientWidth.isActive = false
-            actionButtonWidth.isActive = true
+            if actionButtonPatientWidth != nil { actionButtonPatientWidth.isActive = false }
+            if actionButtonPatientWidth != nil { actionButtonWidth.isActive = true }
         }
         
         actionButton.setTitle(title, for: .normal)

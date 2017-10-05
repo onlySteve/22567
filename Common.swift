@@ -94,7 +94,7 @@ func delay(_ seconds: Double, completion: @escaping ()->Void) {
 
 func showNetworkReachabilityAlert() {
     let errorAlert = alert(title: "No Internet Connection", message: "It lools like there’s a problem with your internet connection. Please try again")
-    UIApplication.shared.keyWindow?.topMostController()?.present(errorAlert, animated: true, completion: nil)
+    UIApplication.shared.keyWindow?.currentViewController()?.present(errorAlert, animated: true, completion: nil)
 }
 
 func showHud() {

@@ -1541,15 +1541,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BugWise/BugWise.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = J3QB7455QC;
 				INFOPLIST_FILE = BugWise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pharmadynamicsappdev.BugWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "adf4dd82-ab1c-463a-986f-f45a4ae23287";
-				PROVISIONING_PROFILE_SPECIFIER = BugWiseDevelopmentProfile;
+				PROVISIONING_PROFILE = "ad0aa569-881f-48a5-abe3-9e31995df500";
+				PROVISIONING_PROFILE_SPECIFIER = BugWiseAdHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "BugWise/BugWise-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

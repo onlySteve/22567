@@ -109,11 +109,13 @@ class BusinessModel {
                     
                     if self.applicationState == .patient {
                         if patientVersionNeedUpdate != true {
+                            self.usr.loggedIn.onNext(true)
                             onSuccess?()
                             break
                         }
                     } else {
                         if providerVersionNeedUpdate != true {
+                            self.usr.loggedIn.onNext(true)
                             onSuccess?()
                             break
                         }

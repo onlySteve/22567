@@ -25,12 +25,11 @@ struct ScheduleHeight {
 struct TimesLabel {
     static let cornerRadius: CGFloat = 20.0
     static let height: CGFloat = 32.0
-    static let width: CGFloat = 70.0
+    static let width: CGFloat = 65.0
     static let spaceBetween: CGFloat = 10.0
 }
 
-
-let reminderNotificationTitle = "Medication reminder"
+let reminderNotificationTitle = "Medicine reminder"
 
 class ReminderViewController: UIViewController {
     
@@ -59,7 +58,6 @@ class ReminderViewController: UIViewController {
         scheduleViewHeight.constant = ScheduleHeight.colapsed
         
         messageLabel.text = messageText
-        messageLabel.textColor = UIColor(netHex: 0xF15A29)
         antibioticField.textField.textColor = CommonAppearance.lighBlueColor
         antibioticField.textField.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
         
@@ -78,14 +76,12 @@ class ReminderViewController: UIViewController {
             self?.bindWithExistingData()
         }
         
-        if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
-            antibioticField.textField.text = detailedAntibiotic.heading
-        }
         
         antibioticField.textField
             .rx
             .text
             .orEmpty
+            .skip(1)
             .subscribe(onNext: { text in
                 BusinessModel.shared.usr.reminderModel.antibioticName = text
             }).addDisposableTo(disposeBag)
@@ -148,6 +144,14 @@ class ReminderViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if BusinessModel.shared.usr.reminderModel.isEnabled {
+            showAlertForTurnedOnReminder()
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -155,9 +159,22 @@ class ReminderViewController: UIViewController {
         layoutBlock = nil
     }
     
+    private func showAlertForTurnedOnReminder() {
+        let antibiotic = BusinessModel.shared.usr.reminderModel.antibioticName ?? ""
+        let alertVC = alert(title: reminderNotificationTitle,
+              message: "Currently medicine reminder is set up for \(antibiotic).")
+        
+        present(alertVC, animated: true, completion: nil)
+    }
+    
     func bindWithExistingData() {
         
-        antibioticField.textField.text = BusinessModel.shared.usr.reminderModel.antibioticName
+        if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
+            antibioticField.textField.text = detailedAntibiotic.heading
+            BusinessModel.shared.usr.reminderModel.antibioticName = detailedAntibiotic.heading
+        } else {
+            antibioticField.textField.text = BusinessModel.shared.usr.reminderModel.antibioticName
+        }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, yyyy"
@@ -205,7 +222,7 @@ class ReminderViewController: UIViewController {
         
         let labelFullWidth = TimesLabel.width + TimesLabel.spaceBetween
         
-        var xOrigin = (scheduleView.frame.size.width - CGFloat(count)*labelFullWidth + TimesLabel.spaceBetween)/2.0
+        var xOrigin = (290 - CGFloat(count)*labelFullWidth + TimesLabel.spaceBetween)/2
         
         let yOrigin: CGFloat = 0
         
@@ -233,6 +250,11 @@ class ReminderViewController: UIViewController {
             start.addTimeInterval(deltaSec)
             
             scheduleView.addSubview(label)
+            label.snp.makeConstraints { (make) in
+                make.top.equalToSuperview()
+                make.leading.equalTo(label.frame.origin.x)
+                make.size.equalTo(label.frame.size)
+            }
         }
     }
     
@@ -250,6 +272,7 @@ class ReminderViewController: UIViewController {
         switchControl.setOn(setupSchedule, animated: true)
         
         if setupSchedule {
+            showAlertForTurnedOnReminder()
             setupNotificationSchedule()
             switchStatusOffLabel.textColor = UIColor(netHex: 0x8C8C8C)
             switchStatusOnLabel.textColor = UIColor.black
@@ -324,7 +347,8 @@ class ReminderViewController: UIViewController {
             
             let notif = UNMutableNotificationContent()
             notif.title = reminderNotificationTitle
-            notif.body = antibioticField.textField.text ?? ""
+            let antibiotic = BusinessModel.shared.usr.reminderModel.antibioticName ?? ""
+            notif.body =  "Time to take \(antibiotic)"
             notif.sound = UNNotificationSound.default()
 
             var dateComponents = DateComponents()

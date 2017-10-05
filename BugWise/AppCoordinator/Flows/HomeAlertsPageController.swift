@@ -49,7 +49,6 @@ class HomeAlertsPageController: UIPageViewController, UIPageViewControllerDelega
                 timer.invalidate()
                 pageViewController.pageControl.currentPage = currentViewController.pageIndex
                 runTimer()
-                
             }
         }
     }
@@ -92,7 +91,7 @@ class HomeAlertsPageController: UIPageViewController, UIPageViewControllerDelega
     func viewControllerAtIndex(_ index: NSInteger) -> HomeAlertContentViewController
     {
         // Create a new view controller and pass suitable data.
-        let alertModel = alertsArray[index]
+        let alertModel = (alertsArray.count > 0) ? alertsArray[index] : AlertEntity()
         
         let pageContentViewController = HomeAlertContentViewController.controller(with: alertModel, index: index) {
             self.navigationController?.pushViewController(AlertDetailedController.controller(with: alertModel), animated: true)

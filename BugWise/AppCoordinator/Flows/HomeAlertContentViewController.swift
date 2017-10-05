@@ -44,10 +44,10 @@ class HomeAlertContentViewController: UIViewController {
         
     }
     
-    static func controller(with alert: AlertEntity, index: Int, selectionAction: selectionBlock) -> HomeAlertContentViewController {
+    static func controller(with alert: AlertEntity?, index: Int, selectionAction: selectionBlock) -> HomeAlertContentViewController {
         let controller = HomeAlertContentViewController.controllerFromStoryboard(.home)
+        if let unwrapAlert = alert { controller.alert = unwrapAlert }
         
-        controller.alert = alert
         controller.pageIndex = index
         controller.alertSelection = selectionAction
         

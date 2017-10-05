@@ -28,10 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UIApplication.shared.statusBarStyle = .default
         
-        if ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 11, minorVersion: 0, patchVersion: 0)) {
-            return true
-        }
-        
         SVProgressHUD.setDefaultMaskType(.black)
         
         

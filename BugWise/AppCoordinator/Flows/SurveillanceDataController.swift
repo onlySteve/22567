@@ -52,7 +52,7 @@ class SurveillanceDataController: BaseViewController {
     
     private func bindUI() {
         
-        microbeField.textField.text = microbeEntity?.title
+        microbeField.textField.text = microbeEntity?.title ?? ""
         
         if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
             antimicrobialField.textField.text = detailedAntibiotic.heading

@@ -27,9 +27,8 @@ final class ApplicationCoordinator: BaseCoordinator {
             .distinctUntilChanged()
             .subscribe { value in
                 guard let value = value.element else { return }
-
-//                self.runMainFlow()
-                if value  && BusinessModel.shared.applicationState != .undefined {
+                
+                if value && BusinessModel.shared.applicationState != .undefined {
                     self.updateOnStart()
                 } else {
                     self.runStarterFlow()
@@ -110,7 +109,7 @@ final class ApplicationCoordinator: BaseCoordinator {
                 self?.runStarterFlow()
             })
             
-            UIApplication.shared.keyWindow?.topMostController()?.present(alertController, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.currentViewController()?.present(alertController, animated: true, completion: nil)
         })
     }
 

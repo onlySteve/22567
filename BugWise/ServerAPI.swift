@@ -57,7 +57,11 @@ extension API: TargetType {
             }
             
             return ["drug" : resultDrugId, "Microbe": requestEntity.microbe?.id ?? "", "Sector": requestEntity.sector, "Location": requestEntity.location]
-        case .search(let type,let searchString): return ["mode": type, "string": searchString ?? ""]
+        case .search(let type,let searchString):
+            if BusinessModel.shared.applicationState == .patient {
+                return ["mode": "patient", "string": searchString ?? ""]
+            }
+            return ["mode": type, "string": searchString ?? ""]
         case .duplications(let values):
             let resultArray = values.map { str -> String in
                 let index = str.index(after: str.startIndex)

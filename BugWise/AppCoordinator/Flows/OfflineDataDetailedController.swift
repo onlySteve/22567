@@ -12,6 +12,12 @@ import RxGesture
 import ObjectMapper
 import RealmSwift
 
+struct ShareMessage {
+    static let patientText = "Hi, I thought you may find the Bug Wise application highly useful and educational regarding responsible use of antibiotics. The application is freely available in your App store!"
+    
+    static let providerText = "Hi, I thought you may find the Bug Wise application clinically useful in promoting antimicrobial stewardship. The application is freely available in your App store"
+}
+
 class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -197,7 +203,7 @@ class OfflineDataDetailedController: UIViewController, UITableViewDelegate, UITa
                                              actionHandler: { [weak self] in
                                                 
                                                 // text to share
-                                                let text = "Hi, I thought you may find the Bug Wise application highly useful and educational regarding responsible use of antibiotics. The application is freely available in your App store!"
+                                                let text = BusinessModel.shared.applicationState == .patient ? ShareMessage.patientText : ShareMessage.providerText
                                                 
                                                 // set up activity view controller
                                                 let textToShare = [ text ]

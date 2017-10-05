@@ -146,10 +146,6 @@ class ReminderViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if BusinessModel.shared.usr.reminderModel.isEnabled {
-            showAlertForTurnedOnReminder()
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -159,19 +155,34 @@ class ReminderViewController: UIViewController {
         layoutBlock = nil
     }
     
-    private func showAlertForTurnedOnReminder() {
-        let antibiotic = BusinessModel.shared.usr.reminderModel.antibioticName ?? ""
-        let alertVC = alert(title: reminderNotificationTitle,
-              message: "Currently medicine reminder is set up for \(antibiotic).")
+    private func showAlertForChangeAntibiotic(oldValue: String, newValue: String) {
+        let message = "Currently medicine reminder is set up for \(oldValue). Would you like to change it to \(newValue)?"
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel) { _ in
+            
+        }
+        let changeAction = UIAlertAction(title: "CHANGE", style: .default) { _ in
+            BusinessModel.shared.usr.reminderModel.antibioticName = newValue
+            self.antibioticField.textField.text = newValue
+            
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            self.setupNotificationSchedule()
+        }
         
+        let alertVC = alert(withTitle: reminderNotificationTitle, message: message, actions: [cancelAction, changeAction], style: .alert)
         present(alertVC, animated: true, completion: nil)
     }
     
     func bindWithExistingData() {
         
         if let antibioticID = antibioticEntity?.id, let detailedAntibiotic = EntitiesManager.shared.antibioticCached(id: antibioticID) {
-            antibioticField.textField.text = detailedAntibiotic.heading
-            BusinessModel.shared.usr.reminderModel.antibioticName = detailedAntibiotic.heading
+            if (BusinessModel.shared.usr.reminderModel.isEnabled){
+                showAlertForChangeAntibiotic(oldValue: BusinessModel.shared.usr.reminderModel.antibioticName ?? "", newValue: detailedAntibiotic.heading ?? "")
+                antibioticField.textField.text = BusinessModel.shared.usr.reminderModel.antibioticName
+            } else {
+                antibioticField.textField.text = detailedAntibiotic.heading
+                BusinessModel.shared.usr.reminderModel.antibioticName = detailedAntibiotic.heading
+            }
+            
         } else {
             antibioticField.textField.text = BusinessModel.shared.usr.reminderModel.antibioticName
         }
@@ -201,6 +212,7 @@ class ReminderViewController: UIViewController {
             timeField.textField.text = dateStr
         }
         
+        enableControls(!BusinessModel.shared.usr.reminderModel.isEnabled)
     }
     
     @IBAction func switchButtonAction(_ sender: UIButton) {
@@ -272,7 +284,6 @@ class ReminderViewController: UIViewController {
         switchControl.setOn(setupSchedule, animated: true)
         
         if setupSchedule {
-            showAlertForTurnedOnReminder()
             setupNotificationSchedule()
             switchStatusOffLabel.textColor = UIColor(netHex: 0x8C8C8C)
             switchStatusOnLabel.textColor = UIColor.black
@@ -282,7 +293,17 @@ class ReminderViewController: UIViewController {
             switchStatusOnLabel.textColor = UIColor(netHex: 0x8C8C8C)
         }
         
+        enableControls(!setupSchedule)
+        
         BusinessModel.shared.usr.reminderModel.isEnabled = setupSchedule
+    }
+    
+    
+    func enableControls(_ enable: Bool) {
+        antibioticField.isUserInteractionEnabled = enable
+        startDateField.isUserInteractionEnabled = enable
+        endDateField.isUserInteractionEnabled = enable
+        timeField.isUserInteractionEnabled = enable
     }
     
     func setupNotificationSchedule() {

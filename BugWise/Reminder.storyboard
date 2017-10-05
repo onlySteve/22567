@@ -108,7 +108,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-ee-20M">
-                                                <rect key="frame" x="15" y="143" width="345" height="504"/>
+                                                <rect key="frame" x="15" y="143" width="345" height="316"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmd-Rd-FUo" customClass="ProfileTextField" customModule="BugWise" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
@@ -230,7 +230,7 @@
                                                     <constraint firstItem="T0A-ni-45a" firstAttribute="height" secondItem="mmd-Rd-FUo" secondAttribute="height" id="kt1-11-WBI"/>
                                                     <constraint firstAttribute="trailing" secondItem="URi-5c-MDS" secondAttribute="trailing" id="rBE-eV-PNP"/>
                                                     <constraint firstItem="CAf-cc-27Z" firstAttribute="leading" secondItem="eUJ-ee-20M" secondAttribute="leading" id="sl2-Ff-gsS"/>
-                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="URi-5c-MDS" secondAttribute="bottom" id="spa-Zs-2HT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="URi-5c-MDS" secondAttribute="bottom" constant="15" id="spa-Zs-2HT"/>
                                                     <constraint firstItem="T0A-ni-45a" firstAttribute="leading" secondItem="eUJ-ee-20M" secondAttribute="leading" id="uJA-Je-Rnf"/>
                                                     <constraint firstAttribute="trailing" secondItem="CAf-cc-27Z" secondAttribute="trailing" id="vWs-w0-2w9"/>
                                                     <constraint firstAttribute="trailing" secondItem="T0A-ni-45a" secondAttribute="trailing" id="wd3-N6-xAg"/>
@@ -243,7 +243,7 @@
                                             <constraint firstItem="eUJ-ee-20M" firstAttribute="top" secondItem="5sJ-aO-bnp" secondAttribute="bottom" id="0r2-P0-YDj"/>
                                             <constraint firstItem="5sJ-aO-bnp" firstAttribute="top" secondItem="uGU-NT-6Im" secondAttribute="bottom" id="13F-Ti-eCf"/>
                                             <constraint firstAttribute="trailing" secondItem="uGU-NT-6Im" secondAttribute="trailing" id="159-dV-Mxv"/>
-                                            <constraint firstAttribute="bottom" secondItem="eUJ-ee-20M" secondAttribute="bottom" constant="20" id="DaC-3A-mj9"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eUJ-ee-20M" secondAttribute="bottom" constant="20" id="DaC-3A-mj9"/>
                                             <constraint firstAttribute="trailing" secondItem="eUJ-ee-20M" secondAttribute="trailing" constant="15" id="Vgu-v5-dgL"/>
                                             <constraint firstItem="uGU-NT-6Im" firstAttribute="leading" secondItem="JOu-IZ-Cpi" secondAttribute="leading" id="iMk-zy-CSR"/>
                                             <constraint firstItem="5sJ-aO-bnp" firstAttribute="leading" secondItem="JOu-IZ-Cpi" secondAttribute="leading" id="rRD-yM-sAH"/>
@@ -257,12 +257,12 @@
                                     <constraint firstAttribute="bottom" secondItem="JOu-IZ-Cpi" secondAttribute="bottom" id="9YY-Ya-qLN"/>
                                     <constraint firstAttribute="trailing" secondItem="JOu-IZ-Cpi" secondAttribute="trailing" id="Dv9-dh-h5V"/>
                                     <constraint firstItem="JOu-IZ-Cpi" firstAttribute="leading" secondItem="HYt-IM-Yro" secondAttribute="leading" id="KH8-U4-KgR"/>
+                                    <constraint firstItem="JOu-IZ-Cpi" firstAttribute="height" secondItem="HYt-IM-Yro" secondAttribute="height" priority="650" id="Y9k-AY-T2E"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JOu-IZ-Cpi" firstAttribute="height" secondItem="ofW-jG-4PP" secondAttribute="height" id="11O-vw-TIw"/>
                             <constraint firstItem="HYt-IM-Yro" firstAttribute="leading" secondItem="ofW-jG-4PP" secondAttribute="leading" id="bpq-Nb-YP7"/>
                             <constraint firstItem="JOu-IZ-Cpi" firstAttribute="width" secondItem="ofW-jG-4PP" secondAttribute="width" id="d0r-k2-jXM"/>
                             <constraint firstAttribute="bottom" secondItem="HYt-IM-Yro" secondAttribute="bottom" id="kxV-1M-GaB"/>

@@ -24,9 +24,22 @@ final class AboutViewController: BaseViewController, UIScrollViewDelegate {
         guard let image = UIImage(named: "aboutContent.jpg")  else {
             return
         }
-        imageScrollView.display(image: image)
+        
+        let resize = resizeImage(image: image, newWidth: view.frame.width, newHeight: view.frame.height)
+        imageScrollView.display(image: resize ?? image)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat, newHeight: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: newWidth, height: newHeight)))
+        imageView.contentMode = .scaleToFill
+        imageView.image = image
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, 1)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
 
 extension AboutViewController {

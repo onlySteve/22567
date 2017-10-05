@@ -32,9 +32,9 @@ enum ModuleSearchType: String {
 extension ModuleSearchType {
     var title: String {
         switch self {
-        case .condition: return "Infection"
+        case .condition: return BusinessModel.shared.applicationState == .patient ? "Infections" : "Infection"
         case .microbe: return BusinessModel.shared.applicationState == .patient ? "Bugs" : "Microbe"
-        case .drug: return "Antibiotic"
+        case .drug: return BusinessModel.shared.applicationState == .patient ? "Antibiotics" : "Antibiotic"
         }
     }
 }

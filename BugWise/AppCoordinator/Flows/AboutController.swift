@@ -33,7 +33,7 @@ final class AboutViewController: BaseViewController, UIScrollViewDelegate {
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: newWidth, height: newHeight)))
         imageView.contentMode = .scaleToFill
         imageView.image = image
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, 1)
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, UIScreen.main.scale)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         imageView.layer.render(in: context)
         guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }

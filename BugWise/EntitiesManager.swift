@@ -200,6 +200,15 @@ final class EntitiesManager {
     
     func alertEntitiesMap(_ alertsJSON: [[String : Any]], save: Bool = true) {
         if save {
+            
+            let allUploadingObjects = realm?.objects(AlertEntity.self)
+            
+            if let objectsForDelete = allUploadingObjects, objectsForDelete.count > 0 {
+                try! realm?.write {
+                    realm?.delete(objectsForDelete)
+                }
+            }
+            
            let mappedAlerts = Mapper<AlertEntity>().mapArray(JSONArray: alertsJSON)
             try! realm?.write {
                 realm?.add(mappedAlerts, update: true)

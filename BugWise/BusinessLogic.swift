@@ -92,7 +92,9 @@ class BusinessModel {
                     if let expires = json["expires_in"] as? Int64 {
                         self.usr.expiresDate.value = Date(timeIntervalSinceNow: TimeInterval(expires)).UTC
                     }
-
+                    
+                    EntitiesManager.shared.alertEntitiesMap(json["news"] as! [[String : Any]])
+                    
                     var providerVersionNeedUpdate = false
                     
                     if let providerMD5 = json["static_content_signature"] as? String {

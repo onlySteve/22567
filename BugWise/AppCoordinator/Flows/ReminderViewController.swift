@@ -371,7 +371,8 @@ class ReminderViewController: UIViewController {
             let antibiotic = BusinessModel.shared.usr.reminderModel.antibioticName ?? ""
             notif.body =  "Time to take \(antibiotic)"
             notif.sound = UNNotificationSound.default()
-
+            notif.badge = NSNumber(value: 1)
+            
             var dateComponents = DateComponents()
             
             let calendar = Calendar.current

@@ -92,6 +92,9 @@ class ReminderViewController: UIViewController {
             .when(.recognized)
             .subscribe{ [weak self] _ in
                 let datepicker = ReminderPickerViewController.controller(type: .time,
+                                                                         selectedDate: BusinessModel.shared.usr.reminderModel.startTime,
+                    timesPerDay: ReminderPickTimePerDay(rawValue: BusinessModel.shared.usr.reminderModel.timesPerDay ?? 1),
+                    
                                                                          onPickSelect: { (pickedTime) in
                                                                             
                                                                             BusinessModel.shared.usr.reminderModel.timesPerDay = pickedTime.timePerDay?.rawValue
@@ -110,7 +113,20 @@ class ReminderViewController: UIViewController {
             .tapGesture()
             .when(.recognized)
             .subscribe{ [weak self] _ in
+                
+                var minDate = Date()
+                
+                var selectedDate = minDate
+                
+                if let startDate = BusinessModel.shared.usr.reminderModel.startDate {
+                    selectedDate = startDate
+                }
+                
+                minDate = selectedDate < minDate ? selectedDate : minDate
+                
                 let datepicker = ReminderPickerViewController.controller(type: .date,
+                                                                         minDate: minDate,
+                                                                         selectedDate: selectedDate,
                                                                          onPickSelect: { (pickedTime) in
                                                              BusinessModel.shared.usr.reminderModel.startDate = pickedTime.date
                                                                             self?.bindWithExistingData()
@@ -128,12 +144,23 @@ class ReminderViewController: UIViewController {
                 
                 var minDate = Date(timeIntervalSinceNow: secInDay)
                 
-                if let startDate = BusinessModel.shared.usr.reminderModel.startDate {
-                    minDate = startDate.addingTimeInterval(secInDay)
+                var selectedDate = minDate
+                
+                if BusinessModel.shared.usr.reminderModel.endDate != nil {
+                    if let endDate = BusinessModel.shared.usr.reminderModel.endDate {
+                        selectedDate = endDate
+                    }
+                } else {
+                    if let startDate = BusinessModel.shared.usr.reminderModel.startDate {
+                        selectedDate = startDate.addingTimeInterval(secInDay)
+                    }
                 }
+                
+                minDate = selectedDate < minDate ? selectedDate : minDate
                 
                 let datepicker = ReminderPickerViewController.controller(type: .date,
                                                                          minDate: minDate,
+                                                                         selectedDate: selectedDate,
                                                                          onPickSelect: { (pickedTime) in
                                                                             BusinessModel.shared.usr.reminderModel.endDate = pickedTime.date
                                                                             self?.bindWithExistingData()

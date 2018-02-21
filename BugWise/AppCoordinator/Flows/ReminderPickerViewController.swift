@@ -53,17 +53,19 @@ class ReminderPickerViewController: BaseViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet var timesButtonCollection: [UIButton]!
     
-    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var timesViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var pickButton: BaseRedButton!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var hintTimeLabel: UILabel!
     
     var type: ReminderPickerType = .date
     var onPickButtonSelect: ((ReminderPickedDate) -> ())?
     var onCloseButtonSelect: voidBlock?
     var minDate = Date()
+    var selectedDate: Date?
+    var timesPerDay: ReminderPickTimePerDay = .one
     
     private let disposeBag = DisposeBag()
     
@@ -77,14 +79,18 @@ class ReminderPickerViewController: BaseViewController {
     
     // MARK: - Private
     private func setupUI() {
-        
         headerLabel.text = type.title
         
         pickButton.setTitle(type.pickButtonTitle, for: .normal)
         
         datePicker.datePickerMode = type.datePickerMode
         
+        if let selectedDate = selectedDate {
+            datePicker.setDate(selectedDate, animated: false)
+        }
+        
         if type == .date {
+            hintTimeLabel.isHidden = true
             datePicker.minimumDate = minDate
         }
     }
@@ -110,7 +116,11 @@ class ReminderPickerViewController: BaseViewController {
                     }.addDisposableTo(disposeBag)
             }
             
-            timesButtonCollection.first?.isSelected = true
+            let selectedIndex = timesPerDay.rawValue - 1
+            
+            if selectedIndex < timesButtonCollection.count {
+                timesButtonCollection[selectedIndex].isSelected = true
+            }
         } else {
             timesButtonCollection.forEach{ $0.isHidden = true }
             timesViewHeight.constant = 0
@@ -219,11 +229,18 @@ class ReminderPickerViewController: BaseViewController {
 extension ReminderPickerViewController {
     static func controller(type: ReminderPickerType,
                            minDate: Date? = nil,
+                           selectedDate: Date? = nil,
+                           timesPerDay: ReminderPickTimePerDay? = nil,
                            onPickSelect: ((ReminderPickedDate) -> ())? = nil) -> ReminderPickerViewController {
         
         let controller = ReminderPickerViewController.controllerFromStoryboard(.reminder)
         controller.type = type
         controller.onPickButtonSelect = onPickSelect
+        if let timesPerDay = timesPerDay {
+            controller.timesPerDay = timesPerDay
+        }
+        
+        controller.selectedDate = selectedDate
         
         if let minDate = minDate {
             controller.minDate = minDate

@@ -27,10 +27,8 @@ class ReturnHeaderCell: UITableViewCell {
             
             var image = ReturnSectionHeaderImage.oral.image
             
-            if BusinessModel.shared.applicationState != .patient {
-                if let stringType = model.titleImage, let headerImageType = ReturnSectionHeaderImage(rawValue: stringType) {
-                    image = headerImageType.image
-                }
+            if let stringType = model.titleImage, let headerImageType = ReturnSectionHeaderImage(rawValue: stringType) {
+                image = headerImageType.image
             }
             
             typeImageView.image = image

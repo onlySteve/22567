@@ -303,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVJ-Zr-nDl" userLabel="view">
-                                        <rect key="frame" x="0.0" y="218" width="375" height="449"/>
+                                        <rect key="frame" x="0.0" y="228" width="375" height="439"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuG-iV-DrD" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -386,7 +386,7 @@
                                                 </constraints>
                                             </view>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-5q-EzE">
-                                                <rect key="frame" x="0.0" y="108" width="375" height="216"/>
+                                                <rect key="frame" x="0.0" y="147" width="375" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="gV5-ut-aMt"/>
                                                 </constraints>
@@ -395,7 +395,7 @@
                                                 </date>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsp-LX-iYh" customClass="BaseRedButton" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="112" y="344" width="150" height="36"/>
+                                                <rect key="frame" x="112" y="383" width="150" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="5OX-vV-Cqb"/>
                                                     <constraint firstAttribute="height" constant="36" id="QsG-AP-3lV"/>
@@ -403,7 +403,7 @@
                                                 <state key="normal" title="Pick"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the first time and the subsequent times will be pre-populated" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pj-o0-300">
-                                                <rect key="frame" x="20" y="400" width="335" height="29"/>
+                                                <rect key="frame" x="20" y="118" width="335" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -411,21 +411,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="1pj-o0-300" firstAttribute="top" secondItem="Tsp-LX-iYh" secondAttribute="bottom" constant="20" id="3fe-EQ-AuO"/>
                                             <constraint firstItem="Tsp-LX-iYh" firstAttribute="top" secondItem="EFd-5q-EzE" secondAttribute="bottom" constant="20" id="4jH-LJ-QKm"/>
-                                            <constraint firstItem="EFd-5q-EzE" firstAttribute="top" secondItem="e0M-BS-jr5" secondAttribute="bottom" id="ARp-1e-lsk"/>
                                             <constraint firstItem="1pj-o0-300" firstAttribute="leading" secondItem="iVJ-Zr-nDl" secondAttribute="leading" constant="20" id="CGC-lN-V1V"/>
                                             <constraint firstItem="EFd-5q-EzE" firstAttribute="leading" secondItem="iVJ-Zr-nDl" secondAttribute="leading" id="CgX-j0-iEa"/>
                                             <constraint firstAttribute="trailing" secondItem="EFd-5q-EzE" secondAttribute="trailing" id="DD0-Yu-tFR"/>
                                             <constraint firstItem="vuG-iV-DrD" firstAttribute="leading" secondItem="iVJ-Zr-nDl" secondAttribute="leading" id="FmT-ge-RcW"/>
                                             <constraint firstItem="e0M-BS-jr5" firstAttribute="top" secondItem="vuG-iV-DrD" secondAttribute="bottom" id="G3g-DO-gpb"/>
                                             <constraint firstItem="vuG-iV-DrD" firstAttribute="top" secondItem="iVJ-Zr-nDl" secondAttribute="top" id="KX8-Hj-eIL"/>
+                                            <constraint firstItem="1pj-o0-300" firstAttribute="bottom" secondItem="EFd-5q-EzE" secondAttribute="top" id="RGT-qp-xk4"/>
                                             <constraint firstItem="e0M-BS-jr5" firstAttribute="leading" secondItem="iVJ-Zr-nDl" secondAttribute="leading" id="ZpE-ms-V5a"/>
+                                            <constraint firstItem="1pj-o0-300" firstAttribute="top" secondItem="e0M-BS-jr5" secondAttribute="bottom" constant="10" id="bB9-tj-dhU"/>
                                             <constraint firstAttribute="trailing" secondItem="e0M-BS-jr5" secondAttribute="trailing" id="bdr-ef-8gO"/>
                                             <constraint firstItem="Tsp-LX-iYh" firstAttribute="centerX" secondItem="iVJ-Zr-nDl" secondAttribute="centerX" id="fso-0X-Ll0"/>
                                             <constraint firstAttribute="trailing" secondItem="vuG-iV-DrD" secondAttribute="trailing" id="k9Z-Lr-p5c"/>
-                                            <constraint firstAttribute="bottom" secondItem="1pj-o0-300" secondAttribute="bottom" constant="20" id="lnt-XZ-zvW"/>
                                             <constraint firstAttribute="trailing" secondItem="1pj-o0-300" secondAttribute="trailing" constant="20" id="qjn-oM-AJj"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tsp-LX-iYh" secondAttribute="bottom" constant="20" id="rbt-xj-11E"/>
                                         </constraints>
                                     </view>
                                 </subviews>

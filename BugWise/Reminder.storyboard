@@ -303,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVJ-Zr-nDl" userLabel="view">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="439"/>
+                                        <rect key="frame" x="0.0" y="242.5" width="375" height="424.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuG-iV-DrD" userLabel="headerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -386,7 +386,7 @@
                                                 </constraints>
                                             </view>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-5q-EzE">
-                                                <rect key="frame" x="0.0" y="147" width="375" height="216"/>
+                                                <rect key="frame" x="0.0" y="132.5" width="375" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="gV5-ut-aMt"/>
                                                 </constraints>
@@ -395,15 +395,15 @@
                                                 </date>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsp-LX-iYh" customClass="BaseRedButton" customModule="BugWise" customModuleProvider="target">
-                                                <rect key="frame" x="112" y="383" width="150" height="36"/>
+                                                <rect key="frame" x="112" y="368.5" width="150" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="5OX-vV-Cqb"/>
                                                     <constraint firstAttribute="height" constant="36" id="QsG-AP-3lV"/>
                                                 </constraints>
                                                 <state key="normal" title="Pick"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the first time and the subsequent times will be pre-populated" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pj-o0-300">
-                                                <rect key="frame" x="20" y="118" width="335" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select time of first dose" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pj-o0-300">
+                                                <rect key="frame" x="20" y="118" width="335" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

@@ -18,7 +18,7 @@ enum ReminderPickerType {
     var title: String {
         switch self {
         case .date: return "Pick the date"
-        case .time: return "Select time/s a day"
+        case .time: return "Select dose/s per day"
         }
     }
     
